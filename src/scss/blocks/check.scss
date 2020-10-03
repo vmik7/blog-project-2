@@ -1,16 +1,12 @@
-
-// Check
+@import '../_variables';
+@import '../_mixins';
 
 .check {
     padding-left: 1.2em;
 
-    // Input
-
     &__input {
         appearance: none;
     }
-
-    // Box
 
     &__box {
         position: absolute;

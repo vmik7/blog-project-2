@@ -1,0 +1,25 @@
+@import '../_variables';
+@import '../_mixins';
+
+.form {
+
+    &__input {
+        display: block;
+        width: 100%;
+        
+        &:focus {
+            border-color: var(--input-focus-border-color, rgba(114, 94, 195, 0.6));
+            box-shadow: var(--input-focus-shadow, 0 0 0 0.2rem rgba(114, 94, 195, 0.2));
+        }
+    }
+
+    &__input::placeholder,
+    &__select:required:invalid {
+        color: var(--input-placeholder-color, rgba(188, 188, 188, 0.8));
+    }
+
+    &__textarea {
+        width: 100%;
+        resize: none;
+    }
+}

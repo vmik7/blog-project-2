@@ -7,13 +7,16 @@ let path = {
     build: {
         html: projectFolder + '/',
         css: projectFolder + '/css/',
+        bem: projectFolder + '/css/blocks/',
         js: projectFolder + '/js/',
         img: projectFolder + '/img/',
         fonts: projectFolder + '/fonts/'
     },
     src: {
         html: [sourceFolder + '/*.html', '!' + sourceFolder + '/_*.html'],
-        css: sourceFolder + '/scss/style.scss',
+        readyCss: [sourceFolder + '/scss/null.scss'],
+        css: [sourceFolder + '/scss/style.scss'],
+        bem: sourceFolder + '/scss/blocks/*.scss',
         js: sourceFolder + '/js/main.js',
         img: sourceFolder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
         fonts: sourceFolder + '/fonts/*.ttf'
@@ -61,12 +64,35 @@ function browserSyncFunction() {
 function html() {
     return src(path.src.html)
         .pipe(fileInclude())
-        .pipe(webpHtml())
+        // .pipe(webpHtml())
         .pipe(dest(path.build.html))
         .pipe(browserSync.stream());
 }
 
 function css() {
+    src(path.src.bem)
+        .pipe(scss({
+            outputStyle: 'expanded'
+        }))
+        .pipe(groupMedia())
+        .pipe(autoprefixer({
+            overrideBrowserslist: ['last 5 versions'],
+            cascade: true
+        }))
+        .pipe(webpCss())
+        .pipe(dest(path.build.bem))
+        .pipe(browserSync.stream());
+    src(path.src.readyCss)
+        .pipe(scss({
+            outputStyle: 'expanded'
+        }))
+        .pipe(dest(path.build.css))
+        .pipe(rename({
+            extname: '.min.css'
+        }))
+        .pipe(cleanCss())
+        .pipe(dest(path.build.css))
+        .pipe(browserSync.stream());
     return src(path.src.css)
         .pipe(scss({
             outputStyle: 'expanded'
@@ -124,31 +150,31 @@ function fonts() {
         .pipe(dest(path.build.fonts));
 }
 
-gulp.task('otf2ttf', function() {
-    return src([sourceFolder + '/fonts/*.otf'])
-        .pipe(fonter({
-            formats: ['ttf']
-        }))
-        .pipe(dest(sourceFolder + '/fonts/'));
-});
+// gulp.task('otf2ttf', function() {
+//     return src([sourceFolder + '/fonts/*.otf'])
+//         .pipe(fonter({
+//             formats: ['ttf']
+//         }))
+//         .pipe(dest(sourceFolder + '/fonts/'));
+// });
 
-gulp.task('svgSprite', function() {
-    return gulp.src([sourceFolder + '/iconsprite/*.svg'])
-    .pipe(svgSprite({
-        mode: {
-            stack: {
-                sprite: '../icons/icons.svg' // sprite file name
-                //example: true
-            }
-        }
-    }))
-    .pipe(dest(path.build.img));
-});
+// gulp.task('svgSprite', function() {
+//     return gulp.src([sourceFolder + '/iconsprite/*.svg'])
+//     .pipe(svgSprite({
+//         mode: {
+//             stack: {
+//                 sprite: '../icons/icons.svg' // sprite file name
+//                 //example: true
+//             }
+//         }
+//     }))
+//     .pipe(dest(path.build.img));
+// });
 
 function fontsStyle() {
-    let fileContent = fs.readFileSync(sourceFolder + '/scss/fonts.scss');
+    let fileContent = fs.readFileSync(sourceFolder + '/scss/_fonts.scss');
     if (fileContent == '') {
-        fs.writeFile(sourceFolder + '/scss/fonts.scss', '', cb);
+        fs.writeFile(sourceFolder + '/scss/_fonts.scss', '', cb);
         return fs.readdir(path.build.fonts, function (err, items) {
             if (items) {
                 let currentFontname;
@@ -156,7 +182,7 @@ function fontsStyle() {
                     let fontname = items[i].split('.');
                     fontname = fontname[0];
                     if (currentFontname != fontname) {
-                        fs.appendFile(sourceFolder + '/scss/fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
+                        fs.appendFile(sourceFolder + '/scss/_fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
                     }
                     currentFontname = fontname;
                 }

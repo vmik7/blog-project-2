@@ -1,44 +1,50 @@
 
-// MIXINS 
+// INFO
 
-@import 'mixins';
+/*
+    This file contains general styles (used on many pages) and base css custom properties.
+    Included blocks: 
+        blocks/page.css
+        blocks/form.css
+        blocks/check.css
+        blocks/header.css
+        blocks/menu.css
+        blocks/main.css
+        blocks/footer.css
+*/
+
+
+
+// VARIABLES & MIXINS
+
+// СSS Custom properties
+:root {
+
+    // /* Основной акцентный цвет */
+    // --accent-color: #6A25FF;
+
+}
+
+// SCSS variables and mixins
+@import '_variables';
+@import '_mixins';
 
 
 
 // FONTS
 
-// File with @font-face rules
-@import 'fonts';
+// This file contains @font-face rules
+@import '_fonts';
 
-// Google fonts imports
+// Google fonts: cyrillic support (add this suffix on URL)
+// &subset=cyrillic-ext
 
-// Cyrillic support (add this suffix on URL)
-// &display=swap&subset=cyrillic-ext
-
-
-
-// VARIABLES
-
-// Default font
-$defaultFont: "Arial";
-
-// Color for custom outline
-$outline-color: #42a0da;
-
-// Maximum container width
-$max-container-width: 1170;
-
-// Media breakpoints
-$md1: $max-container-width + 12;
-$md2: 992;
-$md3: 768;
-$md4: 480;
+// Google fonts: display swap as a best practice (add this suffix on URL)
+// &display=swap
 
 
 
-// NULL & GENERAL
-
-@import 'null';
+// GENERAL
 
 // _visually-hidden class for elements like default checkbox (it should not be visible, but it should be!)
 ._visually-hidden {
@@ -50,10 +56,10 @@ $md4: 480;
     @include focus-outline();
 }
 
-// setting custom focus outline for some elements
-a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
-    @include focus-outline();
-}
+// setting custom focus outline for focusable elements
+// a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
+//     @include focus-outline();
+// }
 
 // _no-focus class for elements, which not needed focus
 ._no-focus-outline:focus {
@@ -67,28 +73,29 @@ a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
 
 
 
-// GRID & CONTAINER
+// PAGE GRID & CONTAINER
 
 ._container {
     max-width: $max-container-width + px;
     margin: 0 auto;
-    @media screen and (max-width: $md1+px) {
+    @media screen and (max-width: $md1 + px) {
         max-width: 970px;
     }
-    @media screen and (max-width: $md2+px) {
+    @media screen and (max-width: $md2 + px) {
         max-width: 750px;
     }
-    @media screen and (max-width: $md3+px) {
-        max-width: none;
+    @media screen and (max-width: $md3 + px) {
+        max-width: 100%;
         padding: 0 10px;
     }
 }
 
 
 
-// BLOCKS
+// BEM BLOCKS
 
 @import 'blocks/page';
+@import 'blocks/form';
 @import 'blocks/check';
 @import 'blocks/header';
 @import 'blocks/menu';

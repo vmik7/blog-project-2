@@ -1,16 +1,13 @@
-
-// Page
+@import '../_variables';
+@import '../_mixins';
 
 .page {
-
-    // Body
 
     &__body {
         font-family: $defaultFont, sans-serif;
         color: #000;
 
         // Lock modificator when some menu is opened (to stop scroll)
-
         &_lock {
             overflow: hidden;
         }
@@ -21,11 +18,14 @@
         min-height: 100vh;
     }
 
-    // Main
+    &__header {
+    }
 
     &__main {
-        
         // for sticky footer
         flex-grow: 1;
+    }
+
+    &__footer {
     }
 }
