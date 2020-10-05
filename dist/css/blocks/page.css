@@ -1,0 +1,25 @@
+.page__body {
+  font-family: "Arial", sans-serif;
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
+.page__body_lock {
+  overflow: hidden;
+}
+
+.page__main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+@supports (-webkit-appearance:none){
+
+}

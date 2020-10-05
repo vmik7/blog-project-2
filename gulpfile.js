@@ -10,22 +10,30 @@ let path = {
         bem: projectFolder + '/css/blocks/',
         js: projectFolder + '/js/',
         img: projectFolder + '/img/',
-        fonts: projectFolder + '/fonts/'
+        fonts: projectFolder + '/fonts/',
+
+        articleHtml: projectFolder + '/articles/article-name/',
+        articleImg: projectFolder + '/articles/article-name/img/',
     },
     src: {
         html: [sourceFolder + '/*.html', '!' + sourceFolder + '/_*.html'],
-        readyCss: [sourceFolder + '/scss/null.scss'],
         css: [sourceFolder + '/scss/style.scss'],
         bem: sourceFolder + '/scss/blocks/*.scss',
         js: sourceFolder + '/js/main.js',
         img: sourceFolder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
-        fonts: sourceFolder + '/fonts/*.ttf'
+        fonts: sourceFolder + '/fonts/*.ttf',
+
+        articleHtml: sourceFolder + '/articles/article-name/index.html',
+        articleImg: sourceFolder + '/articles/article-name/img/**/*.{jpg,png,svg,gif,ico,webp}',
     },
     watch: {
         html: sourceFolder + '/**/*.html',
         css: sourceFolder + '/scss/**/*.scss',
         js: sourceFolder + '/js/**/*.js',
         img: sourceFolder + '/img/**/*.{ipg,png,svg,gif,ico,webp}',
+
+        articleHtml: sourceFolder + '/articles/article-name/*.html',
+        articleImg: sourceFolder + '/articles/article-name/img/**/*.{jpg,png,svg,gif,ico,webp}',
     },
     clean: './' + projectFolder + '/'
 }
@@ -62,6 +70,11 @@ function browserSyncFunction() {
 }
 
 function html() {
+    src(path.src.articleHtml)
+        .pipe(fileInclude())
+        // .pipe(webpHtml())
+        .pipe(dest(path.build.articleHtml))
+        .pipe(browserSync.stream());
     return src(path.src.html)
         .pipe(fileInclude())
         // .pipe(webpHtml())
@@ -82,17 +95,6 @@ function css() {
         .pipe(webpCss())
         .pipe(dest(path.build.bem))
         .pipe(browserSync.stream());
-    src(path.src.readyCss)
-        .pipe(scss({
-            outputStyle: 'expanded'
-        }))
-        .pipe(dest(path.build.css))
-        .pipe(rename({
-            extname: '.min.css'
-        }))
-        .pipe(cleanCss())
-        .pipe(dest(path.build.css))
-        .pipe(browserSync.stream());
     return src(path.src.css)
         .pipe(scss({
             outputStyle: 'expanded'
@@ -102,7 +104,7 @@ function css() {
             overrideBrowserslist: ['last 5 versions'],
             cascade: true
         }))
-        .pipe(webpCss())
+        // .pipe(webpCss())
         .pipe(dest(path.build.css))
         .pipe(rename({
             extname: '.min.css'
@@ -125,6 +127,20 @@ function js() {
 }
 
 function images() {
+    src(path.src.articleImg)
+        .pipe(webp({
+            quality: 70
+        }))
+        .pipe(dest(path.build.articleImg))
+        .pipe(src(path.src.articleImg))
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{ removeViewBox: false }],
+            interlaced: true,
+            optimizationLevel: 3 // 0..7
+        }))
+        .pipe(dest(path.build.articleImg))
+        .pipe(browserSync.stream());
     return src(path.src.img)
         .pipe(webp({
             quality: 70
@@ -197,6 +213,9 @@ function watchFiles() {
     gulp.watch([path.watch.css], css);
     gulp.watch([path.watch.js], js);
     gulp.watch([path.watch.img], images);
+
+    gulp.watch([path.watch.articleHtml], html);
+    gulp.watch([path.watch.articleImg], images);
 }
 
 function clean() {

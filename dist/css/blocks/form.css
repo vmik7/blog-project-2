@@ -1,0 +1,39 @@
+.form__input {
+  display: block;
+  width: 100%;
+}
+
+.form__input:focus {
+  border-color: var(--input-focus-border-color, rgba(114, 94, 195, 0.6));
+  -webkit-box-shadow: var(--input-focus-shadow, 0 0 0 0.2rem rgba(114, 94, 195, 0.2));
+          box-shadow: var(--input-focus-shadow, 0 0 0 0.2rem rgba(114, 94, 195, 0.2));
+}
+
+.form__input::-webkit-input-placeholder {
+  color: var(--input-placeholder-color, rgba(188, 188, 188, 0.8));
+}
+
+.form__input::-moz-placeholder {
+  color: var(--input-placeholder-color, rgba(188, 188, 188, 0.8));
+}
+
+.form__input:-ms-input-placeholder {
+  color: var(--input-placeholder-color, rgba(188, 188, 188, 0.8));
+}
+
+.form__input::-ms-input-placeholder {
+  color: var(--input-placeholder-color, rgba(188, 188, 188, 0.8));
+}
+
+.form__input::placeholder,
+.form__select:required:invalid {
+  color: var(--input-placeholder-color, rgba(188, 188, 188, 0.8));
+}
+
+.form__textarea {
+  width: 100%;
+  resize: none;
+}
+@supports (-webkit-appearance:none){
+
+}
