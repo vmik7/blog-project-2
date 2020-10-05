@@ -1,7 +1,7 @@
 {
-  "name": "personalblog",
+  "name": "blog",
   "version": "1.0.0",
-  "description": "Personal blog web-site layout",
+  "description": "blog web-project",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
