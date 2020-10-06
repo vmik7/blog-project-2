@@ -12,8 +12,7 @@ let path = {
         img: projectFolder + '/img/',
         fonts: projectFolder + '/fonts/',
 
-        articleHtml: projectFolder + '/articles/article-name/',
-        articleImg: projectFolder + '/articles/article-name/img/',
+        articles: projectFolder + '/articles/',
     },
     src: {
         html: [sourceFolder + '/*.html', '!' + sourceFolder + '/_*.html'],
@@ -21,10 +20,11 @@ let path = {
         bem: sourceFolder + '/scss/blocks/*.scss',
         js: sourceFolder + '/js/main.js',
         img: sourceFolder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
-        fonts: sourceFolder + '/fonts/*.ttf',
+        fontsTtf: sourceFolder + '/fonts/**/*.ttf',
+        fontsWoff: sourceFolder + '/fonts/**/*.{woff,woff2}',
 
-        articleHtml: sourceFolder + '/articles/article-name/index.html',
-        articleImg: sourceFolder + '/articles/article-name/img/**/*.{jpg,png,svg,gif,ico,webp}',
+        articleHtml: sourceFolder + '/articles/**/*.html',
+        articleImg: sourceFolder + '/articles/**/img/**/*.{jpg,png,svg,gif,ico,webp}',
     },
     watch: {
         html: sourceFolder + '/**/*.html',
@@ -32,8 +32,8 @@ let path = {
         js: sourceFolder + '/js/**/*.js',
         img: sourceFolder + '/img/**/*.{ipg,png,svg,gif,ico,webp}',
 
-        articleHtml: sourceFolder + '/articles/article-name/*.html',
-        articleImg: sourceFolder + '/articles/article-name/img/**/*.{jpg,png,svg,gif,ico,webp}',
+        articleHtml: sourceFolder + '/articles/**/*.html',
+        articleImg: sourceFolder + '/articles/**/img/**/*.{jpg,png,svg,gif,ico,webp}',
     },
     clean: './' + projectFolder + '/'
 }
@@ -51,12 +51,12 @@ let rename = require('gulp-rename');
 let uglify = require('gulp-uglify-es').default;
 let imagemin = require('gulp-imagemin');
 let webp = require('gulp-webp');
-let webpHtml = require('gulp-webp-html');
+// let webpHtml = require('gulp-webp-html');
 let webpCss = require('gulp-webp-css');
-let svgSprite = require('gulp-svg-sprite');
+// let svgSprite = require('gulp-svg-sprite');
 let ttf2woff = require('gulp-ttf2woff');
 let ttf2woff2 = require('gulp-ttf2woff2');
-let fonter = require('gulp-fonter');
+// let fonter = require('gulp-fonter');
 
 function browserSyncFunction() {
     browserSync.init({
@@ -73,7 +73,7 @@ function html() {
     src(path.src.articleHtml)
         .pipe(fileInclude())
         // .pipe(webpHtml())
-        .pipe(dest(path.build.articleHtml))
+        .pipe(dest(path.build.articles))
         .pipe(browserSync.stream());
     return src(path.src.html)
         .pipe(fileInclude())
@@ -131,7 +131,7 @@ function images() {
         .pipe(webp({
             quality: 70
         }))
-        .pipe(dest(path.build.articleImg))
+        .pipe(dest(path.build.articles))
         .pipe(src(path.src.articleImg))
         .pipe(imagemin({
             progressive: true,
@@ -139,7 +139,7 @@ function images() {
             interlaced: true,
             optimizationLevel: 3 // 0..7
         }))
-        .pipe(dest(path.build.articleImg))
+        .pipe(dest(path.build.articles))
         .pipe(browserSync.stream());
     return src(path.src.img)
         .pipe(webp({
@@ -158,10 +158,12 @@ function images() {
 }
 
 function fonts() {
-    src(path.src.fonts)
+    src(path.src.fontsWoff)
+        .pipe(dest(path.build.fonts));
+    src(path.src.fontsTtf)
         .pipe(ttf2woff())
         .pipe(dest(path.build.fonts));
-    return src(path.src.fonts)
+    return src(path.src.fontsTtf)
         .pipe(ttf2woff2())
         .pipe(dest(path.build.fonts));
 }
@@ -188,23 +190,25 @@ function fonts() {
 // });
 
 function fontsStyle() {
-    let fileContent = fs.readFileSync(sourceFolder + '/scss/_fonts.scss');
-    if (fileContent == '') {
-        fs.writeFile(sourceFolder + '/scss/_fonts.scss', '', cb);
-        return fs.readdir(path.build.fonts, function (err, items) {
-            if (items) {
-                let currentFontname;
-                for (var i = 0; i < items.length; i++) {
-                    let fontname = items[i].split('.');
-                    fontname = fontname[0];
-                    if (currentFontname != fontname) {
-                        fs.appendFile(sourceFolder + '/scss/_fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
+    setTimeout(() => {
+        let fileContent = fs.readFileSync(sourceFolder + '/scss/_fonts.scss');
+        if (fileContent == '') {
+            fs.writeFile(sourceFolder + '/scss/_fonts.scss', '', cb);
+            return fs.readdir(path.build.fonts, function (err, items) {
+                if (items) {
+                    let currentFontname;
+                    for (var i = 0; i < items.length; i++) {
+                        let fontname = items[i].split('.');
+                        fontname = fontname[0];
+                        if (currentFontname != fontname) {
+                            fs.appendFile(sourceFolder + '/scss/_fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
+                        }
+                        currentFontname = fontname;
                     }
-                    currentFontname = fontname;
                 }
-            }
-        })
-    }
+            })
+        }
+    }, 1000);
 }
 function cb() {}
 
