@@ -1,4 +1,8 @@
+/* Main */
 
+.main {
+  background: indigo;
+}
 @supports (-webkit-appearance:none){
 
 }

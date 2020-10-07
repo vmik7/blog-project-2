@@ -1,12 +1,28 @@
 @import '../_variables';
 @import '../_mixins';
 
+/* Page */
+
 .page {
 
-    &__body {
-        font-family: $defaultFont, sans-serif;
-        color: #000;
+    &__container {
+        max-width: $max-container-width + px;
+        padding: 0 10px;
+        margin: 0 auto;
+        // @media screen and (max-width: $md1 + px) {
+        //     max-width: 970px;
+        // }
+        // @media screen and (max-width: $md2 + px) {
+        //     max-width: 750px;
+        // }
+        // @media screen and (max-width: $md3 + px) {
+        //     max-width: 100%;
+        //     padding: 0 10px;
+        // }
+    }
 
+    &__body {
+        
         // Lock modificator when some menu is opened (to stop scroll)
         &_lock {
             overflow: hidden;
@@ -19,6 +35,7 @@
     }
 
     &__header {
+
     }
 
     &__main {

@@ -1,5 +1,16 @@
+@charset "UTF-8";
+
 /*
     This file contains general styles (used on many pages) and base css custom properties.
+    All fonts files was downloaded, but included only needed.
+
+    Included fonts:
+        Montseratt
+        Proxima Nova
+        Open Sans
+        Roboto
+        Roboto Slab
+
     Included blocks: 
         blocks/page.css
         blocks/form.css
@@ -8,7 +19,16 @@
         blocks/menu.css
         blocks/main.css
         blocks/footer.css
+        blocks/logo.css
+        blocks/button.css
 */
+
+:root {
+  /* Основной акцентный цвет */
+  --accent-color: #621EF4;
+  /* Основной акцентный цвет, но чуть потемнее */
+  --accent-dark-color: #4305C7;
+}
 
 @font-face {
   font-family: "Montserrat";
@@ -617,6 +637,11 @@ textarea {
   padding: 0.2em 0;
 }
 
+body {
+  font-family: "Open Sans", "Roboto", sans-serif;
+  color: #000;
+}
+
 ._visually-hidden {
   position: absolute;
   width: 1px;
@@ -633,6 +658,16 @@ textarea {
   outline-offset: 2px;
 }
 
+a:focus,
+link:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid #42a0da;
+  outline-offset: 2px;
+}
+
 ._no-focus-outline:focus {
   outline: 0;
 }
@@ -641,14 +676,15 @@ textarea {
   outline: 0;
 }
 
-._container {
-  max-width: 1170px;
+/* Page */
+
+.page__container {
+  max-width: 1200px;
+  padding: 0 10px;
   margin: 0 auto;
 }
 
 .page__body {
-  font-family: "Arial", sans-serif;
-  color: #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -744,6 +780,50 @@ textarea {
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"%3E%3Crect x="2" y="2" width="16" height="16" fill="%239B9B9B" rx="3"/%3E%3Cpolyline fill="none" stroke="%23FFF" stroke-width="3" points="5 9 9 13 15 6"/%3E%3C/svg%3E');
 }
 
+/* Header */
+
+.header {
+  height: 96px;
+}
+
+.header__container {
+  position: relative;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+}
+
+.header__menu {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
+.header__user-block {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+}
+
+/* Menu */
+
 .menu__button {
   display: none;
 }
@@ -751,30 +831,32 @@ textarea {
 .menu__burger {
   position: relative;
   width: 30px;
-  height: 20px;
-}
-
-.menu__burger-line {
-  position: absolute;
-  left: 0;
-  width: 100%;
   height: 2px;
-  background: #fff;
+  background: #363636;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.menu__burger-line:nth-child(1) {
-  top: 0;
+.menu__burger::before,
+.menu__burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #363636;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.menu__burger-line:nth-child(2) {
-  top: 9px;
+.menu__burger::before {
+  top: -12px;
 }
 
-.menu__burger-line:nth-child(3) {
-  bottom: 0;
+.menu__burger::after {
+  bottom: -12px;
 }
 
 .menu__button_active .menu__burger-line:nth-child(1) {
@@ -795,24 +877,148 @@ textarea {
   bottom: 9px;
 }
 
-@media screen and (max-width: 1182px) {
-  ._container {
-    max-width: 970px;
-  }
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@media screen and (max-width: 992px) {
-  ._container {
-    max-width: 750px;
-  }
+.menu__left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__logo-bg {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 25%;
+          flex: 1 0 25%;
+}
+
+.menu__right {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__list-item:not(:last-child) {
+  margin-right: 22%;
+}
+
+.menu__link {
+  position: relative;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration: none;
+  color: #363636;
+}
+
+.menu__link::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
+  width: 0;
+  opacity: 0;
+  height: 2px;
+  background: -o-linear-gradient(215.55deg, #621EF4 0.79%, #A159FD 100%);
+  background: linear-gradient(234.45deg, #621EF4 0.79%, #A159FD 100%);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.menu__link_current {
+  font-weight: 500;
+}
+
+.menu__link_current::after {
+  width: 120%;
+  opacity: 1;
+}
+
+.menu__link:hover::after {
+  width: 120%;
+  opacity: 1;
+}
+
+/* Logo */
+
+.logo {
+  display: block;
+  text-decoration: none;
+}
+
+.logo_small .logo__img {
+  text-align: center;
+}
+
+.logo_small .logo__info {
+  margin-top: 3px;
+}
+
+.logo_small .logo__title {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.25em;
+  text-indent: 0.25em;
+  color: #363636;
+}
+
+/* Button */
+
+.button {
+  height: 37px;
+  padding: 0 30px;
+  letter-spacing: 0.06em;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  color: #fff;
+  border: 0;
+  background: var(--accent-color, #621EF4);
+  border-radius: 5px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.button:hover,
+.button:focus {
+  background: var(--accent-dark-color, #4305C7);
+}
+
+/* Main */
+
+.main {
+  background: indigo;
 }
 
 @media screen and (max-width: 768px) {
-  ._container {
-    max-width: 100%;
-    padding: 0 10px;
-  }
-
   .menu__button {
     display: block;
     background: none;

@@ -20,6 +20,8 @@
         blocks/menu.css
         blocks/main.css
         blocks/footer.css
+        blocks/logo.css
+        blocks/button.css
 */
 
 
@@ -29,8 +31,11 @@
 // СSS Custom properties
 :root {
 
-    // /* Основной акцентный цвет */
-    // --accent-color: #6A25FF;
+    /* Основной акцентный цвет */
+    --accent-color: #621EF4;
+
+    /* Основной акцентный цвет, но чуть потемнее */
+    --accent-dark-color: #4305C7;
 
 }
 
@@ -58,6 +63,11 @@
 // NULL & GENERAL
 @import 'null';
 
+body {
+    font-family: "Open Sans", "Roboto", sans-serif;
+    color: #000;
+}
+
 // _visually-hidden class for elements like default checkbox (it should not be visible, but it should be!)
 ._visually-hidden {
     @include visually-hidden();
@@ -69,9 +79,9 @@
 }
 
 // setting custom focus outline for focusable elements
-// a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
-//     @include focus-outline();
-// }
+a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
+    @include focus-outline();
+}
 
 // _no-focus class for elements, which not needed focus
 ._no-focus-outline:focus {
@@ -85,25 +95,6 @@
 
 
 
-// PAGE GRID & CONTAINER
-
-._container {
-    max-width: $max-container-width + px;
-    margin: 0 auto;
-    @media screen and (max-width: $md1 + px) {
-        max-width: 970px;
-    }
-    @media screen and (max-width: $md2 + px) {
-        max-width: 750px;
-    }
-    @media screen and (max-width: $md3 + px) {
-        max-width: 100%;
-        padding: 0 10px;
-    }
-}
-
-
-
 // BEM BLOCKS
 
 @import 'blocks/page';
@@ -111,6 +102,9 @@
 @import 'blocks/check';
 @import 'blocks/header';
 @import 'blocks/menu';
+@import 'blocks/logo';
+@import 'blocks/button';
 @import 'blocks/main';
 @import 'blocks/footer';
+
 

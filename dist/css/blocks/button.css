@@ -1,0 +1,28 @@
+/* Button */
+
+.button {
+  height: 37px;
+  padding: 0 30px;
+  letter-spacing: 0.06em;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  color: #fff;
+  border: 0;
+  background: var(--accent-color, #621EF4);
+  border-radius: 5px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.button:hover,
+.button:focus {
+  background: var(--accent-dark-color, #4305C7);
+}
+@supports (-webkit-appearance:none){
+
+}
