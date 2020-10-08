@@ -1019,7 +1019,8 @@ textarea:focus {
 }
 
 .menu__link_current::after,
-.menu__link:focus::after {
+.menu__link:focus::after,
+.menu__link:hover::after {
   width: calc(100% + 0.5em);
   opacity: 1;
 }

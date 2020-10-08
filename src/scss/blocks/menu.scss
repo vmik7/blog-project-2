@@ -196,7 +196,8 @@
         }
 
         &_current,
-        &:focus {
+        &:focus,
+        &:hover {
             &::after {
                 width: calc(100% + 0.5em);
                 opacity: 1;
