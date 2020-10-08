@@ -6,6 +6,10 @@
 .main-header {
     height: 96px;
 
+    @media screen and (max-width: $md2 + px) {
+        height: 75px;
+    }
+
     &__container {
         position: relative;
 
@@ -21,16 +25,23 @@
         left: 50%;
         top: 50%;
         transform: translate3d(-50%, -50%, 0);
+        z-index: 51;
     }
 
     &__menu {
-        flex: 0 0 100%;
+        @media screen and (min-width: $md3 + 1 + px) {
+            flex: 0 0 100%;
+        }
     }
 
     &__user-block {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translate3d(0, -50%, 0);
+        z-index: 51;
+        
+        @media screen and (min-width: $md3 + 1 + px) {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate3d(0, -50%, 0);
+        }
     }
 }

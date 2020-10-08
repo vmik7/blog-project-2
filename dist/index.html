@@ -16,24 +16,9 @@
     <header class="header page__header">
         <div class="header__main main-header">
             <div class="page__container main-header__container">
-                <a href="#" class="logo logo_small main-header__logo">
-                    <div class="logo__img">
-                        <picture>
-                            <source srcset="img/logo@1x.webp 1x,
-                                            img/logo@2x.webp 2x"
-                                    type="image/webp">
-                            <img	src="img/logo@1x.png"
-                                    srcset="img/logo@2x.jpg 2x"
-                                    alt="Логотип" title="REBORN">
-                        </picture>
-                    </div>
-                    <div class="logo__info">
-                        <div class="logo__title">REBORN</div>
-                    </div>
-                </a>
                 <nav class="main-header__menu menu">
-                    <button class="menu__button" aria-expanded="false" aria-controls="menu-list">
-                        <span class="menu__burger"></span>
+                    <button class="menu__button menu__burger" aria-expanded="false" aria-controls="menu-list">
+                        <span class="menu__burger-inner"></span>
                     </button>
                     <div class="menu__body">
                         <ul class="menu__list" id="menu-list">
@@ -50,15 +35,35 @@
                         </ul>
                     </div>
                 </nav>
-                <div class="main-header__user-block">
-                    <button class="button">Регистрация</button>
+                <a href="#" class="logo logo_small main-header__logo">
+                    <div class="logo__img">
+                        <picture>
+                            <source srcset="img/logo@1x.webp 1x,
+                                            img/logo@2x.webp 2x"
+                                    type="image/webp">
+                            <img	src="img/logo@1x.png"
+                                    srcset="img/logo@2x.jpg 2x"
+                                    alt="Логотип" title="REBORN">
+                        </picture>
+                    </div>
+                    <div class="logo__info">
+                        <div class="logo__title">REBORN</div>
+                    </div>
+                </a>
+                <div class="main-header__user-block user-block">
+                    <button class="user-block__button">
+                        <img src="img/login.svg" alt="Войти" aria-label="Войти">
+                    </button>
+                    <div class="user-block__body">
+                        <button class="button">Войти</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="header__progress-bar"></div>
-        <div class="header__top-menu top-menu">
+        <!-- <div class="header__progress-bar"></div> -->
+        <!-- <div class="header__top-menu top-menu">
             <div class="page__container top-menu__container"></div>
-        </div>
+        </div> -->
     </header>
 
     <!-- MAIN -->

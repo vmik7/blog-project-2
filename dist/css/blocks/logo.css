@@ -22,6 +22,27 @@
   text-indent: 0.25em;
   color: #363636;
 }
+
+@media screen and (max-width: 992px) {
+  .logo_small .logo__img img {
+    height: 40px;
+  }
+
+  .logo_small .logo__title {
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: .2em;
+    text-indent: .2em;
+  }
+}
 @supports (-webkit-appearance:none){
+
+}
+
+ @media screen and (max-width: 992px){
+
+@supports (-webkit-appearance:none){
+
+}
 
 }

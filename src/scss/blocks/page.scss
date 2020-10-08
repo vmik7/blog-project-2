@@ -6,19 +6,18 @@
 .page {
 
     &__container {
-        max-width: $max-container-width + 20 + px;
-        padding: 0 10px;
+        max-width: $max-container-width + px;
         margin: 0 auto;
-        // @media screen and (max-width: $md1 + px) {
-        //     max-width: 970px;
-        // }
-        // @media screen and (max-width: $md2 + px) {
-        //     max-width: 750px;
-        // }
-        // @media screen and (max-width: $md3 + px) {
-        //     max-width: 100%;
-        //     padding: 0 10px;
-        // }
+        @media screen and (max-width: $md1 + px) {
+            max-width: 970px;
+        }
+        @media screen and (max-width: $md2 + px) {
+            max-width: 750px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            max-width: 100%;
+            padding: 0 10px;
+        }
     }
 
     &__body {

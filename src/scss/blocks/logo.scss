@@ -9,6 +9,12 @@
 
     &_small &__img {
         text-align: center;
+
+        img {
+            @media screen and (max-width: $md2 + px) {
+                height: 40px;
+            }
+        }
     }
 
     &_small &__info {
@@ -22,6 +28,13 @@
         line-height: 19px;
         letter-spacing: 0.25em;
         text-indent: 0.25em;
+
+        @media screen and (max-width: $md2 + px) {
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: .2em;
+            text-indent: .2em;
+        }
 
         color: #363636;
     }

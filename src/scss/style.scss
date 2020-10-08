@@ -96,11 +96,16 @@ a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
 @import 'blocks/page';
 @import 'blocks/form';
 @import 'blocks/check';
+@import 'blocks/button';
+
+@import 'blocks/logo';
+
 @import 'blocks/header';
 @import 'blocks/main-header';
 @import 'blocks/top-menu';
 @import 'blocks/menu';
-@import 'blocks/logo';
-@import 'blocks/button';
+@import 'blocks/user-block';
+
 @import 'blocks/main';
+
 @import 'blocks/footer';

@@ -1,0 +1,41 @@
+/* User-block */
+
+@media screen and (min-width: 769px) {
+  .user-block__button {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .user-block__button {
+    border: 0;
+    background: none;
+  }
+
+  .user-block__button img {
+    height: 22px;
+  }
+
+  .user-block__body {
+    display: none;
+  }
+}
+@supports (-webkit-appearance:none){
+
+}
+
+ @media screen and (min-width: 769px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 768px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}

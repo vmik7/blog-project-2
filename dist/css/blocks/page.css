@@ -1,8 +1,7 @@
 /* Page */
 
 .page__container {
-  max-width: 1220px;
-  padding: 0 10px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -26,6 +25,49 @@
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
+
+@media screen and (max-width: 1212px) {
+  .page__container {
+    max-width: 970px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .page__container {
+    max-width: 750px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page__container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
 @supports (-webkit-appearance:none){
+
+}
+
+ @media screen and (max-width: 1212px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 992px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 768px){
+
+@supports (-webkit-appearance:none){
+
+}
 
 }

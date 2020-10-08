@@ -1,0 +1,27 @@
+@import '../_variables';
+@import '../_mixins';
+
+/* User-block */
+
+.user-block {
+
+
+    &__button {
+        @media screen and (min-width: $md3 + 1 + px) {
+            display: none;
+        }
+        @media screen and (max-width: $md3 + px) {
+            border: 0;
+            background: none;
+            img {
+                height: 22px;
+            }
+        }
+    }
+
+    &__body {
+        @media screen and (max-width: $md3 + px) {
+            display: none;
+        }
+    }
+}
