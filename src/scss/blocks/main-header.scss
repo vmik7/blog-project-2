@@ -1,0 +1,36 @@
+@import '../_variables';
+@import '../_mixins';
+
+/* Main-header */
+
+.main-header {
+    height: 96px;
+
+    &__container {
+        position: relative;
+
+        height: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+
+    &__menu {
+        flex: 0 0 100%;
+    }
+
+    &__user-block {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate3d(0, -50%, 0);
+    }
+}

@@ -6,7 +6,7 @@
 .page {
 
     &__container {
-        max-width: $max-container-width + px;
+        max-width: $max-container-width + 20 + px;
         padding: 0 10px;
         margin: 0 auto;
         // @media screen and (max-width: $md1 + px) {

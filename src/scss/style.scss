@@ -13,15 +13,7 @@
         Roboto Slab
 
     Included blocks: 
-        blocks/page.css
-        blocks/form.css
-        blocks/check.css
-        blocks/header.css
-        blocks/menu.css
-        blocks/main.css
-        blocks/footer.css
-        blocks/logo.css
-        blocks/button.css
+        TODO: Note about included blocks
 */
 
 
@@ -63,6 +55,10 @@
 // NULL & GENERAL
 @import 'null';
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Open Sans", "Roboto", sans-serif;
     color: #000;
@@ -101,10 +97,10 @@ a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
 @import 'blocks/form';
 @import 'blocks/check';
 @import 'blocks/header';
+@import 'blocks/main-header';
+@import 'blocks/top-menu';
 @import 'blocks/menu';
 @import 'blocks/logo';
 @import 'blocks/button';
 @import 'blocks/main';
 @import 'blocks/footer';
-
-

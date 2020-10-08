@@ -4,33 +4,33 @@
 /* Header */
 
 .header {
-    height: 96px;
+    box-shadow: 0px 4px 10px rgba(80, 80, 80, 0.1);
 
-    &__container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    background: #fff;
+
+    &__main {
+        
+    }
+
+    &__progress-bar {
         position: relative;
+        height: 6px;
+        background: #F5F5F5;
 
-        height: 100%;
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        &::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 30%;
+            background: var(--accent-color, #621EF4);
+        }
     }
 
-    &__logo {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate3d(-50%, -50%, 0);
-    }
+    &__top-menu {
 
-    &__menu {
-        flex: 0 0 100%;
-    }
-
-    &__user-block {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translate3d(0, -50%, 0);
     }
 }

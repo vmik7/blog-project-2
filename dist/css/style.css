@@ -12,15 +12,7 @@
         Roboto Slab
 
     Included blocks: 
-        blocks/page.css
-        blocks/form.css
-        blocks/check.css
-        blocks/header.css
-        blocks/menu.css
-        blocks/main.css
-        blocks/footer.css
-        blocks/logo.css
-        blocks/button.css
+        TODO: Note about included blocks
 */
 
 :root {
@@ -637,6 +629,13 @@ textarea {
   padding: 0.2em 0;
 }
 
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   font-family: "Open Sans", "Roboto", sans-serif;
   color: #000;
@@ -679,7 +678,7 @@ textarea:focus {
 /* Page */
 
 .page__container {
-  max-width: 1200px;
+  max-width: 1220px;
   padding: 0 10px;
   margin: 0 auto;
 }
@@ -783,10 +782,35 @@ textarea:focus {
 /* Header */
 
 .header {
+  -webkit-box-shadow: 0px 4px 10px rgba(80, 80, 80, 0.1);
+          box-shadow: 0px 4px 10px rgba(80, 80, 80, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+}
+
+.header__progress-bar {
+  position: relative;
+  height: 6px;
+  background: #F5F5F5;
+}
+
+.header__progress-bar::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 30%;
+  background: var(--accent-color, #621EF4);
+}
+
+/* Main-header */
+
+.main-header {
   height: 96px;
 }
 
-.header__container {
+.main-header__container {
   position: relative;
   height: 100%;
   display: -webkit-box;
@@ -800,7 +824,7 @@ textarea:focus {
           align-items: center;
 }
 
-.header__logo {
+.main-header__logo {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -808,18 +832,28 @@ textarea:focus {
           transform: translate3d(-50%, -50%, 0);
 }
 
-.header__menu {
+.main-header__menu {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
 }
 
-.header__user-block {
+.main-header__user-block {
   position: absolute;
   right: 0;
   top: 50%;
   -webkit-transform: translate3d(0, -50%, 0);
           transform: translate3d(0, -50%, 0);
+}
+
+/* Top-menu */
+
+.top-menu {
+  height: 65px;
+}
+
+.top-menu__container {
+  height: 100%;
 }
 
 /* Menu */
@@ -1015,7 +1049,7 @@ textarea:focus {
 /* Main */
 
 .main {
-  background: indigo;
+  background: #fff;
 }
 
 @media screen and (max-width: 768px) {

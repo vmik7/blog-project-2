@@ -1,0 +1,13 @@
+@import '../_variables';
+@import '../_mixins';
+
+/* Top-menu */
+
+.top-menu {
+    height: 65px;
+
+    &__container {
+        height: 100%;
+    }
+
+}
