@@ -11,7 +11,7 @@
     top: 0;
     width: 100%;
 
-    transition: all 0.5s ease;
+    transition: all var(--transition-time, 0.5s) ease;
 
     &__main {
 

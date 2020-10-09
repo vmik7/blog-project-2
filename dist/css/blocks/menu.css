@@ -15,9 +15,9 @@
   height: 4px;
   border-radius: 2px;
   background: #363636;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all var(--transition-time, 0.5s) ease;
+  -o-transition: all var(--transition-time, 0.5s) ease;
+  transition: all var(--transition-time, 0.5s) ease;
 }
 
 .menu__burger {
@@ -107,9 +107,9 @@
   height: 2px;
   background: -o-linear-gradient(215.55deg, #621EF4 0.79%, #A159FD 100%);
   background: linear-gradient(234.45deg, #621EF4 0.79%, #A159FD 100%);
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all var(--transition-time, 0.5s) ease;
+  -o-transition: all var(--transition-time, 0.5s) ease;
+  transition: all var(--transition-time, 0.5s) ease;
 }
 
 .menu__link_current {
@@ -181,9 +181,9 @@
     width: 100%;
     height: 100%;
     z-index: 50;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    -webkit-transition: all var(--transition-time, 0.5s) ease;
+    -o-transition: all var(--transition-time, 0.5s) ease;
+    transition: all var(--transition-time, 0.5s) ease;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
