@@ -9,6 +9,9 @@
     @media screen and (max-width: $md2 + px) {
         height: 75px;
     }
+    @media screen and (max-width: $md3 + px) {
+        height: 60px;
+    }
 
     &__container {
         position: relative;

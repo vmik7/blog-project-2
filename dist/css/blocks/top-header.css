@@ -7,6 +7,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 50;
   -webkit-transition: all var(--transition-time, 0.5s) ease;
   -o-transition: all var(--transition-time, 0.5s) ease;
   transition: all var(--transition-time, 0.5s) ease;

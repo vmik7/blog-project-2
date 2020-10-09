@@ -69,36 +69,62 @@
     <!-- MAIN -->
     <main class="page__main main">
 
-        <header class="page__header page-header article-header">
-            <div class="page-header__content">
-
+        <header class="page__header page-header">
+            <div class="page-header__content article-header">
+                <picture>
+                    <source srcset="img/header-bg@1x.webp 1x,
+                                    img/header-bg@2x.webp 2x"
+                            type="image/webp">
+                    <img	src="img/header-bg@1x.jpg"
+                            srcset="img/header-bg@2x.jpg 2x"
+                            alt="background" class="article-header__background">
+                </picture>
+                <div class="page__container article-header__container">
+                    <nav class="article-header__breadcrumbs">
+                        <ul class="article-header__breadcrumbs-list">
+                            <li class="article-header__breadcrumbs-item">
+                                <a href="#" class="article-header__breadcrumbs-link">Главная</a>
+                            </li>
+                            <li class="article-header__breadcrumbs-item">
+                                <a href="#" class="article-header__breadcrumbs-link">Блог</a>
+                            </li>
+                            <li class="article-header__breadcrumbs-item">
+                                <a href="#" class="article-header__breadcrumbs-link">Психология</a>
+                            </li>
+                            <li class="article-header__breadcrumbs-item">
+                                <a href="#" class="article-header__breadcrumbs-link">Тема 1</a>
+                            </li>
+                            <li class="article-header__breadcrumbs-item">
+                                <a href="#" class="article-header__breadcrumbs-link">Статья 2</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <h1 class="article-header__title">
+                        Продвижение сайта в поисковых системах: 56 шагов, которые позволят вам выйти в топ
+                    </h1>
+                </div>
             </div>
             <div class="page-header__bottom">
-                <div class="page__container page-header__container">
+                <div class="page__container page-header__bottom-container">
                     <ul class="page-header__bottom-list">
                         <li class="page-header__bottom-item">
-                            <img src="../../img/header-icons/article.svg" alt="" class="page-header__bottom-icon">
-                            <span class="page-header__bottom-title">Статей</span>
-                            <span class="page-header__bottom-value">9999</span>
+                            <img src="../../img/header-icons/calendar.svg" alt="" class="page-header__bottom-icon">
+                            <span class="page-header__bottom-title">Опубликовано</span>
+                            <span class="page-header__bottom-value"><a href="#" class="page-header__bottom-link">22 мая 2020</a></span>
                         </li>
                         <li class="page-header__bottom-item">
-                            <img src="../../img/header-icons/article.svg" alt="" class="page-header__bottom-icon">
-                            <span class="page-header__bottom-title">Статей</span>
-                            <span class="page-header__bottom-value">9999</span>
+                            <img src="../../img/header-icons/user.svg" alt="" class="page-header__bottom-icon">
+                            <span class="page-header__bottom-title">Автор</span>
+                            <span class="page-header__bottom-value"><a href="#" class="page-header__bottom-link">Павел Бурдынов</a></span>
                         </li>
                         <li class="page-header__bottom-item">
-                            <img src="../../img/header-icons/article.svg" alt="" class="page-header__bottom-icon">
-                            <span class="page-header__bottom-title">Статей</span>
-                            <span class="page-header__bottom-value">9999</span>
+                            <img src="../../img/header-icons/clock.svg" alt="" class="page-header__bottom-icon">
+                            <span class="page-header__bottom-title">На прочтение</span>
+                            <span class="page-header__bottom-value">7 минут</span>
                         </li>
                         <li class="page-header__bottom-item">
-                            <img src="../../img/header-icons/article.svg" alt="" class="page-header__bottom-icon">
-                            <span class="page-header__bottom-title">Статей</span>
-                            <span class="page-header__bottom-value">9999</span>
-                        </li>
-                        <li class="page-header__bottom-item">
-                            <img src="../../img/header-icons/article.svg" alt="" class="page-header__bottom-icon">
-                            <span class="page-header__bottom-title">Статей</span>
+                            <img src="../../img/header-icons/eye.svg" alt="" class="page-header__bottom-icon">
+                            <span class="page-header__bottom-title">Прочитано</span>
                             <span class="page-header__bottom-value">9999</span>
                         </li>
                     </ul>

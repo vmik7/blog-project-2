@@ -4,5 +4,111 @@
 /* Article-Header */
 
 .article-header {
-    
+    position: relative;
+    background: transparent;
+    z-index: 1;
+
+    padding: 50px 0 40px 0;
+    min-height: 420px;
+    height: 1px;
+
+    @media screen and (max-width: $md2 + px) {
+        padding: 30px 0 25px 0;
+        min-height: 340px;
+    }
+    @media screen and (max-width: $md3 + px) {
+        padding: 20px 0;
+        min-height: 280px;
+    }
+    @media screen and (max-width: $md4 + px) {
+        padding: 15px 0;
+        min-height: 250px;
+    }
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    &__container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__breadcrumbs {
+        text-align: center;
+    }
+
+    &__breadcrumbs-list {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__breadcrumbs-item {
+        display: flex;
+
+        &:not(:last-child)::after {
+            content: url("data:image/svg+xml,%3Csvg width='4' height='7' viewBox='0 0 4 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 3.5L0.6965 7L0 6.262L2.607 3.5L0 0.738L0.6965 0L4 3.5Z' fill='white'/%3E%3C/svg%3E%0A");
+            margin: auto 10px;
+            padding-bottom: 0.1em;
+
+            @media screen and (max-width: $md3 + px) {
+                padding-bottom: 0.2em;
+            }
+        }
+    }
+
+    &__breadcrumbs-link {
+        font-family: "Open Sans", sans-serif;
+        font-size: 15px;
+        line-height: 20px;
+        color: #fff;
+
+        @media screen and (max-width: $md2 + px) {
+            font-size: 13px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            font-size: 12px;
+        }
+    }
+
+    &__title {
+        font-family: "Proxima Nova", "Montserrat", "Open Sans", sans-serif;
+        font-weight: 700;
+        font-size: 45px;
+        line-height: 55px;
+        text-align: center;
+        color: #fff;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        max-width: 970px;
+        flex: 1;
+
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: $md2 + px) {
+            max-width: 650px;
+            font-size: 35px;
+            line-height: 48px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            max-width: 100%;
+            font-size: 30px;
+            line-height: 40px;
+        }
+        @media screen and (max-width: $md4 + px) {
+            font-size: 22px;
+            line-height: 32px;
+        }
+    }
 }

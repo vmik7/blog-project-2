@@ -5,53 +5,95 @@
 
 .page-header {
 
-    &__container {
-        height: 100%;
-    }
-
     &__content {
+
     }
 
     &__bottom {
-        height: 60px;
         background: #F5F5F5;
+        overflow: hidden;
+        padding: 20px 0;
+        @media screen and (max-width: $md2 + px) {
+            padding: 16px 0;
+        }
+        @media screen and (max-width: $md4 + px) {
+            padding: 12px 0;
+        }
+    }
+
+    &__bottom-container {
     }
 
     &__bottom-list {
-        height: 100%;
 
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
 
-        margin: 0 -25px;
+        margin: -10px -25px;
+
+        @media screen and (max-width: $md2 + px) {
+            margin: -8px -15px;
+        }
+        @media screen and (max-width: $md4 + px) {
+            margin: -6px -10px;
+        }
     }
 
     &__bottom-item {
-        margin: 0 25px;
+        margin: 10px 25px;
+        @media screen and (max-width: $md2 + px) {
+            margin: 8px 15px;
+        }
+        @media screen and (max-width: $md4 + px) {
+            margin: 6px 10px;
+        }
     }
 
     &__bottom-icon {
         margin-right: 10px;
+        @media screen and (max-width: $md2 + px) {
+            margin-right: 5px;
+            height: 18px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            height: 15px;
+        }
     }
 
-    &__bottom-title {
+    &__bottom-title, 
+    &__bottom-value {
         font-family: "Open Sans", sans-serif;
-        font-weight: 300;
         font-size: 13px;
         line-height: 18px;
         color: #787878;
+
+        @media screen and (max-width: $md2 + px) {
+            font-size: 12px;
+        }
+    }
+
+    &__bottom-title {
+        font-weight: 300;
 
         &::after {
             content: ':';
         }
+
+        @media screen and (max-width: $md3 + px) {
+            display: none;
+        }
     }
 
     &__bottom-value {
-        font-family: "Open Sans", sans-serif;
         font-weight: 700;
-        font-size: 13px;
-        line-height: 18px;
-        color: #787878;
+
+        @media screen and (max-width: $md3 + px) {
+            font-weight: normal;
+        }
+    }
+
+    &__bottom-link {
     }
 }

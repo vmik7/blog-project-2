@@ -14,11 +14,17 @@
             @media screen and (max-width: $md2 + px) {
                 height: 40px;
             }
+            @media screen and (max-width: $md3 + px) {
+                height: 35px;
+            }
         }
     }
 
     &_small &__info {
         margin-top: 3px;
+        @media screen and (max-width: $md3 + px) {
+            margin-top: 1px;
+        }
     }
 
     &_small &__title {
@@ -34,6 +40,12 @@
             line-height: 16px;
             letter-spacing: .2em;
             text-indent: .2em;
+        }
+        @media screen and (max-width: $md3 + px) {
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: .1em;
+            text-indent: .1em;
         }
 
         color: #363636;

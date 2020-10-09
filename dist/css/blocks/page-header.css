@@ -1,16 +1,12 @@
 /* Page-Header */
 
-.page-header__container {
-  height: 100%;
-}
-
 .page-header__bottom {
-  height: 60px;
   background: #F5F5F5;
+  overflow: hidden;
+  padding: 20px 0;
 }
 
 .page-header__bottom-list {
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,23 +16,29 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 -25px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: -10px -25px;
 }
 
 .page-header__bottom-item {
-  margin: 0 25px;
+  margin: 10px 25px;
 }
 
 .page-header__bottom-icon {
   margin-right: 10px;
 }
 
-.page-header__bottom-title {
+.page-header__bottom-title,
+.page-header__bottom-value {
   font-family: "Open Sans", sans-serif;
-  font-weight: 300;
   font-size: 13px;
   line-height: 18px;
   color: #787878;
+}
+
+.page-header__bottom-title {
+  font-weight: 300;
 }
 
 .page-header__bottom-title::after {
@@ -44,12 +46,84 @@
 }
 
 .page-header__bottom-value {
-  font-family: "Open Sans", sans-serif;
   font-weight: 700;
-  font-size: 13px;
-  line-height: 18px;
-  color: #787878;
+}
+
+@media screen and (max-width: 992px) {
+  .page-header__bottom {
+    padding: 16px 0;
+  }
+
+  .page-header__bottom-list {
+    margin: -8px -15px;
+  }
+
+  .page-header__bottom-item {
+    margin: 8px 15px;
+  }
+
+  .page-header__bottom-icon {
+    margin-right: 5px;
+    height: 18px;
+  }
+
+  .page-header__bottom-title,
+  .page-header__bottom-value {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-header__bottom-icon {
+    height: 15px;
+  }
+
+  .page-header__bottom-title {
+    display: none;
+  }
+
+  .page-header__bottom-value {
+    font-weight: normal;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .page-header__bottom {
+    padding: 12px 0;
+  }
+
+  .page-header__bottom-list {
+    margin: -6px -10px;
+  }
+
+  .page-header__bottom-item {
+    margin: 6px 10px;
+  }
 }
 @supports (-webkit-appearance:none){
+
+}
+
+ @media screen and (max-width: 992px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 768px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 480px){
+
+@supports (-webkit-appearance:none){
+
+}
 
 }

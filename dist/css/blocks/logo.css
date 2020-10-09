@@ -35,11 +35,36 @@
     text-indent: .2em;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .logo_small .logo__img img {
+    height: 35px;
+  }
+
+  .logo_small .logo__info {
+    margin-top: 1px;
+  }
+
+  .logo_small .logo__title {
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: .1em;
+    text-indent: .1em;
+  }
+}
 @supports (-webkit-appearance:none){
 
 }
 
  @media screen and (max-width: 992px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 768px){
 
 @supports (-webkit-appearance:none){
 

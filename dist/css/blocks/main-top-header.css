@@ -52,6 +52,12 @@
     height: 75px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .main-top-header {
+    height: 60px;
+  }
+}
 @supports (-webkit-appearance:none){
 
 }
@@ -65,6 +71,14 @@
 }
 
  @media screen and (max-width: 992px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 768px){
 
 @supports (-webkit-appearance:none){
 
