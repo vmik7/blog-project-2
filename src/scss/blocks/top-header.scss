@@ -1,9 +1,9 @@
 @import '../_variables';
 @import '../_mixins';
 
-/* Header */
+/* Top-Header */
 
-.header {
+.top-header {
     box-shadow: 0px 4px 10px rgba(80, 80, 80, 0.1);
     background: #fff;
 
@@ -33,9 +33,13 @@
             width: 30%;
             background: var(--accent-color, #621EF4);
         }
+
+        // TODO: Сделать появление при прокрутке
+        display: none;
     }
 
     &__top-menu {
-
+        // TODO: Сделать появление при прокрутке
+        display: none;
     }
 }

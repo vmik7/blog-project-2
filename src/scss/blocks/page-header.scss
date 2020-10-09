@@ -1,0 +1,57 @@
+@import '../_variables';
+@import '../_mixins';
+
+/* Page-Header */
+
+.page-header {
+
+    &__container {
+        height: 100%;
+    }
+
+    &__content {
+    }
+
+    &__bottom {
+        height: 60px;
+        background: #F5F5F5;
+    }
+
+    &__bottom-list {
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0 -25px;
+    }
+
+    &__bottom-item {
+        margin: 0 25px;
+    }
+
+    &__bottom-icon {
+        margin-right: 10px;
+    }
+
+    &__bottom-title {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 18px;
+        color: #787878;
+
+        &::after {
+            content: ':';
+        }
+    }
+
+    &__bottom-value {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 18px;
+        color: #787878;
+    }
+}

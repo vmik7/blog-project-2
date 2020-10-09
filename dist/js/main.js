@@ -9237,9 +9237,9 @@ function undoBlocking(element) {
 
 if (window.matchMedia('(max-width: 768px)').matches) {
     const pageBody = document.querySelector('.page__body');
-    const mainHeader = document.querySelector('.main-header');
-    const menuButton = document.querySelector('.main-header__menu .menu__button');
-    const menuBody = document.querySelector('.main-header__menu .menu__body');
+    const mainTopHeader = document.querySelector('.main-top-header');
+    const menuButton = document.querySelector('.main-top-header__menu .menu__button');
+    const menuBody = document.querySelector('.main-top-header__menu .menu__body');
 
     let showNavMenu = () => {
         menuButton.setAttribute('aria-expanded', true)
@@ -9247,7 +9247,7 @@ if (window.matchMedia('(max-width: 768px)').matches) {
         menuBody.classList.add('menu__body_open');
 
         pageBody.classList.add('page__body_lock');
-        makeBlocking(mainHeader);
+        makeBlocking(mainTopHeader);
     };
 
     let hideNavMenu = () => {
@@ -9256,7 +9256,7 @@ if (window.matchMedia('(max-width: 768px)').matches) {
         menuBody.classList.remove('menu__body_open');
 
         pageBody.classList.remove('page__body_lock');
-        undoBlocking(mainHeader);
+        undoBlocking(mainTopHeader);
     };
     
     menuButton.addEventListener('click', () => {
@@ -9278,24 +9278,24 @@ if (window.matchMedia('(max-width: 768px)').matches) {
 
 // Page interactive (menu, fixed header, ...)
 
-const pageHeader = document.querySelector('.page__header');
+const pageTopHeader = document.querySelector('.page__top-header');
 const pageMain = document.querySelector('.page__main');
-const mainHeader = document.querySelector('.main-header');
+const mainTopHeader = document.querySelector('.main-top-header');
 
 // Page-main padding 
-pageMain.style.paddingTop = `${mainHeader.offsetHeight}px`;
+pageMain.style.paddingTop = `${mainTopHeader.offsetHeight}px`;
 
 // Header scrolling
 let prevScroll = pageYOffset;
 window.addEventListener('scroll', () => {
    
     if (pageYOffset > prevScroll) {
-        if (pageYOffset > mainHeader.offsetHeight) {
-            pageHeader.style.top = `-${mainHeader.offsetHeight}px`;
+        if (pageYOffset > mainTopHeader.offsetHeight) {
+            pageTopHeader.style.top = `-${mainTopHeader.offsetHeight}px`;
         }
     }
     else {
-        pageHeader.style.top = `-${0}px`;
+        pageTopHeader.style.top = `-${0}px`;
     }
 
     prevScroll = pageYOffset;

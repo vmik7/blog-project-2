@@ -1,9 +1,9 @@
 @import '../_variables';
 @import '../_mixins';
 
-/* Main-header */
+/* Main-Top-Header */
 
-.main-header {
+.main-top-header {
     height: 96px;
 
     @media screen and (max-width: $md2 + px) {

@@ -30,7 +30,7 @@
     --accent-dark-color: #4305C7;
 
     /* Время переходов */
-    --transition-time: 0.5s;
+    --transition-time: 0.4s;
 }
 
 // SCSS variables and mixins
@@ -102,12 +102,15 @@ a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
 
 @import 'blocks/logo';
 
-@import 'blocks/header';
-@import 'blocks/main-header';
+@import 'blocks/top-header';
+@import 'blocks/main-top-header';
 @import 'blocks/top-menu';
 @import 'blocks/menu';
 @import 'blocks/user-block';
 
 @import 'blocks/main';
+@import 'blocks/page-header';
+@import 'blocks/hero';
+@import 'blocks/article-header';
 
 @import 'blocks/footer';
