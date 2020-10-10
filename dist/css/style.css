@@ -711,6 +711,11 @@ textarea:focus {
           flex-grow: 1;
 }
 
+.page__contant-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
 .form__input {
   display: block;
   width: 100%;

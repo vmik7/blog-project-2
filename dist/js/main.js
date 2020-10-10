@@ -147,7 +147,9 @@ if (window.matchMedia('(max-width: 768px)').matches) {
 
 const pageTopHeader = document.querySelector('.page__top-header');
 const pageMain = document.querySelector('.page__main');
+const pageContent = document.querySelector('.page__content');
 const mainTopHeader = document.querySelector('.main-top-header');
+
 
 // Page-main padding 
 pageMain.style.paddingTop = `${mainTopHeader.offsetHeight}px`;
@@ -170,3 +172,5 @@ window.addEventListener('scroll', () => {
 
     prevScroll = pageYOffset;
 });
+
+// Sidebar interactive

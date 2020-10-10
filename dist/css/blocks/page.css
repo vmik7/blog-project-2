@@ -26,6 +26,11 @@
           flex-grow: 1;
 }
 
+.page__contant-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 1212px) {
   .page__container {
     max-width: 970px;
