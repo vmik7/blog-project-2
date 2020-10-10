@@ -154,6 +154,19 @@ if (window.matchMedia('(max-width: 768px)').matches) {
 
 
 
+// Hero slider
+
+$('.hero__slider').slick({
+    dots: true,
+    infinite: true,
+    initialSlide: 1,
+    speed: 500,
+    fade: true,
+    cssEase: 'ease'
+});
+
+
+
 // Page interactive (menu, fixed header, ...)
 
 const pageTopHeader = document.querySelector('.page__top-header');

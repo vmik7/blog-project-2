@@ -52,7 +52,7 @@ let uglify = require('gulp-uglify-es').default;
 let imagemin = require('gulp-imagemin');
 let webp = require('gulp-webp');
 // let webpHtml = require('gulp-webp-html');
-let webpCss = require('gulp-webp-css');
+// let webpCss = require('gulp-webp-css');
 // let svgSprite = require('gulp-svg-sprite');
 let ttf2woff = require('gulp-ttf2woff');
 let ttf2woff2 = require('gulp-ttf2woff2');
@@ -92,7 +92,7 @@ function css() {
             overrideBrowserslist: ['last 5 versions'],
             cascade: true
         }))
-        .pipe(webpCss())
+        // .pipe(webpCss())
         .pipe(dest(path.build.bem))
         .pipe(browserSync.stream());
     return src(path.src.css)
