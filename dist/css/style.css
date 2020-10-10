@@ -1496,7 +1496,7 @@ textarea:focus {
     line-height: 16px;
   }
 
-  .user-block__button {
+  .user-block__button_desktop {
     height: 35px;
     padding: 0 20px;
     letter-spacing: .03em;
