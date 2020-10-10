@@ -1,5 +1,13 @@
 'use strict'
 
+// JQuery
+
+@@include('../../node_modules/jquery/dist/jquery.min.js')
+
+// Slick slider
+
+@@include('../../node_modules/slick-carousel/slick/slick.min.js')
+
 // JS function to test webp support
 
 // include('files/webp-test.js', {})
