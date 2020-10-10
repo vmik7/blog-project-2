@@ -12,6 +12,14 @@
             @media screen and (max-width: $md3 + px) {
                 display: none;
             }
+            
+            @media screen and (max-width: $md2 + px) {
+                height: 35px;
+                padding: 0 20px;
+                letter-spacing: .03em;
+                font-size: 12px;
+                line-height: 16px;
+            }
         }
 
         &_mobile {
@@ -21,14 +29,6 @@
             @media screen and (min-width: $md3 + 1 + px) {
                 display: none;
             }
-        }
-
-        @media screen and (max-width: $md2 + px) {
-            height: 35px;
-            padding: 0 20px;
-            letter-spacing: .03em;
-            font-size: 12px;
-            line-height: 16px;
         }
     }
 
