@@ -103,6 +103,7 @@ $('.hero__slider').slick({
     initialSlide: 1,
     speed: 500,
     fade: true,
+    adaptiveHeight: true,
     cssEase: 'ease'
 });
 

@@ -26,6 +26,7 @@
         // Лента слайдов
         &-track {
             display: flex;
+            align-items: flex-start;
         }
 
         // Слайд
@@ -47,36 +48,63 @@
         // Стрелка
         &-arrow {
 
-            // Стрелка влево
-            &.slick-prev {
-                background: center center no-repeat;
+            &.slick-prev,
+            &.slick-next {
+                background: center center / contain no-repeat;
                 background-image: url("data:image/svg+xml,%3Csvg width='24' height='44' viewBox='0 0 24 44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 21.9996L19.821 43.0996L24 38.6505L8.358 21.9996L24 5.34869L19.821 0.899609L0 21.9996Z' fill='white'/%3E%3C/svg%3E%0A");
                 border: 0;
                 font-size: 0;
                 width: 24px;
                 height: 44px;
-
                 position: absolute;
                 top: 50%;
+                z-index: 1001;
+
+                @media screen and (max-width: $md2 + px) {
+                    height: 35px;
+                }
+                @media screen and (max-width: $md3 + px) {
+                    height: 25px;
+                }
+                @media screen and (max-width: $md4 + px) {
+                    height: 20px;
+                }
+            }
+
+            // Стрелка влево
+            &.slick-prev {
                 left: 100px;
                 transform: translate3d(0, -50%, 0);
-                z-index: 1001;
+                @media screen and (max-width: $md1 + px) {
+                    left: 50px;
+                }
+                @media screen and (max-width: $md2 + px) {
+                    left: 30px;
+                }
+                @media screen and (max-width: $md3 + px) {
+                    left: 15px;
+                }
+                @media screen and (max-width: $md4 + px) {
+                    left: 5px;
+                }
             }
 
             // Стрелка вправо
             &.slick-next {
-                background: center center no-repeat;
-                background-image: url("data:image/svg+xml,%3Csvg width='24' height='44' viewBox='0 0 24 44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 21.9996L19.821 43.0996L24 38.6505L8.358 21.9996L24 5.34869L19.821 0.899609L0 21.9996Z' fill='white'/%3E%3C/svg%3E%0A");
-                border: 0;
-                font-size: 0;
-                width: 24px;
-                height: 44px;
-
-                position: absolute;
-                top: 50%;
                 right: 100px;
                 transform: translate3d(0, -50%, 0) rotate(180deg);
-                z-index: 1001;
+                @media screen and (max-width: $md1 + px) {
+                    right: 50px;
+                }
+                @media screen and (max-width: $md2 + px) {
+                    right: 30px;
+                }
+                @media screen and (max-width: $md3 + px) {
+                    right: 15px;
+                }
+                @media screen and (max-width: $md4 + px) {
+                    right: 5px;
+                }
             }
 
             // Стрелка не активная
@@ -90,8 +118,17 @@
             left: 50%;
             transform: translate3d(-50%, 0, 0);
             z-index: 1000;
-
             display: flex;
+
+            @media screen and (max-width: $md2 + px) {
+                bottom: 45px;
+            }
+            @media screen and (max-width: $md3 + px) {
+                bottom: 30px;
+            }
+            @media screen and (max-width: $md4 + px) {
+                bottom: 26px;
+            }
 
             li {
 
@@ -100,6 +137,13 @@
                     button {
                         background: var(--accent-color, #621EF4);
                         box-shadow: 0 0 0 3px var(--accent-color,#621ef4);
+
+                        @media screen and (max-width: $md2 + px) {
+                            box-shadow: 0 0 0 2px var(--accent-color,#621ef4);
+                        }
+                        @media screen and (max-width: $md4 + px) {
+                            box-shadow: 0 0 0 1px var(--accent-color,#621ef4);
+                        }
                     }
                 }
 
@@ -117,6 +161,16 @@
                     background: #fff;
 
                     transition: all var(--transition-time, 0.4s) ease;
+
+                    @media screen and (max-width: $md2 + px) {
+                        width: 6px;
+                        height: 6px;
+                    }
+                    @media screen and (max-width: $md4 + px) {
+                        width: 5px;
+                        height: 5px;
+                        margin: 0 5px;
+                    }
                 }
             }
         }
@@ -130,6 +184,16 @@
         z-index: 1;
         padding: 55px 0 114px 0;
         text-align: center;
+
+        @media screen and (max-width: $md2 + px) {
+            padding: 30px 0 80px 0;
+        }
+        @media screen and (max-width: $md3 + px) {
+            padding: 25px 0 60px 0;
+        }
+        @media screen and (max-width: $md4 + px) {
+            padding: 18px 0 45px 0;
+        }
     }
 
     &__background {
@@ -138,6 +202,7 @@
         left: 0;
         width: 100%;
         height: 100%;
+        object-fit: cover;
         z-index: -1;
     }
 
@@ -152,6 +217,26 @@
         color: #fff;
 
         margin-bottom: 17px;
+
+        @media screen and (max-width: $md1 + px) {
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 10px;
+        }
+        @media screen and (max-width: $md2 + px) {
+            font-size: 15px;
+            line-height: 18px;
+            margin-bottom: 9px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+        @media screen and (max-width: $md4 + px) {
+            font-size: 13px;
+            line-height: 15px;
+            margin-bottom: 5px;
+        }
     }
 
     &__subtitle {
@@ -159,6 +244,19 @@
         font-size: 17px;
         line-height: 23px;
         color: #fff;
+
+        @media screen and (max-width: $md1 + px) {
+            font-size: 14px;
+            line-height: 18px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            font-size: 12px;
+            line-height: 16px;
+        }
+        @media screen and (max-width: $md4 + px) {
+            font-size: 11px;
+            line-height: 13px;
+        }
     }
 
     &__topic {
@@ -169,7 +267,33 @@
         color: #fff;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-        margin: 23px 0;
+        max-width: 1000px;
+        margin: 23px auto;
+
+        @media screen and (max-width: $md1 + px) {
+            font-size: 60px;
+            line-height: 70px;
+            max-width: 780px;
+            margin: 15px auto;
+        }
+        @media screen and (max-width: $md2 + px) {
+            font-size: 50px;
+            line-height: 55px;
+            max-width: 620px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            font-size: 38px;
+            line-height: 42px;
+            max-width: 390px;
+            margin: 13px auto;
+        }
+        @media screen and (max-width: $md4 + px) {
+            font-size: 28px;
+            line-height: 32px;
+            max-width: 255px;
+            margin: 10px auto;
+            text-shadow: 0 2px 2px rgba(0,0,0,.25);
+        }
     }
 
     &__read-more {
@@ -177,5 +301,28 @@
         height: 40px;
         font-size: 17px;
         line-height: 23px;
+
+        @media screen and (max-width: $md1 + px) {
+            min-width: 150px;
+            height: 37px;
+            font-size: 14px;
+            line-height: 18px;
+        }
+        @media screen and (max-width: $md2 + px) {
+            min-width: 135px;
+            height: 33px;
+            font-size: 13px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            min-width: 110px;
+            height: 30px;
+            font-size: 11px;
+        }
+        @media screen and (max-width: $md4 + px) {
+            padding: 0 20px;
+            min-width: 90px;
+            height: 25px;
+            font-size: 10px;
+        }
     }
 }

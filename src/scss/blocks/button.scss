@@ -35,4 +35,8 @@
             color: #000;
         }
     }
+
+    @media screen and (max-width: $md3 + px) {
+        border-radius: 3px;
+    }
 }
