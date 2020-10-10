@@ -18,6 +18,7 @@
   -o-object-fit: cover;
      object-fit: cover;
   z-index: -1;
+  background-color: #363636;
 }
 
 .article-header__container {

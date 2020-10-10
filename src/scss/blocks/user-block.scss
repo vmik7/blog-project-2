@@ -7,16 +7,85 @@
 
 
     &__button {
-        @media screen and (min-width: $md3 + 1 + px) {
-            display: none;
-        }
-        @media screen and (max-width: $md3 + px) {
-            border: 0;
-            background: none;
-            img {
-                height: 22px;
+
+        &_desktop {
+            @media screen and (max-width: $md3 + px) {
+                display: none;
             }
         }
+
+        &_mobile {
+            border: 0;
+            background: none;
+            padding: 0;
+            @media screen and (min-width: $md3 + 1 + px) {
+                display: none;
+            }
+        }
+    }
+
+    &__arrow-btn-inner {
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        right: 0;
+        top: 50%;
+        border-radius: 0 1px 1px 0;
+        background: #484848;
+        transform: translate3d(0, -50%, 0);
+        transition: all var(--transition-time, 0.5s) ease;
+    }
+
+    &__arrow-btn::before,
+    &__arrow-btn::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: -1px;
+        height: 2px;
+        width: 12px;
+        border-radius: 1px;
+        background: #484848;
+        transition: all var(--transition-time, 0.5s) ease;
+    }
+
+    &__arrow-btn {
+        position: relative;
+        width: 22px;
+        height: 20px;
+
+        &::before {
+            top: 5px;
+            transform: rotate(45deg);
+        }
+        &::after {
+            bottom: 5px;
+            transform: rotate(-45deg);
+        }
+    }
+
+    
+
+    // Active modificator when menu is opened
+
+    &__button_active::before {
+        top: 9px;
+        right: 0;
+        transform: rotate(-45deg);
+        width: 22px;
+        border-radius: 0;
+    }
+    &__button_active &__arrow-btn-inner {
+        width: 0;
+        opacity: 0;
+    }
+    &__button_active::after {
+        bottom: 9px;
+        right: 0;
+        transform: rotate(45deg);
+        width: 22px;
+        border-radius: 0;
     }
 
     &__body {

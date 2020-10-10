@@ -101,6 +101,47 @@ if (window.matchMedia('(max-width: 768px)').matches) {
 
 
 
+// Login button interactive
+
+if (window.matchMedia('(max-width: 768px)').matches) {
+    const pageBody = document.querySelector('.page__body');
+    const mainTopHeader = document.querySelector('.main-top-header');
+    const userBlockBody = document.querySelector('.main-top-header .user-block__body');
+    const userBlockButton = document.querySelector('.main-top-header .user-block__button');
+
+    let showLogin = () => {
+        userBlockButton.setAttribute('aria-expanded', true)
+        userBlockButton.classList.add('user-block__button_active');
+        userBlockBody.classList.add('user-block__body_open');
+
+        pageBody.classList.add('page__body_lock');
+        makeBlocking(mainTopHeader);
+    };
+
+    let hideLogin = () => {
+        userBlockButton.setAttribute('aria-expanded', false)
+        userBlockButton.classList.remove('user-block__button_active');
+        userBlockBody.classList.remove('user-block__body_open');
+
+        pageBody.classList.remove('page__body_lock');
+        undoBlocking(mainTopHeader);
+    };
+    
+    userBlockButton.addEventListener('click', () => {
+        let expanded = userBlockButton.getAttribute('aria-expanded') === 'true' || false;
+
+        if (!expanded) {
+            showLogin();
+        }
+        else {
+            hideLogin();
+        }
+    });
+
+    hideLogin();
+}
+
+
 
 // Page interactive (menu, fixed header, ...)
 
@@ -110,6 +151,9 @@ const mainTopHeader = document.querySelector('.main-top-header');
 
 // Page-main padding 
 pageMain.style.paddingTop = `${mainTopHeader.offsetHeight}px`;
+window.addEventListener('resize', () => {
+    pageMain.style.paddingTop = `${mainTopHeader.offsetHeight}px`;
+});
 
 // Header scrolling
 let prevScroll = pageYOffset;

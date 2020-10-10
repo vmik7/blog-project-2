@@ -1,19 +1,96 @@
 /* User-Block */
 
+.user-block__button_mobile {
+  border: 0;
+  background: none;
+  padding: 0;
+}
+
+.user-block__arrow-btn-inner {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  right: 0;
+  top: 50%;
+  border-radius: 0 1px 1px 0;
+  background: #484848;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+  -webkit-transition: all var(--transition-time, 0.5s) ease;
+  -o-transition: all var(--transition-time, 0.5s) ease;
+  transition: all var(--transition-time, 0.5s) ease;
+}
+
+.user-block__arrow-btn::before,
+.user-block__arrow-btn::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: -1px;
+  height: 2px;
+  width: 12px;
+  border-radius: 1px;
+  background: #484848;
+  -webkit-transition: all var(--transition-time, 0.5s) ease;
+  -o-transition: all var(--transition-time, 0.5s) ease;
+  transition: all var(--transition-time, 0.5s) ease;
+}
+
+.user-block__arrow-btn {
+  position: relative;
+  width: 22px;
+  height: 20px;
+}
+
+.user-block__arrow-btn::before {
+  top: 5px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.user-block__arrow-btn::after {
+  bottom: 5px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.user-block__button_active::before {
+  top: 9px;
+  right: 0;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  width: 22px;
+  border-radius: 0;
+}
+
+.user-block__button_active .user-block__arrow-btn-inner {
+  width: 0;
+  opacity: 0;
+}
+
+.user-block__button_active::after {
+  bottom: 9px;
+  right: 0;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 22px;
+  border-radius: 0;
+}
+
 @media screen and (min-width: 769px) {
-  .user-block__button {
+  .user-block__button_mobile {
     display: none;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .user-block__button {
-    border: 0;
-    background: none;
-  }
-
-  .user-block__button img {
-    height: 22px;
+  .user-block__button_desktop {
+    display: none;
   }
 
   .user-block__body {

@@ -13,6 +13,13 @@
 </head>
 <body class="page__body">
 
+    <!-- <img src="../../img/login-btn.svg" alt="" style="
+        position: fixed;
+        top: 20px;
+        right: 50px;
+        z-index: 500;
+    "> -->
+
     <header class="top-header page__top-header">
         <div class="top-header__main main-top-header">
             <div class="page__container main-top-header__container">
@@ -51,11 +58,12 @@
                     </div>
                 </a>
                 <div class="main-top-header__user-block user-block">
-                    <button class="user-block__button">
-                        <img src="../../img/login.svg" alt="Войти" aria-label="Войти">
+                    <button class="user-block__button user-block__button_mobile user-block__arrow-btn" aria-label="Войти" aria-expanded="false" aria-controls="user-block-body">
+                        <div class="user-block__arrow-btn-inner"></div>
                     </button>
-                    <div class="user-block__body">
-                        <button class="button">Войти</button>
+                    <button class="user-block__button user-block__button_desktop button" aria-expanded="false" aria-controls="user-block-body">Войти</button>
+                    <div class="user-block__body" id="user-block-body">
+                        
                     </div>
                 </div>
             </div>

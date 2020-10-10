@@ -928,9 +928,8 @@ textarea:focus {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background: #363636;
+  height: 2px;
+  background: #484848;
   -webkit-transition: all var(--transition-time, 0.5s) ease;
   -o-transition: all var(--transition-time, 0.5s) ease;
   transition: all var(--transition-time, 0.5s) ease;
@@ -938,8 +937,8 @@ textarea:focus {
 
 .menu__burger {
   position: relative;
-  width: 25px;
-  height: 20px;
+  width: 22px;
+  height: 18px;
 }
 
 .menu__burger::before {
@@ -1041,6 +1040,88 @@ textarea:focus {
 
 /* User-Block */
 
+.user-block__button_mobile {
+  border: 0;
+  background: none;
+  padding: 0;
+}
+
+.user-block__arrow-btn-inner {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  right: 0;
+  top: 50%;
+  border-radius: 0 1px 1px 0;
+  background: #484848;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+  -webkit-transition: all var(--transition-time, 0.5s) ease;
+  -o-transition: all var(--transition-time, 0.5s) ease;
+  transition: all var(--transition-time, 0.5s) ease;
+}
+
+.user-block__arrow-btn::before,
+.user-block__arrow-btn::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: -1px;
+  height: 2px;
+  width: 12px;
+  border-radius: 1px;
+  background: #484848;
+  -webkit-transition: all var(--transition-time, 0.5s) ease;
+  -o-transition: all var(--transition-time, 0.5s) ease;
+  transition: all var(--transition-time, 0.5s) ease;
+}
+
+.user-block__arrow-btn {
+  position: relative;
+  width: 22px;
+  height: 20px;
+}
+
+.user-block__arrow-btn::before {
+  top: 5px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.user-block__arrow-btn::after {
+  bottom: 5px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.user-block__button_active::before {
+  top: 9px;
+  right: 0;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  width: 22px;
+  border-radius: 0;
+}
+
+.user-block__button_active .user-block__arrow-btn-inner {
+  width: 0;
+  opacity: 0;
+}
+
+.user-block__button_active::after {
+  bottom: 9px;
+  right: 0;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 22px;
+  border-radius: 0;
+}
+
 /* Main */
 
 .main {
@@ -1120,6 +1201,7 @@ textarea:focus {
   -o-object-fit: cover;
      object-fit: cover;
   z-index: -1;
+  background-color: #363636;
 }
 
 .article-header__container {
@@ -1228,7 +1310,7 @@ textarea:focus {
     margin-right: 15%;
   }
 
-  .user-block__button {
+  .user-block__button_mobile {
     display: none;
   }
 }
@@ -1422,13 +1504,8 @@ textarea:focus {
     line-height: 25px;
   }
 
-  .user-block__button {
-    border: 0;
-    background: none;
-  }
-
-  .user-block__button img {
-    height: 22px;
+  .user-block__button_desktop {
+    display: none;
   }
 
   .user-block__body {
