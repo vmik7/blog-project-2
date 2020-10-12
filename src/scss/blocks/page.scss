@@ -34,22 +34,31 @@
     }
 
     &__top-header {
+    }
 
+    &__header {
+        z-index: 1;
     }
 
     &__main {
         // for sticky footer
         flex-grow: 1;
-    }
 
-    &__header {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        overflow: hidden;
 
+        transition: padding var(--transition-time, 0.4s) ease;
     }
 
     &__sidebar {
     }
 
     &__content {
+        flex: 1;
+
+        padding-top: 53px;
     }
 
     &__contant-container {

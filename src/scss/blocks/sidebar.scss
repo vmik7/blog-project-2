@@ -4,5 +4,51 @@
 /* Sidebar */
 
 .sidebar {
-    
+    overflow: auto;
+    display: flex;
+
+    width: 380px;
+
+    position: fixed; 
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    background: #fff;
+    box-shadow: -7px 0px 10px rgba(0, 0, 0, 0.1); 
+
+    transition: right var(--transition-time, 0.4s) ease, padding-top var(--transition-time, 0.4s) ease;
+
+    &_hide {
+        overflow: hidden;
+    }
+
+    &__fixed-bar {
+        position: sticky;
+        top: 0;
+
+        flex: 0 0 70px;
+        height: 100%;
+    }
+
+    &__control-btn {
+        background: none;
+        border: 0;
+        padding: 0;
+
+        position: absolute;
+        top: 35px;
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
+
+        transition: all var(--transition-time, 0.4s) ease;
+    }
+    &_hide &__control-btn {
+        transform: translate3d(-50%, 0, 0) rotate(180deg);
+    }
+
+    &__content {
+        flex: 1;
+        padding: 80px 80px 50px 0;
+    }
 }
