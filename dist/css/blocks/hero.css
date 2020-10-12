@@ -20,14 +20,17 @@
   background: none;
   border: 0;
   font-size: 0;
-  width: 24px;
-  height: 44px;
   position: absolute;
   top: 50%;
   z-index: 1001;
   -webkit-transition: all var(--transition-time, 0.4s) ease;
   -o-transition: all var(--transition-time, 0.4s) ease;
   transition: all var(--transition-time, 0.4s) ease;
+}
+
+.hero .slick-arrow.slick-prev svg,
+.hero .slick-arrow.slick-next svg {
+  height: 44px;
 }
 
 .hero .slick-arrow.slick-prev path,
@@ -193,8 +196,8 @@
 }
 
 @media screen and (max-width: 992px) {
-  .hero .slick-arrow.slick-prev,
-  .hero .slick-arrow.slick-next {
+  .hero .slick-arrow.slick-prev svg,
+  .hero .slick-arrow.slick-next svg {
     height: 40px;
   }
 
@@ -220,8 +223,8 @@
 }
 
 @media screen and (max-width: 768px) {
-  .hero .slick-arrow.slick-prev,
-  .hero .slick-arrow.slick-next {
+  .hero .slick-arrow.slick-prev svg,
+  .hero .slick-arrow.slick-next svg {
     height: 30px;
   }
 
@@ -270,8 +273,8 @@
 }
 
 @media screen and (max-width: 480px) {
-  .hero .slick-arrow.slick-prev,
-  .hero .slick-arrow.slick-next {
+  .hero .slick-arrow.slick-prev svg,
+  .hero .slick-arrow.slick-next svg {
     height: 20px;
   }
 

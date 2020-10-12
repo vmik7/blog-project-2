@@ -53,13 +53,25 @@
                 background: none;
                 border: 0;
                 font-size: 0;
-                width: 24px;
-                height: 44px;
+                
                 position: absolute;
                 top: 50%;
                 z-index: 1001;
 
                 transition: all var(--transition-time, 0.4s) ease;
+                svg {
+                    // width: 24px;
+                    height: 44px;
+                    @media screen and (max-width: $md2 + px) {
+                        height: 40px;
+                    }
+                    @media screen and (max-width: $md3 + px) {
+                        height: 30px;
+                    }
+                    @media screen and (max-width: $md4 + px) {
+                        height: 20px;
+                    }
+                }
                 path {
                     transition: all var(--transition-time, 0.4s) ease;
                 }
@@ -68,16 +80,6 @@
                     path {
                         fill: var(--accent-color, #621EF4);
                     }
-                }
-
-                @media screen and (max-width: $md2 + px) {
-                    height: 40px;
-                }
-                @media screen and (max-width: $md3 + px) {
-                    height: 30px;
-                }
-                @media screen and (max-width: $md4 + px) {
-                    height: 20px;
                 }
             }
 
