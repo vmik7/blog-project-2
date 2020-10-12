@@ -13,11 +13,11 @@
 </head>
 <body class="page__body">
 
-    <!-- Top-Header -->
-    <header class="top-header page__top-header">
-        <div class="top-header__main main-top-header">
-            <div class="page__container main-top-header__container">
-                <nav class="main-top-header__menu menu">
+    <!-- Top -->
+    <header class="page__top">
+        <div class="page__top-header top-header">
+            <div class="page__container top-header__container">
+                <nav class="top-header__menu menu">
                     <button class="menu__button menu__burger" aria-expanded="false" aria-controls="menu-list">
                         <span class="menu__burger-inner"></span>
                     </button>
@@ -36,14 +36,14 @@
                         </ul>
                     </div>
                 </nav>
-                <a href="#" class="logo logo_small main-top-header__logo">
+                <a href="#" class="logo logo_small top-header__logo">
                     <div class="logo__img">
                         <picture>
-                            <source srcset="img/logo@1x.webp 1x,
-                                            img/logo@2x.webp 2x"
+                            <source srcset="../../img/logo@1x.webp 1x,
+                                            ../../img/logo@2x.webp 2x"
                                     type="image/webp">
-                            <img	src="img/logo@1x.png"
-                                    srcset="img/logo@2x.jpg 2x"
+                            <img	src="../../img/logo@1x.png"
+                                    srcset="../../img/logo@2x.jpg 2x"
                                     alt="Логотип" title="REBORN">
                         </picture>
                     </div>
@@ -51,7 +51,7 @@
                         <div class="logo__title">REBORN</div>
                     </div>
                 </a>
-                <div class="main-top-header__user-block user-block">
+                <div class="top-header__user-block user-block">
                     <button class="user-block__button user-block__button_mobile user-block__arrow-btn" aria-label="Войти" aria-expanded="false" aria-controls="user-block-body">
                         <div class="user-block__arrow-btn-inner"></div>
                     </button>
@@ -62,8 +62,16 @@
                 </div>
             </div>
         </div>
+        <div class="page__top-menu page__top-menu_hidden top-menu">
+            <div class="top-menu__progress-bar"></div>
+            <div class="top-menu__content">
+                <div class="page__container top-menu__container">
+
+                </div>
+            </div>
+        </div>
     </header>
-    <!-- End: Top-Header -->
+    <!-- End: Top -->
 
     <!-- Header -->
     <header class="page__header page-header">
@@ -217,14 +225,46 @@
 
     <!-- Main -->
     <main class="page__main main">
-        
+
         <!-- Sidebar -->
-        <aside class="page__sidebar sidebar"></aside>
+        <aside class="page__sidebar sidebar" id="sidebar">
+            <div class="sidebar__fixed-bar">
+                <button class="page__sidebar-toggle sidebar__toggle" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="sidebar">
+                    <svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 10.5L2.0895 21L0 18.786L7.821 10.5L0 2.214L2.0895 0L12 10.5Z" fill="#A0A0A0"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="sidebar__content">
+                <p style="color: black;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est animi perferendis, accusantium fugit, amet, earum expedita illum maxime temporibus explicabo corrupti iste! Eaque, deleniti non eum nesciunt est voluptates?
+                    Quos deleniti porro, et labore, excepturi reiciendis accusamus omnis cum nemo voluptas tempora est molestiae! Reprehenderit ut necessitatibus optio iure, repellendus quidem! Tenetur officiis sed, suscipit ipsam non ab perferendis.
+                    Tempora illo qui laborum, deleniti, veritatis repellendus totam id enim perferendis, dolores ab nulla odit modi accusantium rem. Deleniti ipsa dolores mollitia accusamus atque labore, saepe inventore incidunt perspiciatis corrupti?
+                    Eum minima pariatur doloremque est tempore incidunt repellendus dignissimos saepe dolore deserunt laborum voluptatum provident itaque nisi et, consectetur quisquam impedit autem dolorum similique dicta possimus officia eligendi quidem. Magni?
+                    Quisquam magnam tempore culpa laudantium! Accusamus, magni amet, suscipit labore ipsam esse illum nisi nesciunt pariatur earum fugit accusantium ipsa quis architecto laudantium modi. Laudantium eum praesentium minus id officia.
+                    Culpa sequi temporibus dolores illum dolore ex non dolorem voluptates doloremque dolor quos nesciunt dolorum, commodi accusamus, saepe, vitae aliquam. Aperiam totam, sequi excepturi eaque velit corrupti enim distinctio animi.
+                    Sapiente, nostrum minus? Reprehenderit, eligendi. Ipsa labore vel quisquam omnis, placeat officia quos maiores fugiat dolor velit aliquid tenetur, adipisci veritatis vitae ad! Fuga nam suscipit aliquid repudiandae at assumenda.
+                    Reprehenderit unde nesciunt recusandae nisi debitis voluptatem, in cumque eius! Iusto a facilis, voluptates quidem est velit mollitia expedita, odio iste labore et rem dolorum quaerat deleniti illum quod nemo.
+                    Laudantium similique hic natus laboriosam quibusdam, atque enim, obcaecati temporibus voluptatum reiciendis ducimus ut? Cum non aperiam dicta, illum id illo animi eius voluptatum sed velit esse nobis, harum deleniti.
+                    Necessitatibus a tempore deserunt eos quasi quis eligendi aspernatur assumenda hic ipsam natus saepe nulla illum perferendis culpa, dignissimos expedita debitis neque voluptatum fugit sed ratione? Pariatur ex minus consequuntur!
+                    Ducimus a fugiat impedit labore ipsum reiciendis voluptates. Recusandae nesciunt blanditiis quo officiis quos delectus temporibus aliquid, adipisci, ipsa voluptatibus dolorum earum explicabo eligendi, ea magni hic dolorem unde nihil?
+                    Animi nam exercitationem explicabo doloremque accusamus architecto facilis maxime, minima quod id atque asperiores, voluptatem laboriosam molestias hic optio tempora! Voluptas ad qui enim laborum recusandae totam officia ab provident.
+                    Alias dolor excepturi quidem placeat temporibus repellat corporis, cumque amet accusantium sed magnam nihil eaque blanditiis laborum perspiciatis pariatur maiores mollitia quaerat provident! Minima quam impedit necessitatibus! Adipisci, veritatis expedita.
+                    Minus eius doloribus, id pariatur, necessitatibus sequi iste ipsam eaque perspiciatis blanditiis eum, dolores eligendi at! Magnam, doloremque. Eligendi quasi quae vel beatae mollitia at facilis praesentium, doloremque cum blanditiis?
+                    Velit porro, nisi quia illum ex, voluptatem, hic voluptate corrupti aliquid quaerat illo. Expedita excepturi iste explicabo dolor inventore, eius totam ipsum nulla nostrum dolorum molestiae nihil recusandae deserunt fugiat.
+                    Ipsa amet voluptatum fugit. Molestiae laudantium facilis qui unde cum neque suscipit libero quaerat sit ducimus rerum ipsa, necessitatibus voluptatem quod dolor facere debitis iure quos dolores provident labore! Itaque!
+                    Sequi eligendi, a cumque accusamus molestiae, delectus nesciunt maiores reiciendis magnam provident aliquam autem commodi id nemo qui voluptate minima veniam ratione ullam facere voluptatem neque expedita quod. Iste, et.
+                    Delectus est commodi, qui quia ipsam tenetur ea consequatur voluptatem a nemo, repellat inventore sapiente! Odit, illum consequatur. Rem ab reprehenderit esse quia error quisquam deleniti, exercitationem sequi optio commodi?
+                    Ipsum illum placeat temporibus officiis quaerat deleniti accusamus facere magni eum? Quasi iste molestias, sequi ratione quia ipsum nostrum quaerat maxime! Eum amet quasi iste placeat natus, culpa deleniti architecto.
+                    Soluta, ad consequuntur ipsam illum numquam, omnis, minima ducimus natus dolorem accusantium tempore quidem similique corporis saepe! Aperiam debitis quas quae fugit quaerat, sunt explicabo? Expedita assumenda blanditiis animi facere?
+                </p>
+            </div> 
+        </aside>
         <!-- End: Sidebar -->
 
         <!-- Content -->
         <div class="page__content">
-            <div class="page__contant-container">
+            <div class="page__content-container">
                 <p style="color: black;">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est animi perferendis, accusantium fugit, amet, earum expedita illum maxime temporibus explicabo corrupti iste! Eaque, deleniti non eum nesciunt est voluptates?
                     Quos deleniti porro, et labore, excepturi reiciendis accusamus omnis cum nemo voluptas tempora est molestiae! Reprehenderit ut necessitatibus optio iure, repellendus quidem! Tenetur officiis sed, suscipit ipsam non ab perferendis.
