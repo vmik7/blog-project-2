@@ -1,10 +1,10 @@
-/* Main-Top-Header */
+/* Top-Header */
 
-.main-top-header {
+.top-header {
   height: 96px;
 }
 
-.main-top-header__container {
+.top-header__container {
   position: relative;
   height: 100%;
   display: -webkit-box;
@@ -18,7 +18,7 @@
           align-items: center;
 }
 
-.main-top-header__logo {
+.top-header__logo {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -27,18 +27,18 @@
   z-index: 51;
 }
 
-.main-top-header__user-block {
+.top-header__user-block {
   z-index: 51;
 }
 
 @media screen and (min-width: 769px) {
-  .main-top-header__menu {
+  .top-header__menu {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
   }
 
-  .main-top-header__user-block {
+  .top-header__user-block {
     position: absolute;
     right: 0;
     top: 50%;
@@ -48,13 +48,13 @@
 }
 
 @media screen and (max-width: 992px) {
-  .main-top-header {
+  .top-header {
     height: 75px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .main-top-header {
+  .top-header {
     height: 60px;
   }
 }

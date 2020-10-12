@@ -13,9 +13,6 @@
   background: #fff;
   -webkit-box-shadow: -7px 0px 10px rgba(0, 0, 0, 0.1);
           box-shadow: -7px 0px 10px rgba(0, 0, 0, 0.1);
-  -webkit-transition: right var(--transition-time, 0.4s) ease, padding-top var(--transition-time, 0.4s) ease;
-  -o-transition: right var(--transition-time, 0.4s) ease, padding-top var(--transition-time, 0.4s) ease;
-  transition: right var(--transition-time, 0.4s) ease, padding-top var(--transition-time, 0.4s) ease;
 }
 
 .sidebar_hide {
@@ -32,7 +29,7 @@
   height: 100%;
 }
 
-.sidebar__control-btn {
+.sidebar__toggle {
   background: none;
   border: 0;
   padding: 0;
@@ -46,7 +43,7 @@
   transition: all var(--transition-time, 0.4s) ease;
 }
 
-.sidebar_hide .sidebar__control-btn {
+.sidebar_hide .sidebar__toggle {
   -webkit-transform: translate3d(-50%, 0, 0) rotate(180deg);
           transform: translate3d(-50%, 0, 0) rotate(180deg);
 }

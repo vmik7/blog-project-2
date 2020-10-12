@@ -27,23 +27,23 @@ $('.hero__slider').slick({
 
 
 
-// Page elements to controll
+// Variables
 
+const pageTop = document.querySelector('.page__top');
 const pageTopHeader = document.querySelector('.page__top-header');
+const pageTopMenu = document.querySelector('.page__top-menu');
 const pageBody = document.querySelector('.page__body');
 const pageMain = document.querySelector('.page__main');
 const pageSidebar = document.querySelector('.page__sidebar');
+const pageSidebarToggle = document.querySelector('.page__sidebar-toggle');
 const pageContent = document.querySelector('.page__content');
 
-const mainTopHeader = document.querySelector('.main-top-header');
+const menuButton = document.querySelector('.top-header__menu .menu__button');
+const menuBody = document.querySelector('.top-header__menu .menu__body');
 
-const menuButton = document.querySelector('.main-top-header__menu .menu__button');
-const menuBody = document.querySelector('.main-top-header__menu .menu__body');
+const userBlockBody = document.querySelector('.top-header .user-block__body');
+const userBlockButton = document.querySelector('.top-header .user-block__button');
 
-const userBlockBody = document.querySelector('.main-top-header .user-block__body');
-const userBlockButton = document.querySelector('.main-top-header .user-block__button');
-
-const sidebarControlButton = document.querySelector('.sidebar__control-btn');
 const sidebarFixedBar = document.querySelector('.sidebar__fixed-bar');
 const sidebarContent = document.querySelector('.sidebar__content');
 
@@ -58,7 +58,7 @@ if (window.matchMedia('(max-width: 768px)').matches) {
         menuBody.classList.add('menu__body_open');
 
         pageBody.classList.add('page__body_lock');
-        makeBlocking(mainTopHeader);
+        makeBlocking(pageTopHeader);
     };
     let hideNavMenu = () => {
         menuButton.setAttribute('aria-expanded', false)
@@ -66,7 +66,7 @@ if (window.matchMedia('(max-width: 768px)').matches) {
         menuBody.classList.remove('menu__body_open');
 
         pageBody.classList.remove('page__body_lock');
-        undoBlocking(mainTopHeader);
+        undoBlocking(pageTopHeader);
     };
     
     menuButton.addEventListener('click', () => {
@@ -94,7 +94,7 @@ if (window.matchMedia('(max-width: 768px)').matches) {
         userBlockBody.classList.add('user-block__body_open');
 
         pageBody.classList.add('page__body_lock');
-        makeBlocking(mainTopHeader);
+        makeBlocking(pageTopHeader);
     };
     let hideLogin = () => {
         userBlockButton.setAttribute('aria-expanded', false)
@@ -102,7 +102,7 @@ if (window.matchMedia('(max-width: 768px)').matches) {
         userBlockBody.classList.remove('user-block__body_open');
 
         pageBody.classList.remove('page__body_lock');
-        undoBlocking(mainTopHeader);
+        undoBlocking(pageTopHeader);
     };
     
     userBlockButton.addEventListener('click', () => {
@@ -121,61 +121,68 @@ if (window.matchMedia('(max-width: 768px)').matches) {
 
 
 
-// Page-main padding 
+// Padding in Main
 
-pageBody.style.paddingTop = `${mainTopHeader.offsetHeight}px`;
-window.addEventListener('resize', () => {
-    pageBody.style.paddingTop = `${mainTopHeader.offsetHeight}px`;
-});
+let setPaddingMain = () => {
+    pageBody.style.paddingTop = `${pageTopHeader.offsetHeight}px`;
+}; setPaddingMain();
+window.addEventListener('resize', setPaddingMain);
 
-// Header scrolling
+
+
+// Header on scroll
+
 let prevScroll = pageYOffset;
 window.addEventListener('scroll', () => {
-   
     if (pageYOffset > prevScroll) {
-        if (pageYOffset > mainTopHeader.offsetHeight) {
-            pageTopHeader.style.top = `-${mainTopHeader.offsetHeight}px`;
-            pageTopHeader.classList.add('top-header_hide');
+        if (pageYOffset > pageTopHeader.offsetHeight) {
+            pageTop.style.top = `-${pageTopHeader.offsetHeight}px`;
+            pageTop.classList.add('page__top_hidden');
         }
     }
     else {
-        pageTopHeader.style.top = `-${0}px`;
-        pageTopHeader.classList.remove('top-header_hide');
+        pageTop.style.top = `-${0}px`;
+        pageTop.classList.remove('page__top_hidden');
     }
-
     prevScroll = pageYOffset;
 });
 
 
 
-// Sidebar interactive
+// Sidebar fixing
 
-// Fixing
 let fixSidebar = () => {
-    pageSidebar.style.top = `${Math.max(pageMain.offsetTop - pageYOffset, 0)}px`;
-    pageSidebar.style.paddingTop = `${pageTopHeader.offsetHeight + pageTopHeader.offsetTop}px`;
+    let headerOffset = Math.max(pageMain.offsetTop - pageYOffset, 0);
+    let topOffset = 0;
+    if (pageTop && !pageTop.classList.contains('page__top_hidden')) {
+        topOffset = pageTop.offsetHeight;
+    }
+    if (pageTopMenu && !pageTopMenu.classList.contains('page__top-menu_hidden')) {
+        topOffset += pageTopMenu.offsetHeight;
+    }
+    pageSidebar.style.top = `${Math.max(headerOffset, topOffset)}px`;
 }; fixSidebar();
 window.addEventListener('scroll', fixSidebar);
 
 // Hide / Show
 let showSidebar = () => {
-    sidebarControlButton.setAttribute('aria-expanded', true)
-    sidebarControlButton.classList.add('sidebar__control-btn_active');
+    pageSidebarToggle.setAttribute('aria-expanded', true)
+    pageSidebarToggle.classList.add('sidebar__toggle_active');
     pageSidebar.classList.remove('sidebar_hide');
     pageSidebar.style.right = `${0}px`;
     pageMain.style.paddingRight = `${pageSidebar.offsetWidth}px`;
 };
 
 let hideSidebar = () => {
-    sidebarControlButton.setAttribute('aria-expanded', false)
-    sidebarControlButton.classList.remove('sidebar__control-btn_active');
+    pageSidebarToggle.setAttribute('aria-expanded', false)
+    pageSidebarToggle.classList.remove('sidebar__toggle_active');
     pageSidebar.classList.add('sidebar_hide');
     pageSidebar.style.right = `${-sidebarContent.offsetWidth}px`;
     pageMain.style.paddingRight = `${sidebarFixedBar.offsetWidth}px`;
 };
 
 pageSidebar.addEventListener('click', () => {
-    let expanded = sidebarControlButton.getAttribute('aria-expanded') === 'true' || false;
+    let expanded = pageSidebarToggle.getAttribute('aria-expanded') === 'true' || false;
 
     if (!expanded) {
         showSidebar();
