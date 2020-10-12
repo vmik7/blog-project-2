@@ -22,7 +22,8 @@
 
     transition: all var(--transition-time, 0.4s) ease;
 
-    &:hover, &:focus {
+    &:hover, &.focus-visible {
+        @include no-focus-outline();
         background: var(--accent-dark-color, #4305C7);
     }
 
@@ -30,9 +31,9 @@
         background: #fff;
         color: #5a5a5a;
 
-        &:hover, &:focus {
-            background: #F5F5F5;
-            color: #000;
+        &:hover, &.focus-visible {
+            background: var(--accent-color, #621EF4);
+            color: #fff;
         }
     }
 
