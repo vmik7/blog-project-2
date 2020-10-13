@@ -12,7 +12,11 @@
     font-weight: 600;
     font-size: 14px;
     line-height: 19px;
-    text-align: center;
+    // text-align: center;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
     color: #fff;
     
@@ -35,6 +39,40 @@
             background: var(--accent-color, #621EF4);
             color: #fff;
         }
+    }
+
+    &_grey {
+        background: #F5F5F5;
+        color: #787878;
+        path {
+            fill: #787878;
+            transition: all var(--transition-time, 0.4s) ease;
+        }
+
+        &:hover, &.focus-visible {
+            background: #E5D9FF;
+            color: var(--accent-color, #621EF4);
+            path {
+                fill: var(--accent-color, #621EF4);
+            }
+        }
+
+        &:active {
+            background: var(--accent-color, #621EF4);
+            color: #fff;
+            path {
+                fill: #fff;
+            }
+        }
+    }
+
+    &__icon-block {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon-label {
+        margin-left: 6px;
     }
 
     @media screen and (max-width: $md3 + px) {

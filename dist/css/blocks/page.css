@@ -49,10 +49,16 @@
   top: 100%;
   width: 100%;
   z-index: -1;
+  -webkit-box-shadow: 0px 4px 10px rgba(80, 80, 80, 0.1);
+          box-shadow: 0px 4px 10px rgba(80, 80, 80, 0.1);
+  -webkit-transition: all var(--transition-time, 0.4s) ease;
+  -o-transition: all var(--transition-time, 0.4s) ease;
+  transition: all var(--transition-time, 0.4s) ease;
 }
 
 .page__top-menu_hidden {
-  top: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .page__header {
@@ -89,7 +95,6 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding-top: 53px;
 }
 
 .page__content-container {

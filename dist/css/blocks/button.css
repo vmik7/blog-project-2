@@ -8,7 +8,14 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 19px;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #fff;
   border: 0;
   background: var(--accent-color, #621EF4);
@@ -33,6 +40,51 @@
 .button_white.focus-visible {
   background: var(--accent-color, #621EF4);
   color: #fff;
+}
+
+.button_grey {
+  background: #F5F5F5;
+  color: #787878;
+}
+
+.button_grey path {
+  fill: #787878;
+  -webkit-transition: all var(--transition-time, 0.4s) ease;
+  -o-transition: all var(--transition-time, 0.4s) ease;
+  transition: all var(--transition-time, 0.4s) ease;
+}
+
+.button_grey:hover,
+.button_grey.focus-visible {
+  background: #E5D9FF;
+  color: var(--accent-color, #621EF4);
+}
+
+.button_grey:hover path,
+.button_grey.focus-visible path {
+  fill: var(--accent-color, #621EF4);
+}
+
+.button_grey:active {
+  background: var(--accent-color, #621EF4);
+  color: #fff;
+}
+
+.button_grey:active path {
+  fill: #fff;
+}
+
+.button__icon-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.button__icon-label {
+  margin-left: 6px;
 }
 
 @media screen and (max-width: 768px) {

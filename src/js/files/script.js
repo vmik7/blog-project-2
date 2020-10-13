@@ -37,12 +37,15 @@ const pageMain = document.querySelector('.page__main');
 const pageSidebar = document.querySelector('.page__sidebar');
 const pageSidebarToggle = document.querySelector('.page__sidebar-toggle');
 const pageContent = document.querySelector('.page__content');
+const pageArticleAction = document.querySelector('.page__article-action');
 
-const menuButton = document.querySelector('.top-header__menu .menu__button');
-const menuBody = document.querySelector('.top-header__menu .menu__body');
+const menuButton = pageTopHeader.querySelector('.top-header__menu .menu__button');
+const menuBody = pageTopHeader.querySelector('.top-header__menu .menu__body');
 
-const userBlockBody = document.querySelector('.top-header .user-block__body');
-const userBlockButton = document.querySelector('.top-header .user-block__button');
+const userBlockBody = pageTopHeader.querySelector('.user-block__body');
+const userBlockButton = pageTopHeader.querySelector('.user-block__button');
+
+const progressValue = pageTopMenu.querySelector('.top-menu__progress-value');
 
 const sidebarFixedBar = document.querySelector('.sidebar__fixed-bar');
 const sidebarContent = document.querySelector('.sidebar__content');
@@ -71,7 +74,6 @@ if (window.matchMedia('(max-width: 768px)').matches) {
     
     menuButton.addEventListener('click', () => {
         let expanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
-
         if (!expanded) {
             showNavMenu();
         }
@@ -130,7 +132,7 @@ window.addEventListener('resize', setPaddingMain);
 
 
 
-// Header on scroll
+// Top-Header on scroll
 
 let prevScroll = pageYOffset;
 window.addEventListener('scroll', () => {
@@ -149,6 +151,36 @@ window.addEventListener('scroll', () => {
 
 
 
+// Top-Menu on scroll
+
+if (pageTopMenu) {
+    
+    let fixTopMenu = () => {
+        let offsetValue = pageContent.offsetTop;
+        if (pageArticleAction) {
+            offsetValue = pageArticleAction.offsetTop + pageArticleAction.offsetHeight;
+        }
+        if (pageYOffset >= offsetValue) {
+            pageTopMenu.style.top = `100%`;
+            pageTopMenu.classList.remove('page__top-menu_hidden');
+        }
+        else {
+            pageTopMenu.style.top = `${pageTopHeader.offsetHeight - pageTopMenu.offsetHeight}px`;
+            pageTopMenu.classList.add('page__top-menu_hidden');
+        }
+    }; fixTopMenu();
+    window.addEventListener('scroll', fixTopMenu);
+
+    let setProgressBarWidth = () => {
+        let fullScroll = pageBody.offsetHeight - window.innerHeight;
+        progressValue.style.width = `${pageYOffset * 100 / fullScroll}%`;
+    }; setProgressBarWidth();
+    window.addEventListener('scroll', setProgressBarWidth);
+}
+
+
+
+
 // Sidebar fixing
 
 let fixSidebar = () => {
@@ -164,7 +196,10 @@ let fixSidebar = () => {
 }; fixSidebar();
 window.addEventListener('scroll', fixSidebar);
 
-// Hide / Show
+
+
+// Sidebar hide / show
+
 let showSidebar = () => {
     pageSidebarToggle.setAttribute('aria-expanded', true)
     pageSidebarToggle.classList.add('sidebar__toggle_active');
@@ -172,7 +207,6 @@ let showSidebar = () => {
     pageSidebar.style.right = `${0}px`;
     pageMain.style.paddingRight = `${pageSidebar.offsetWidth}px`;
 };
-
 let hideSidebar = () => {
     pageSidebarToggle.setAttribute('aria-expanded', false)
     pageSidebarToggle.classList.remove('sidebar__toggle_active');
@@ -180,7 +214,6 @@ let hideSidebar = () => {
     pageSidebar.style.right = `${-sidebarContent.offsetWidth}px`;
     pageMain.style.paddingRight = `${sidebarFixedBar.offsetWidth}px`;
 };
-
 pageSidebar.addEventListener('click', () => {
     let expanded = pageSidebarToggle.getAttribute('aria-expanded') === 'true' || false;
 
@@ -191,5 +224,4 @@ pageSidebar.addEventListener('click', () => {
         hideSidebar();
     }
 });
-
 showSidebar();

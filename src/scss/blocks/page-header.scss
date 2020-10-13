@@ -95,5 +95,8 @@
     }
 
     &__bottom-link {
+        &:hover {
+            color: var(--accent-color, #621EF4);
+        }
     }
 }

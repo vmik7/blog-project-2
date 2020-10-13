@@ -2,22 +2,23 @@
 
 .top-menu {
   background: #fff;
-  -webkit-box-shadow: 0px 4px 10px rgba(80, 80, 80, 0.1);
-          box-shadow: 0px 4px 10px rgba(80, 80, 80, 0.1);
 }
 
-.top-menu__progress-bar {
+.top-menu__progress {
   position: relative;
   height: 6px;
   background: #F5F5F5;
 }
 
-.top-menu__progress-bar::before {
+.top-menu__progress-value {
   content: '';
   position: absolute;
   height: 100%;
   width: 30%;
   background: var(--accent-color, #621EF4);
+  -webkit-transition: all var(--transition-time, 0.4s) ease;
+  -o-transition: all var(--transition-time, 0.4s) ease;
+  transition: all var(--transition-time, 0.4s) ease;
 }
 
 .top-menu__content {
@@ -29,7 +30,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .top-menu__progress-bar {
+  .top-menu__progress {
     height: 4px;
   }
 }

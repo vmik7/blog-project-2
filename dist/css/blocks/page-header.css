@@ -49,6 +49,10 @@
   font-weight: 700;
 }
 
+.page-header__bottom-link:hover {
+  color: var(--accent-color, #621EF4);
+}
+
 @media screen and (max-width: 992px) {
   .page-header__bottom {
     padding: 16px 0;

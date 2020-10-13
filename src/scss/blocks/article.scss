@@ -1,0 +1,21 @@
+@import '../_variables';
+@import '../_mixins';
+
+/* Article */
+
+.article {
+
+    &__header {
+    }
+
+    &__action {
+        padding: 50px 0;
+    }
+
+    &__content {
+        padding-top: 40px;
+    }
+
+    &__footer {
+    }
+}

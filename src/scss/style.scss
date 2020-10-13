@@ -24,13 +24,13 @@
 :root {
 
     /* Основной акцентный цвет */
-    --accent-color: #621EF4;
+    --accent-color: #621EF4; // var(--accent-color, #621EF4)
 
     /* Основной акцентный цвет, но чуть потемнее */
-    --accent-dark-color: #4305C7;
+    --accent-dark-color: #4305C7; // var(--accent-dark-color, #4305C7)
 
     /* Время переходов */
-    --transition-time: 0.4s;
+    --transition-time: 0.4s; // transition: all var(--transition-time, 0.4s) ease;
 }
 
 // SCSS variables and mixins
@@ -121,5 +121,8 @@ a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
 
 @import 'blocks/main';
 @import 'blocks/sidebar';
+@import 'blocks/page-content';
+@import 'blocks/article';
+@import 'blocks/article-action';
 
 @import 'blocks/footer';

@@ -1,0 +1,12 @@
+@import '../_variables';
+@import '../_mixins';
+
+/* Page-Content */
+
+.page-content {
+
+    &__separator {
+        height: 1px;
+        background: #F5F5F5;
+    }
+}
