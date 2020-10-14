@@ -97,6 +97,7 @@ const pageBody = document.querySelector('.page__body');
 const pageMain = document.querySelector('.page__main');
 const pageSidebar = document.querySelector('.page__sidebar');
 const pageSidebarToggle = document.querySelector('.page__sidebar-toggle');
+const pageSidebarOverlayer = document.querySelector('.page__sidebar-overlayer');
 const pageContent = document.querySelector('.page__content');
 const pageArticleAction = document.querySelector('.page__article-action');
 
@@ -382,7 +383,15 @@ let showSidebar = () => {
         pageSidebarToggle.setAttribute('aria-expanded', true)
         pageSidebarToggle.classList.add('sidebar__toggle_active');
         pageSidebar.style.right = `${0}px`;
-        pageMain.style.paddingRight = `${pageSidebar.offsetWidth}px`;
+        pageSidebar.classList.remove('sidebar_hidden');
+
+        if (window.matchMedia('(max-width: 1290px)').matches) {
+            pageSidebarOverlayer.classList.add('page__sidebar-overlayer_active');
+            pageBody.classList.add('page__body_lock');
+        } else {
+            pageMain.style.paddingRight = `${pageSidebar.offsetWidth}px`;
+        }
+
         fixSidebarFixedBarContent();
     }
 };
@@ -391,26 +400,54 @@ let hideSidebar = () => {
         sidebarHidden = true;
         pageSidebarToggle.setAttribute('aria-expanded', false)
         pageSidebarToggle.classList.remove('sidebar__toggle_active');
+        pageSidebar.classList.add('sidebar_hidden');
         pageSidebar.style.right = `${-sidebarContent.offsetWidth}px`;
-        pageMain.style.paddingRight = `${sidebarFixedBar.offsetWidth}px`;
+
+        if (window.matchMedia('(max-width: 1290px)').matches) {
+            pageSidebarOverlayer.classList.remove('page__sidebar-overlayer_active');
+            pageBody.classList.remove('page__body_lock');
+        } else {
+            pageMain.style.paddingRight = `${sidebarFixedBar.offsetWidth}px`;
+        }
+
         fixSidebarFixedBarContent();
     }
 };
 
 // Initialization
 
-// Show sidebar
-sidebarHidden = false;
-withoutTransition(pageSidebarToggle, () => {
-    pageSidebarToggle.setAttribute('aria-expanded', true)
-    pageSidebarToggle.classList.add('sidebar__toggle_active');
-});
-withoutTransition(pageSidebar, () => {
-    pageSidebar.style.right = `${0}px`;
-});
-withoutTransition(pageMain, () => {
-    pageMain.style.paddingRight = `${pageSidebar.offsetWidth}px`;
-});
+if (window.matchMedia('(max-width: 1290px)').matches) {
+
+    // Hide
+    sidebarHidden = true;
+    withoutTransition(pageSidebarToggle, () => {
+        pageSidebarToggle.setAttribute('aria-expanded', false)
+        pageSidebarToggle.classList.remove('sidebar__toggle_active');
+    });
+    withoutTransition(pageSidebar, () => {
+        pageSidebar.classList.add('sidebar_hidden');
+        pageSidebar.style.right = `${-sidebarContent.offsetWidth}px`;
+    });
+    withoutTransition(pageMain, () => {
+        pageMain.style.paddingRight = `${sidebarFixedBar.offsetWidth}px`;
+    });
+}
+else {
+
+    // Show
+    sidebarHidden = false;
+    withoutTransition(pageSidebarToggle, () => {
+        pageSidebarToggle.setAttribute('aria-expanded', true)
+        pageSidebarToggle.classList.add('sidebar__toggle_active');
+    });
+    withoutTransition(pageSidebar, () => {
+        pageSidebar.classList.add('sidebar_hidden');
+        pageSidebar.style.right = `${0}px`;
+    });
+    withoutTransition(pageMain, () => {
+        pageMain.style.paddingRight = `${pageSidebar.offsetWidth}px`;
+    });
+}
 
 // Setup sidebar top property
 let headerOffset = Math.max(pageMain.offsetTop - pageYOffset, 0);
@@ -429,7 +466,7 @@ sidebarFixedBarContent.classList.add('sidebar__fixed-bar-content_hidden');
 sidebarFixedBarContent.style.display = 'none';
 
 // Toggle button interactive
-pageSidebarToggle.addEventListener('click', () => {
+let toggleSidebar = () => {
     let expanded = pageSidebarToggle.getAttribute('aria-expanded') === 'true' || false;
     if (!expanded) {
         showSidebar();
@@ -437,7 +474,12 @@ pageSidebarToggle.addEventListener('click', () => {
     else {
         hideSidebar();
     }
-});
+}
+pageSidebarToggle.addEventListener('click', toggleSidebar);
+if (window.matchMedia('(max-width: 1290px)').matches) {
+    pageSidebarOverlayer.addEventListener('click', toggleSidebar);
+}
+
 
 // Fixing sidebar on scroll
 window.addEventListener('scroll', fixSidebar);
