@@ -86,9 +86,9 @@
 }
 
 .page__sidebar {
-  -webkit-transition: right var(--transition-time, 0.4s) ease;
-  -o-transition: right var(--transition-time, 0.4s) ease;
-  transition: right var(--transition-time, 0.4s) ease;
+  -webkit-transition: right var(--transition-time, 0.4s) ease, padding-top var(--transition-time, 0.4s) ease;
+  -o-transition: right var(--transition-time, 0.4s) ease, padding-top var(--transition-time, 0.4s) ease;
+  transition: right var(--transition-time, 0.4s) ease, padding-top var(--transition-time, 0.4s) ease;
 }
 
 .page__content {

@@ -4,6 +4,10 @@
   padding: 50px 0;
 }
 
+.article__action-bookmark {
+  min-width: 235px;
+}
+
 .article__content {
   padding-top: 40px;
 }

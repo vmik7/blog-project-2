@@ -1,5 +1,5 @@
 
-// Blocking Elements functons
+// * Blocking Elements functons
 
 function makeBlocking(element) {
     document.$blockingElements.push(element);
@@ -10,7 +10,8 @@ function undoBlocking(element) {
 
 
 
-// Hero slider
+
+// * Hero slider
 
 $('.hero__slider').slick({
     dots: true,
@@ -27,7 +28,8 @@ $('.hero__slider').slick({
 
 
 
-// Variables
+
+// * Variables
 
 const pageTop = document.querySelector('.page__top');
 const pageTopHeader = document.querySelector('.page__top-header');
@@ -45,14 +47,27 @@ const menuBody = pageTopHeader.querySelector('.top-header__menu .menu__body');
 const userBlockBody = pageTopHeader.querySelector('.user-block__body');
 const userBlockButton = pageTopHeader.querySelector('.user-block__button');
 
-const progressValue = pageTopMenu.querySelector('.top-menu__progress-value');
+const progressValue = document.querySelector('.top-menu__progress-value');
 
 const sidebarFixedBar = document.querySelector('.sidebar__fixed-bar');
+const sidebarFixedBarContent = document.querySelector('.sidebar__fixed-bar-content');
 const sidebarContent = document.querySelector('.sidebar__content');
 
+let prevScroll = pageYOffset;
+
+let withoutTransition = (elem, func) => {
+    let tranBackup = window.getComputedStyle(elem).transitionDuration;
+    elem.style.transitionDuration = '0s';
+    func();
+    setTimeout(() => {
+        elem.style.transitionDuration = tranBackup;
+    }, 10);
+};
 
 
-// Burger interactive
+
+
+// * Burger interactive
 
 if (window.matchMedia('(max-width: 768px)').matches) {
     let showNavMenu = () => {
@@ -87,7 +102,8 @@ if (window.matchMedia('(max-width: 768px)').matches) {
 
 
 
-// Login button interactive
+
+// * Login button interactive
 
 if (window.matchMedia('(max-width: 768px)').matches) {
     let showLogin = () => {
@@ -123,100 +139,239 @@ if (window.matchMedia('(max-width: 768px)').matches) {
 
 
 
-// Padding in Main
 
-let setPaddingMain = () => {
-    pageBody.style.paddingTop = `${pageTopHeader.offsetHeight}px`;
-}; setPaddingMain();
-window.addEventListener('resize', setPaddingMain);
+// * PaddingTop to body (because of TopHeader fixed position)
+
+pageBody.style.paddingTop = `${pageTopHeader.offsetHeight}px`;
 
 
 
-// Top-Header on scroll
 
-let prevScroll = pageYOffset;
-window.addEventListener('scroll', () => {
+// * Top-Header interactive
+
+// Functional
+
+let topHeaderHidden;
+let showTopHeader = () => {
+    if (topHeaderHidden) {
+        topHeaderHidden = false;
+        pageTop.style.top = `0px`;
+        pageTop.classList.remove('page__top_hidden');
+
+        // Smooth fixing sidebar along 500 ms
+        // let timerId = setInterval(fixSidebar, 10);
+        // setTimeout(() => {
+        //     clearInterval(timerId);
+        // }, 500);
+    }
+};
+let hideTopHeader = () => {
+    if (!topHeaderHidden) {
+        topHeaderHidden = true;
+        pageTop.style.top = `-${pageTopHeader.offsetHeight}px`;
+        pageTop.classList.add('page__top_hidden');
+
+        // Smooth fixing sidebar along 500 ms
+        // let timerId = setInterval(fixSidebar, 10);
+        // setTimeout(() => {
+        //     clearInterval(timerId);
+        // }, 500);
+    }
+};
+let fixTopHeader = () => {
     if (pageYOffset > prevScroll) {
         if (pageYOffset > pageTopHeader.offsetHeight) {
-            pageTop.style.top = `-${pageTopHeader.offsetHeight}px`;
-            pageTop.classList.add('page__top_hidden');
+            hideTopHeader();
         }
     }
     else {
-        pageTop.style.top = `-${0}px`;
-        pageTop.classList.remove('page__top_hidden');
+        showTopHeader();
     }
     prevScroll = pageYOffset;
+};
+
+// Initialization
+
+topHeaderHidden = false;
+withoutTransition(pageTop, () => {
+    pageTop.style.top = `0px`;
+    pageTop.classList.remove('page__top_hidden');
 });
+window.addEventListener('scroll', fixTopHeader);
 
 
 
-// Top-Menu on scroll
 
+// * Top-Menu interactive
+
+// Default is hidden, because Top-Menu can be missing
+let topMenuHidden = true;
+
+// If Top-Menu exists only
 if (pageTopMenu) {
-    
+
+    // Functional
+    let showTopMenu = () => {
+        if (topMenuHidden) {
+            topMenuHidden = false;
+            pageTopMenu.style.top = `100%`;
+            pageTopMenu.classList.remove('page__top-menu_hidden');
+        }
+    };
+    let hideTopMenu = () => {
+        if (!topMenuHidden) {
+            topMenuHidden = true;
+            pageTopMenu.style.top = `${pageTopHeader.offsetHeight - pageTopMenu.offsetHeight}px`;
+            pageTopMenu.classList.add('page__top-menu_hidden');
+        }
+    };
     let fixTopMenu = () => {
         let offsetValue = pageContent.offsetTop;
         if (pageArticleAction) {
             offsetValue = pageArticleAction.offsetTop + pageArticleAction.offsetHeight;
         }
         if (pageYOffset >= offsetValue) {
-            pageTopMenu.style.top = `100%`;
-            pageTopMenu.classList.remove('page__top-menu_hidden');
+            showTopMenu();
         }
         else {
-            pageTopMenu.style.top = `${pageTopHeader.offsetHeight - pageTopMenu.offsetHeight}px`;
-            pageTopMenu.classList.add('page__top-menu_hidden');
+            hideTopMenu();
         }
-    }; fixTopMenu();
-    window.addEventListener('scroll', fixTopMenu);
+    };
 
+    let currentArticleProgress;
     let setProgressBarWidth = () => {
         let fullScroll = pageBody.offsetHeight - window.innerHeight;
-        progressValue.style.width = `${pageYOffset * 100 / fullScroll}%`;
-    }; setProgressBarWidth();
+        currentArticleProgress = Math.max(currentArticleProgress, pageYOffset * 100 / fullScroll);
+        progressValue.style.width = `${currentArticleProgress}%`;
+    };
+
+    // Initialization
+
+    topMenuHidden = true;
+    topMenuHidden = true;
+    withoutTransition(pageTopMenu, () => {
+        pageTopMenu.style.top = `${pageTopHeader.offsetHeight - pageTopMenu.offsetHeight}px`;
+        pageTopMenu.classList.add('page__top-menu_hidden');
+    });
+    window.addEventListener('scroll', fixTopMenu);
+
+    currentArticleProgress = 0;
+    withoutTransition(progressValue, () => {
+        progressValue.style.width = `${currentArticleProgress}%`;
+    });
     window.addEventListener('scroll', setProgressBarWidth);
 }
 
 
 
 
-// Sidebar fixing
+// * Sidebar interactive
 
-let fixSidebar = () => {
+// Functional
+
+let sidebarFixedBarContentHidden;
+let showSidebarFixedBarContent = () => {
+    if (sidebarFixedBarContentHidden) {
+        sidebarFixedBarContentHidden = false;
+        sidebarFixedBarContent.style.display = 'block';
+        setTimeout(() => {
+            sidebarFixedBarContent.classList.remove('sidebar__fixed-bar-content_hidden');
+        }, 10);
+    }
+};
+let hideSidebarFixedBarContent = () => {
+    if (!sidebarFixedBarContentHidden) {
+        sidebarFixedBarContentHidden = true;
+        sidebarFixedBarContent.classList.add('sidebar__fixed-bar-content_hidden');
+        setTimeout(() => {
+            sidebarFixedBarContent.style.display = 'none';
+        }, 400);
+    }
+};
+let fixSidebarFixedBarContent = () => {
     let headerOffset = Math.max(pageMain.offsetTop - pageYOffset, 0);
-    let topOffset = 0;
-    if (pageTop && !pageTop.classList.contains('page__top_hidden')) {
-        topOffset = pageTop.offsetHeight;
-    }
-    if (pageTopMenu && !pageTopMenu.classList.contains('page__top-menu_hidden')) {
-        topOffset += pageTopMenu.offsetHeight;
-    }
-    pageSidebar.style.top = `${Math.max(headerOffset, topOffset)}px`;
-}; fixSidebar();
-window.addEventListener('scroll', fixSidebar);
-
-
-
-// Sidebar hide / show
-
-let showSidebar = () => {
-    pageSidebarToggle.setAttribute('aria-expanded', true)
-    pageSidebarToggle.classList.add('sidebar__toggle_active');
-    pageSidebar.classList.remove('sidebar_hide');
-    pageSidebar.style.right = `${0}px`;
-    pageMain.style.paddingRight = `${pageSidebar.offsetWidth}px`;
-};
-let hideSidebar = () => {
-    pageSidebarToggle.setAttribute('aria-expanded', false)
-    pageSidebarToggle.classList.remove('sidebar__toggle_active');
-    pageSidebar.classList.add('sidebar_hide');
-    pageSidebar.style.right = `${-sidebarContent.offsetWidth}px`;
-    pageMain.style.paddingRight = `${sidebarFixedBar.offsetWidth}px`;
-};
-pageSidebar.addEventListener('click', () => {
     let expanded = pageSidebarToggle.getAttribute('aria-expanded') === 'true' || false;
 
+    if (headerOffset === 0 && !expanded) {
+        showSidebarFixedBarContent();
+    }
+    else {
+        hideSidebarFixedBarContent();
+    }
+};
+let fixSidebar = () => {
+    fixSidebarFixedBarContent();
+
+    let headerOffset = Math.max(pageMain.offsetTop - pageYOffset, 0);
+
+    let topOffset = 0;
+    if (pageTop && !topHeaderHidden) {
+        topOffset += pageTop.offsetHeight;
+    }
+    if (pageTopMenu && !topMenuHidden) {
+        topOffset += pageTopMenu.offsetHeight;
+    }
+
+    pageSidebar.style.top = `${headerOffset}px`;
+    pageSidebar.style.paddingTop = `${Math.max(topOffset - headerOffset, 0)}px`;
+};
+
+let sidebarHidden;
+let showSidebar = () => {
+    if (sidebarHidden) {
+        sidebarHidden = false;
+        pageSidebarToggle.setAttribute('aria-expanded', true)
+        pageSidebarToggle.classList.add('sidebar__toggle_active');
+        pageSidebar.style.right = `${0}px`;
+        pageMain.style.paddingRight = `${pageSidebar.offsetWidth}px`;
+        fixSidebarFixedBarContent();
+    }
+};
+let hideSidebar = () => {
+    if (!sidebarHidden) {
+        sidebarHidden = true;
+        pageSidebarToggle.setAttribute('aria-expanded', false)
+        pageSidebarToggle.classList.remove('sidebar__toggle_active');
+        pageSidebar.style.right = `${-sidebarContent.offsetWidth}px`;
+        pageMain.style.paddingRight = `${sidebarFixedBar.offsetWidth}px`;
+        fixSidebarFixedBarContent();
+    }
+};
+
+// Initialization
+
+// Show sidebar
+sidebarHidden = false;
+withoutTransition(pageSidebarToggle, () => {
+    pageSidebarToggle.setAttribute('aria-expanded', true)
+    pageSidebarToggle.classList.add('sidebar__toggle_active');
+});
+withoutTransition(pageSidebar, () => {
+    pageSidebar.style.right = `${0}px`;
+});
+withoutTransition(pageMain, () => {
+    pageMain.style.paddingRight = `${pageSidebar.offsetWidth}px`;
+});
+
+// Setup sidebar top property
+let headerOffset = Math.max(pageMain.offsetTop - pageYOffset, 0);
+let topOffset = 0;
+if (pageTop && !topHeaderHidden) {
+    topOffset = pageTop.offsetHeight;
+}
+if (pageTopMenu && !topMenuHidden) {
+    topOffset += pageTopMenu.offsetHeight;
+}
+pageSidebar.style.top = `${Math.max(headerOffset, topOffset)}px`;
+
+// Hide sidebar-fixed-bar content 
+sidebarFixedBarContentHidden = true;
+sidebarFixedBarContent.classList.add('sidebar__fixed-bar-content_hidden');
+sidebarFixedBarContent.style.display = 'none';
+
+// Toggle button interactive
+pageSidebarToggle.addEventListener('click', () => {
+    let expanded = pageSidebarToggle.getAttribute('aria-expanded') === 'true' || false;
     if (!expanded) {
         showSidebar();
     }
@@ -224,4 +379,6 @@ pageSidebar.addEventListener('click', () => {
         hideSidebar();
     }
 });
-showSidebar();
+
+// Fixing sidebar on scroll
+window.addEventListener('scroll', fixSidebar);

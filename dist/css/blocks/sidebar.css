@@ -1,7 +1,7 @@
 /* Sidebar */
 
 .sidebar {
-  overflow: auto;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,18 +15,32 @@
           box-shadow: -7px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar_hide {
-  overflow: hidden;
-}
-
 .sidebar__fixed-bar {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+  position: relative;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 70px;
           flex: 0 0 70px;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar__fixed-bar-content {
+  -webkit-transition: all var(--transition-time, 0.4s) ease;
+  -o-transition: all var(--transition-time, 0.4s) ease;
+  transition: all var(--transition-time, 0.4s) ease;
+  opacity: 1;
+}
+
+.sidebar__fixed-bar-content_hidden {
+  opacity: 0;
 }
 
 .sidebar__toggle {
@@ -36,16 +50,16 @@
   position: absolute;
   top: 35px;
   left: 50%;
-  -webkit-transform: translate3d(-50%, 0, 0);
-          transform: translate3d(-50%, 0, 0);
+  -webkit-transform: translate3d(-50%, 0, 0) rotate(180deg);
+          transform: translate3d(-50%, 0, 0) rotate(180deg);
   -webkit-transition: all var(--transition-time, 0.4s) ease;
   -o-transition: all var(--transition-time, 0.4s) ease;
   transition: all var(--transition-time, 0.4s) ease;
 }
 
-.sidebar_hide .sidebar__toggle {
-  -webkit-transform: translate3d(-50%, 0, 0) rotate(180deg);
-          transform: translate3d(-50%, 0, 0) rotate(180deg);
+.sidebar__toggle_active {
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
 }
 
 .sidebar__content {
@@ -53,4 +67,5 @@
       -ms-flex: 1;
           flex: 1;
   padding: 80px 80px 50px 0;
+  overflow: auto;
 }

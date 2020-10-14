@@ -85,7 +85,7 @@
     }
 
     &__sidebar {
-        transition: right var(--transition-time, 0.4s) ease;
+        transition: right var(--transition-time, 0.4s) ease, padding-top var(--transition-time, 0.4s) ease;
     }
 
     &__sidebar-toggle {

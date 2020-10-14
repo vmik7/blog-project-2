@@ -25,6 +25,10 @@
   margin-right: 30px;
 }
 
+.article-action_small .article-action__item {
+  margin-right: 25px;
+}
+
 .article-action__item-icon {
   cursor: pointer;
 }
@@ -43,6 +47,10 @@
   margin-left: 19px;
 }
 
+.article-action_small .article-action__item-info {
+  margin-left: 10px;
+}
+
 .article-action__item-value {
   font-family: Montserrat, "Open Sans", sans-serif;
   font-weight: 700;
@@ -51,13 +59,14 @@
   color: #484848;
 }
 
+.article-action_small .article-action__item-value {
+  font-size: 14px;
+  line-height: 17px;
+}
+
 .article-action__item-label {
   font-family: "Open Sans", sans-serif;
   font-size: 13px;
   line-height: 17px;
   color: #C6C6C6;
-}
-
-.article-action__bookmark {
-  min-width: 235px;
 }

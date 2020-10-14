@@ -2,8 +2,6 @@
 
 .button {
   height: 37px;
-  padding: 0 30px;
-  letter-spacing: 0.06em;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -23,12 +21,28 @@
   -webkit-transition: all var(--transition-time, 0.4s) ease;
   -o-transition: all var(--transition-time, 0.4s) ease;
   transition: all var(--transition-time, 0.4s) ease;
+  padding: 0 30px;
 }
 
 .button:hover,
 .button.focus-visible {
   outline: 0;
   background: var(--accent-dark-color, #4305C7);
+}
+
+.button_small {
+  padding: 0 17px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.button_small .button__icon-block {
+  margin-left: 13px;
+}
+
+.button_wide {
+  width: 100%;
 }
 
 .button_white {
@@ -48,7 +62,7 @@
 }
 
 .button_grey path {
-  fill: #787878;
+  fill: #A0A0A0;
   -webkit-transition: all var(--transition-time, 0.4s) ease;
   -o-transition: all var(--transition-time, 0.4s) ease;
   transition: all var(--transition-time, 0.4s) ease;

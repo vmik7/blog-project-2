@@ -5,14 +5,11 @@
 
 .button {
     height: 37px;
-    padding: 0 30px;
-    letter-spacing: 0.06em;
 
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
     font-size: 14px;
     line-height: 19px;
-    // text-align: center;
 
     display: flex;
     justify-content: space-around;
@@ -31,6 +28,19 @@
         background: var(--accent-dark-color, #4305C7);
     }
 
+    padding: 0 30px;
+    &_small {
+        padding: 0 17px;
+        justify-content: center;
+    }
+    &_small &__icon-block {
+        margin-left: 13px;
+    }
+
+    &_wide {
+        width: 100%;
+    }
+
     &_white {
         background: #fff;
         color: #5a5a5a;
@@ -45,7 +55,7 @@
         background: #F5F5F5;
         color: #787878;
         path {
-            fill: #787878;
+            fill: #A0A0A0;
             transition: all var(--transition-time, 0.4s) ease;
         }
 

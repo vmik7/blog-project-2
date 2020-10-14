@@ -1,0 +1,52 @@
+@import '../_variables';
+@import '../_mixins';
+
+/* Social */
+
+.social {
+    display: flex;
+
+    &_vertical {
+        flex-direction: column;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+    &_vertical &__item {
+        &:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__link {
+        display: block;
+        width: 38px;
+        height: 38px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 50%;
+        background: #F5F5F5;
+        transition: all var(--transition-time, 0.4s) ease;
+
+        path {
+            fill: #828282;
+            transition: all var(--transition-time, 0.4s) ease;
+        }
+
+        @media screen and (min-width: $md3 + 1 + px) {
+            &:hover, &:focus {
+                background: var(--accent-color, #621EF4);
+                path {
+                    fill: #fff;
+                }
+            }
+        }
+    }
+}

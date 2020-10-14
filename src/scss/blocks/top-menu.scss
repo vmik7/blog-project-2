@@ -31,5 +31,23 @@
 
     &__container {
         height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__breadcrumbs {
+        
+    }
+
+    &__breadcrumbs-item {
+        &:not(:last-child)::after {
+            content: url("data:image/svg+xml,%3Csvg width='4' height='7' viewBox='0 0 4 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 3.5L0.6965 7L0 6.262L2.607 3.5L0 0.738L0.6965 0L4 3.5Z' fill='%23787878'/%3E%3C/svg%3E%0A");
+            margin: auto 15px;
+        }
+    }
+
+    &__breadcrumbs-link {
+        color: #787878;
     }
 }

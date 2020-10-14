@@ -4,7 +4,7 @@
 /* Sidebar */
 
 .sidebar {
-    overflow: auto;
+    overflow: hidden;
     display: flex;
 
     width: 380px;
@@ -17,16 +17,24 @@
     background: #fff;
     box-shadow: -7px 0px 10px rgba(0, 0, 0, 0.1); 
 
-    &_hide {
-        overflow: hidden;
-    }
-
     &__fixed-bar {
-        position: sticky;
-        top: 0;
+        position: relative;
 
         flex: 0 0 70px;
         height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__fixed-bar-content {
+        transition: all var(--transition-time, 0.4s) ease;
+        opacity: 1;
+    }
+
+    &__fixed-bar-content_hidden {
+        opacity: 0;
     }
 
     &__toggle {
@@ -37,16 +45,18 @@
         position: absolute;
         top: 35px;
         left: 50%;
-        transform: translate3d(-50%, 0, 0);
+        transform: translate3d(-50%, 0, 0) rotate(180deg);
 
         transition: all var(--transition-time, 0.4s) ease;
     }
-    &_hide &__toggle {
-        transform: translate3d(-50%, 0, 0) rotate(180deg);
+    &__toggle_active {
+        transform: translate3d(-50%, 0, 0);
     }
 
     &__content {
         flex: 1;
         padding: 80px 80px 50px 0;
+
+        overflow: auto;
     }
 }

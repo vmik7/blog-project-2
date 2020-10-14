@@ -16,6 +16,9 @@
         align-items: center;
         margin-right: 30px;
     }
+    &_small &__item {
+        margin-right: 25px;
+    }
 
     &__item-icon {
         cursor: pointer;
@@ -33,6 +36,9 @@
     &__item-info {
         margin-left: 19px;
     }
+    &_small &__item-info {
+        margin-left: 10px;
+    }
 
     &__item-value {
         font-family: Montserrat, "Open Sans", sans-serif;
@@ -40,6 +46,10 @@
         font-size: 17px;
         line-height: 21px;
         color: #484848;
+    }
+    &_small &__item-value {
+        font-size: 14px;
+        line-height: 17px;
     }
 
     &__item-label {
@@ -50,6 +60,6 @@
     }
 
     &__bookmark {
-        min-width: 235px;
+        
     }
 }
