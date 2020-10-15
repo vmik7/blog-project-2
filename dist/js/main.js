@@ -609,6 +609,9 @@ else {
         pageSidebar.classList.add('sidebar_hidden');
     });
 
+    // Padding-Bottom to Page-Body
+    pageBody.style.paddingBottom = `${sidebarFixedBar.offsetHeight}px`;
+
 }
 
 // Toggle button interactive

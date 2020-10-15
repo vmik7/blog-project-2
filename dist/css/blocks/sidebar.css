@@ -120,7 +120,7 @@
 
 @media screen and (max-width: 480px) {
   .sidebar {
-    top: 10%;
+    top: 17%;
     left: 0;
     width: 100%;
     -webkit-box-orient: vertical;

@@ -1,14 +1,5 @@
 /* Article-Action */
 
-.article-action {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
 .article-action__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -40,6 +31,10 @@
   transition: all var(--transition-time, 0.4s) ease;
 }
 
+.article-action__item-icon svg {
+  height: 30px;
+}
+
 .article-action__item-info {
   margin-left: 19px;
 }
@@ -66,6 +61,17 @@
   font-size: 13px;
   line-height: 17px;
   color: #C6C6C6;
+}
+
+@media screen and (min-width: 481px) {
+  .article-action {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -151,7 +157,56 @@
     font-size: 13px;
     line-height: 15px;
   }
+}
 
+@media screen and (max-width: 480px) {
+  .article-action__list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 -7px;
+  }
+
+  .article-action_small .article-action__list {
+    margin: 0;
+  }
+
+  .article-action__item {
+    margin: 0 7px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+
+  .article-action_small .article-action__item {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    text-align: left;
+  }
+
+  .article-action__item-info {
+    margin: 5px 0 0 0;
+  }
+
+  .article-action_small .article-action__item-info {
+    margin: 0 0 0 10px;
+  }
+
+  .article-action__item-label {
+    font-size: 11px;
+    line-height: 14px;
+  }
+
+  .article-action__bookmark {
+    margin: 15px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
   .article-action__item-label {
     display: none;
   }
