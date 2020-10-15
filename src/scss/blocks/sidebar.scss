@@ -17,6 +17,24 @@
     background: #fff;
     box-shadow: -7px 0px 10px rgba(0, 0, 0, 0.1); 
 
+    @media screen and (max-width: $md2 + px) {
+        box-shadow: -2px 0 10px rgba(0,0,0,.1);
+    }
+    @media screen and (max-width: $md3 + px) {
+        width: 350px;
+    }
+    @media screen and (max-width: $md4 + px) {
+        top: 10%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        z-index: 2000;
+
+        &_hidden {
+            top: calc(100vh - 50px);
+        }
+    }
+
     &__fixed-bar {
         position: relative;
 
@@ -26,15 +44,35 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media screen and (max-width: $md3 + px) {
+            flex: 0 0 60px;
+        }
+        @media screen and (max-width: $md4 + px) {
+            flex: 0 0 50px;
+            justify-content: flex-start;
+        }
     }
 
     &__fixed-bar-content {
         transition: all var(--transition-time, 0.4s) ease;
         opacity: 1;
-    }
 
-    &__fixed-bar-content_hidden {
-        opacity: 0;
+        &_hidden {
+            opacity: 0;
+        }
+
+        &_desktop {
+            @media screen and (max-width: $md4 + px) {
+                display: none;
+            }
+        }
+
+        &_mobile {
+            @media screen and (min-width: $md4 + 1 + px) {
+                display: none;
+            }
+        }
     }
 
     &__toggle {
@@ -43,20 +81,55 @@
         padding: 0;
 
         position: absolute;
-        top: 35px;
-        left: 50%;
-        transform: translate3d(-50%, 0, 0) rotate(180deg);
+        
+
+        @media screen and (min-width: $md3 + 1 + px) {
+            top: 35px;
+        }
+        @media screen and (min-width: $md4 + 1 + px) {
+            top: 30px;
+            left: 50%;
+            transform: translate3d(-50%, 0, 0) rotate(180deg);
+        }
+        @media screen and (max-width: $md4 + px) {
+            right: 25px;
+            top: 50%;
+            transform: translate3d(0, -50%, 0) rotate(-90deg);
+        }
 
         transition: all var(--transition-time, 0.4s) ease;
     }
     &__toggle_active {
-        transform: translate3d(-50%, 0, 0);
+        @media screen and (min-width: $md4 + 1 + px) {
+            transform: translate3d(-50%, 0, 0);
+        }
+        @media screen and (max-width: $md4 + px) {
+            transform: translate3d(0, -50%, 0) rotate(90deg);
+        }
     }
 
     &__content {
         flex: 1;
         padding: 80px 80px 50px 0;
-
         overflow: auto;
+
+        @media screen and (max-width: $md3 + px) {
+            padding: 70px 60px 40px 0;
+        }
+        @media screen and (max-width: $md4 + px) {
+            padding: 15px 15px;
+            text-align: center;
+            max-width: 340px;
+            margin: 0 auto;
+        }
+
+        opacity: 1;
+        visibility: visible;
+
+        transition: all var(--transition-time, 0.4s) ease;
+    }
+    &_hidden &__content {
+        opacity: 0;
+        visibility: hidden;
     }
 }

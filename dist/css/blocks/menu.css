@@ -152,7 +152,7 @@
   }
 }
 
-@media screen and (min-width: 1213px) {
+@media screen and (min-width: 1231px) {
   .menu__list-item:not(:last-child) {
     margin-right: 22%;
   }

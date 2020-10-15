@@ -10,10 +10,12 @@
 
     &__action {
         padding: 50px 0;
-    }
-
-    &__action-bookmark {
-        min-width: 235px;
+        @media screen and (max-width: $md2 + px) {
+            padding: 35px 0;
+        }
+        @media screen and (max-width: $md3 + px) {
+            padding: 25px 0;
+        }
     }
 
     &__content {

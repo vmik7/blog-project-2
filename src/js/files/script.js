@@ -322,42 +322,185 @@ let showSidebar = () => {
     if (sidebarHidden) {
         sidebarHidden = false;
         pageSidebarToggle.setAttribute('aria-expanded', true)
-        pageSidebarToggle.classList.add('sidebar__toggle_active');
-        pageSidebar.style.right = `${0}px`;
-        pageSidebar.classList.remove('sidebar_hidden');
 
-        if (window.matchMedia('(max-width: 1290px)').matches) {
+        if (window.matchMedia('(min-width: 1291px)').matches) {
+
+            // Desktop
+
+            pageSidebar.style.right = `${0}px`;
+            pageMain.style.paddingRight = `${pageSidebar.offsetWidth}px`;
+            pageSidebarToggle.classList.add('sidebar__toggle_active');
+            pageSidebar.classList.remove('sidebar_hidden');
+
+            fixSidebarFixedBarContent();
+        }
+        else if (window.matchMedia('(min-width: 481px)').matches) {
+
+            // Tablet
+
             pageSidebarOverlayer.classList.add('page__sidebar-overlayer_active');
             pageBody.classList.add('page__body_lock');
-        } else {
-            pageMain.style.paddingRight = `${pageSidebar.offsetWidth}px`;
+
+            let headerOffset = Math.max(pageMain.offsetTop - pageYOffset, 0);
+            if (headerOffset) {
+
+                withoutTransition(pageSidebarOverlayer, () => {
+                    pageSidebarOverlayer.style.zIndex = '1';
+                });
+                withoutTransition(pageSidebar, () => {
+                    pageSidebar.style.zIndex = '1';
+                });
+
+                setTimeout(() => {
+                    let tranBackup = window.getComputedStyle(pageSidebar).transition;
+                    pageSidebar.style.transition = 'all 0.3s ease';
+
+                    let topOffset = 0;
+                    if (pageTop && !topHeaderHidden) {
+                        topOffset += pageTop.offsetHeight;
+                    }
+                    if (pageTopMenu && !topMenuHidden) {
+                        topOffset += pageTopMenu.offsetHeight;
+                    }
+
+                    pageSidebar.style.top = `${topOffset}px`;
+                    pageSidebar.style.paddingTop = `0px`;
+
+                    setTimeout(() => {
+                        pageSidebar.style.transition = tranBackup;
+                        pageSidebar.style.right = `${0}px`;
+                        pageSidebarToggle.classList.add('sidebar__toggle_active');
+                        pageSidebar.classList.remove('sidebar_hidden');
+                    }, 300);
+                }, 40);
+            }
+            else {
+                pageSidebar.style.right = `${0}px`;
+                pageSidebarToggle.classList.add('sidebar__toggle_active');
+                pageSidebar.classList.remove('sidebar_hidden');
+            }
+
+            fixSidebarFixedBarContent();
+        }
+        else {
+
+            // Mobile
+
+            pageSidebarOverlayer.classList.add('page__sidebar-overlayer_active');
+            pageBody.classList.add('page__body_lock');
+
+            pageSidebarToggle.classList.add('sidebar__toggle_active');
+            pageSidebar.classList.remove('sidebar_hidden');
+
         }
 
-        fixSidebarFixedBarContent();
     }
 };
 let hideSidebar = () => {
     if (!sidebarHidden) {
         sidebarHidden = true;
-        pageSidebarToggle.setAttribute('aria-expanded', false)
-        pageSidebarToggle.classList.remove('sidebar__toggle_active');
-        pageSidebar.classList.add('sidebar_hidden');
-        pageSidebar.style.right = `${-sidebarContent.offsetWidth}px`;
+        pageSidebarToggle.setAttribute('aria-expanded', false);
 
-        if (window.matchMedia('(max-width: 1290px)').matches) {
+        if (window.matchMedia('(min-width: 1291px)').matches) {
+
+            // Desktop
+
+            pageMain.style.paddingRight = `${sidebarFixedBar.offsetWidth}px`;
+            pageSidebarToggle.classList.remove('sidebar__toggle_active');
+            pageSidebar.classList.add('sidebar_hidden');
+            pageSidebar.style.right = `${-sidebarContent.offsetWidth}px`;
+
+            fixSidebarFixedBarContent();
+        }
+        else if (window.matchMedia('(min-width: 481px)').matches) {
+
+            // Tablet
+
+            pageSidebarToggle.classList.remove('sidebar__toggle_active');
+            pageSidebar.classList.add('sidebar_hidden');
+            pageSidebar.style.right = `${-sidebarContent.offsetWidth}px`;
+
+            let headerOffset = Math.max(pageMain.offsetTop - pageYOffset, 0);
+            if (headerOffset) {
+                setTimeout(() => {
+                    let tranBackup = window.getComputedStyle(pageSidebar).transition;
+                    pageSidebar.style.transition = 'all 0.4s ease';
+    
+                    fixSidebar();
+                    
+                    pageSidebarOverlayer.classList.remove('page__sidebar-overlayer_active');
+                    pageBody.classList.remove('page__body_lock');
+    
+                    setTimeout(() => {
+                        pageSidebar.style.transition = tranBackup;
+                        pageSidebar.style.zIndex = '0';
+                        pageSidebarOverlayer.style.zIndex = '0';
+                    }, 400);
+                }, 400);
+            }
+            else {
+                pageSidebarOverlayer.classList.remove('page__sidebar-overlayer_active');
+                pageBody.classList.remove('page__body_lock');
+            }
+
+            fixSidebarFixedBarContent();
+        }
+        else {
+
+            // Mobile
+
+            pageSidebarToggle.classList.remove('sidebar__toggle_active');
+            pageSidebar.classList.add('sidebar_hidden');
             pageSidebarOverlayer.classList.remove('page__sidebar-overlayer_active');
             pageBody.classList.remove('page__body_lock');
-        } else {
-            pageMain.style.paddingRight = `${sidebarFixedBar.offsetWidth}px`;
-        }
 
-        fixSidebarFixedBarContent();
+        }
     }
 };
 
 // Initialization
 
-if (window.matchMedia('(max-width: 1290px)').matches) {
+if (window.matchMedia('(min-width: 1291px)').matches) {
+
+    // Desktop
+
+    // Show
+    sidebarHidden = false;
+    withoutTransition(pageSidebarToggle, () => {
+        pageSidebarToggle.setAttribute('aria-expanded', true)
+        pageSidebarToggle.classList.add('sidebar__toggle_active');
+    });
+    withoutTransition(pageSidebar, () => {
+        pageSidebar.classList.remove('sidebar_hidden');
+        pageSidebar.style.right = `${0}px`;
+    });
+    withoutTransition(pageMain, () => {
+        pageMain.style.paddingRight = `${pageSidebar.offsetWidth}px`;
+    });
+
+    // Setup sidebar top property
+    let headerOffset = Math.max(pageMain.offsetTop - pageYOffset, 0);
+    let topOffset = 0;
+    if (pageTop && !topHeaderHidden) {
+        topOffset = pageTop.offsetHeight;
+    }
+    if (pageTopMenu && !topMenuHidden) {
+        topOffset += pageTopMenu.offsetHeight;
+    }
+    pageSidebar.style.top = `${Math.max(headerOffset, topOffset)}px`;
+
+    // Hide sidebar-fixed-bar content 
+    sidebarFixedBarContentHidden = true;
+    sidebarFixedBarContent.classList.add('sidebar__fixed-bar-content_hidden');
+    sidebarFixedBarContent.style.display = 'none';
+
+    // Fixing sidebar on scroll
+    window.addEventListener('scroll', fixSidebar);
+    
+}
+else if (window.matchMedia('(min-width: 481px)').matches) {
+
+    // Tablet
 
     // Hide
     sidebarHidden = true;
@@ -372,39 +515,42 @@ if (window.matchMedia('(max-width: 1290px)').matches) {
     withoutTransition(pageMain, () => {
         pageMain.style.paddingRight = `${sidebarFixedBar.offsetWidth}px`;
     });
+
+    // Setup sidebar top property
+    let headerOffset = Math.max(pageMain.offsetTop - pageYOffset, 0);
+    let topOffset = 0;
+    if (pageTop && !topHeaderHidden) {
+        topOffset = pageTop.offsetHeight;
+    }
+    if (pageTopMenu && !topMenuHidden) {
+        topOffset += pageTopMenu.offsetHeight;
+    }
+    pageSidebar.style.top = `${Math.max(headerOffset, topOffset)}px`;
+
+    // Hide sidebar-fixed-bar content 
+    sidebarFixedBarContentHidden = true;
+    sidebarFixedBarContent.classList.add('sidebar__fixed-bar-content_hidden');
+    sidebarFixedBarContent.style.display = 'none';
+
+    // Fixing sidebar on scroll
+    window.addEventListener('scroll', fixSidebar);
+
 }
 else {
 
-    // Show
-    sidebarHidden = false;
+    // Mobile
+
+    // Hide
+    sidebarHidden = true;
     withoutTransition(pageSidebarToggle, () => {
-        pageSidebarToggle.setAttribute('aria-expanded', true)
-        pageSidebarToggle.classList.add('sidebar__toggle_active');
+        pageSidebarToggle.setAttribute('aria-expanded', false)
+        pageSidebarToggle.classList.remove('sidebar__toggle_active');
     });
     withoutTransition(pageSidebar, () => {
         pageSidebar.classList.add('sidebar_hidden');
-        pageSidebar.style.right = `${0}px`;
     });
-    withoutTransition(pageMain, () => {
-        pageMain.style.paddingRight = `${pageSidebar.offsetWidth}px`;
-    });
-}
 
-// Setup sidebar top property
-let headerOffset = Math.max(pageMain.offsetTop - pageYOffset, 0);
-let topOffset = 0;
-if (pageTop && !topHeaderHidden) {
-    topOffset = pageTop.offsetHeight;
 }
-if (pageTopMenu && !topMenuHidden) {
-    topOffset += pageTopMenu.offsetHeight;
-}
-pageSidebar.style.top = `${Math.max(headerOffset, topOffset)}px`;
-
-// Hide sidebar-fixed-bar content 
-sidebarFixedBarContentHidden = true;
-sidebarFixedBarContent.classList.add('sidebar__fixed-bar-content_hidden');
-sidebarFixedBarContent.style.display = 'none';
 
 // Toggle button interactive
 let toggleSidebar = () => {
@@ -421,6 +567,3 @@ if (window.matchMedia('(max-width: 1290px)').matches) {
     pageSidebarOverlayer.addEventListener('click', toggleSidebar);
 }
 
-
-// Fixing sidebar on scroll
-window.addEventListener('scroll', fixSidebar);

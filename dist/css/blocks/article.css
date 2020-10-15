@@ -4,10 +4,18 @@
   padding: 50px 0;
 }
 
-.article__action-bookmark {
-  min-width: 235px;
-}
-
 .article__content {
   padding-top: 40px;
+}
+
+@media screen and (max-width: 992px) {
+  .article__action {
+    padding: 35px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .article__action {
+    padding: 25px 0;
+  }
 }

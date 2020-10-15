@@ -31,16 +31,13 @@
 
 .article-action__item-icon {
   cursor: pointer;
+  font-size: 0;
 }
 
 .article-action__item-icon path {
   -webkit-transition: all var(--transition-time, 0.4s) ease;
   -o-transition: all var(--transition-time, 0.4s) ease;
   transition: all var(--transition-time, 0.4s) ease;
-}
-
-.article-action__item-icon:hover path {
-  fill: var(--accent-color, #621EF4);
 }
 
 .article-action__item-info {
@@ -69,4 +66,93 @@
   font-size: 13px;
   line-height: 17px;
   color: #C6C6C6;
+}
+
+@media screen and (min-width: 769px) {
+  .article-action__item-icon:hover path {
+    fill: var(--accent-color, #621EF4);
+  }
+}
+
+@media screen and (max-width: 1230px) {
+  .article-action_small .article-action__item {
+    margin-right: 20px;
+  }
+
+  .article-action_small .article-action__item-icon svg {
+    height: 19px;
+  }
+
+  .article-action_small .article-action__item-info {
+    margin-left: 7px;
+  }
+
+  .article-action_small .article-action__item-value {
+    font-size: 13px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .article-action__item {
+    margin-right: 15px;
+  }
+
+  .article-action_small .article-action__item {
+    margin-right: 10px;
+  }
+
+  .article-action__item-icon svg {
+    height: 27px;
+  }
+
+  .article-action_small .article-action__item-icon svg {
+    height: 18px;
+  }
+
+  .article-action__item-info {
+    margin-left: 10px;
+  }
+
+  .article-action_small .article-action__item-info {
+    margin-left: 5px;
+  }
+
+  .article-action__item-value {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .article-action_small .article-action__item-value {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .article-action__item-label {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .article-action__item {
+    margin-right: 10px;
+  }
+
+  .article-action__item-icon svg {
+    height: 23px;
+  }
+
+  .article-action__item-info {
+    margin-left: 5px;
+  }
+
+  .article-action__item-value {
+    font-size: 13px;
+    line-height: 15px;
+  }
+
+  .article-action__item-label {
+    display: none;
+  }
 }
