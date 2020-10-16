@@ -71,6 +71,32 @@
   visibility: hidden;
 }
 
+.sidebar__section {
+  margin: 0px 0px 50px 0px;
+}
+
+.sidebar__title {
+  font-family: Montserrat, "Open Sans", sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 21px;
+  color: #3C3C3C;
+  margin: 0 0 32px 0;
+}
+
+.sidebar__form-submit {
+  margin-top: 23px;
+}
+
+.sidebar__image {
+  border-radius: 11px;
+  overflow: hidden;
+}
+
+.sidebar__image img {
+  max-width: 100%;
+}
+
 @media screen and (min-width: 481px) {
   .sidebar__fixed-bar-content_mobile {
     display: none;
@@ -161,8 +187,15 @@
 
   .sidebar__content {
     padding: 15px 15px;
+  }
+
+  .sidebar__social {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .sidebar__image {
     text-align: center;
-    max-width: 340px;
-    margin: 0 auto;
   }
 }

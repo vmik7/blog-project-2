@@ -1,0 +1,75 @@
+@import '../_variables';
+@import '../_mixins';
+
+/* Popular */
+
+.popular {
+
+    &__item {
+        display: flex;
+        margin: 20px 0;
+    }
+
+    &__body {
+        flex: 1;
+    }
+
+    &__title {
+        font-family: Montserrat, "Open Sans", sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        color: #5A5A5A;
+
+        margin: 0px 0px 5px 0px;
+
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 165px;
+
+        transition: all var(--transition-time, 0.4s) ease;
+
+        @media screen and (min-width: $md3 + 1 + px) {
+            &:hover {
+                color: var(--accent-color, #621EF4);
+            }
+        }
+    }
+
+    &__text {
+        font-family: "Open Sans", sans-serif;
+        font-size: 11px;
+        line-height: 15px;
+        color: #BEBEBE;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+
+    &__metrics {
+        flex-shrink: 0;
+        display: flex;
+    }
+
+    &__index {
+        margin-left: 10px;
+    }
+
+    &__index-icon {
+        margin-bottom: 7px;
+    }
+
+    &__index-value {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 600;
+        font-size: 11px;
+        line-height: 15px;
+        text-align: center;
+        color: #AAAAAA;
+    }
+}

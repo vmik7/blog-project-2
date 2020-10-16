@@ -118,9 +118,6 @@
         }
         @media screen and (max-width: $md4 + px) {
             padding: 15px 15px;
-            text-align: center;
-            max-width: 340px;
-            margin: 0 auto;
         }
 
         opacity: 1;
@@ -131,5 +128,49 @@
     &_hidden &__content {
         opacity: 0;
         visibility: hidden;
+    }
+
+    &__section {
+        margin: 0px 0px 50px 0px;
+    }
+
+    &__title {
+        font-family: Montserrat, "Open Sans", sans-serif;
+        font-weight: 800;
+        font-size: 17px;
+        line-height: 21px;
+        color: #3C3C3C;
+
+        margin: 0 0 32px 0;
+    }
+
+    &__social {
+        @media screen and (max-width: $md4 + px) {
+            justify-content: center;
+        }
+    }
+
+    &__form {
+    }
+
+    &__form-submit {
+        margin-top: 23px;
+    }
+
+    &__image {
+        border-radius: 11px;
+        overflow: hidden;
+
+        img {
+            max-width: 100%;
+        }
+
+        @media screen and (max-width: $md4 + px) {
+            text-align: center;
+        }
+    }
+
+    &__category-list {
+
     }
 }

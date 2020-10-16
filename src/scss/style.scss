@@ -121,9 +121,14 @@ a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
 @import 'blocks/article-header';
 
 @import 'blocks/main';
-@import 'blocks/sidebar';
 @import 'blocks/page-content';
 @import 'blocks/article';
 @import 'blocks/article-action';
+
+@import 'blocks/sidebar';
+@import 'blocks/category';
+@import 'blocks/theme-list';
+@import 'blocks/popular';
+@import 'blocks/recent';
 
 @import 'blocks/footer';
