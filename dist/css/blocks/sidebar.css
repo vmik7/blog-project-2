@@ -15,6 +15,18 @@
           box-shadow: -7px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
+.sidebar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  background: -webkit-gradient(linear, left bottom, left top, from(white), to(rgba(255, 255, 255, 0)));
+  background: -o-linear-gradient(bottom, white, rgba(255, 255, 255, 0));
+  background: linear-gradient(0deg, white, rgba(255, 255, 255, 0));
+}
+
 .sidebar__fixed-bar {
   position: relative;
   -webkit-box-flex: 0;

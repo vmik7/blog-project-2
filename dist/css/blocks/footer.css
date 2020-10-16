@@ -1,0 +1,198 @@
+.footer {
+  background: #FCFAFA;
+  padding: 55px 0 45px 0;
+}
+
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer__left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 350px;
+          flex: 0 1 350px;
+}
+
+.footer__contacts-list {
+  margin-top: 32px;
+}
+
+.footer__contacts-item {
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  line-height: 19px;
+  color: #9D9D9D;
+}
+
+.footer__contacts-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer__contacts-item_payment {
+  margin-top: 22px;
+}
+
+.footer__contacts-title {
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 21px;
+  color: #22212C;
+  margin-right: 5px;
+}
+
+.footer__contacts-title::after {
+  content: ':';
+}
+
+.footer__contacts-item_payment .footer__contacts-title {
+  margin-right: 15px;
+}
+
+.footer__payment-link {
+  margin-right: 19px;
+}
+
+.footer__payment-more {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  text-decoration: underline;
+  color: #B7B6C9;
+  display: block;
+  margin-top: 15px;
+}
+
+.footer__right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 110px;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer__right-title {
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #21212C;
+}
+
+.footer__list {
+  margin-top: 13px;
+}
+
+.footer__list-item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.footer__list-link {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #9D9D9D;
+}
+
+@media screen and (max-width: 1230px) {
+  .footer__right {
+    grid-template-columns: 1fr 1fr;
+    margin-left: 80px;
+  }
+
+  .footer__right-item {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .footer__contacts-list {
+    margin-top: 25px;
+  }
+
+  .footer__contacts-item {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .footer__right {
+    margin-left: 20px;
+  }
+
+  .footer__right-item {
+    margin-bottom: 25px;
+  }
+
+  .footer__list {
+    margin-top: 8px;
+  }
+
+  .footer__list-item:not(:last-child) {
+    margin-bottom: 6px;
+  }
+
+  .footer__list-link {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer__container {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+
+  .footer__left {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 35%;
+            flex: 0 1 35%;
+  }
+
+  .footer__right {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    -webkit-box-flex: initial;
+        -ms-flex: initial;
+            flex: initial;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 35px 0 25px 0;
+  }
+
+  .footer__container {
+    display: block;
+  }
+
+  .footer__left {
+    margin-bottom: 25px;
+  }
+
+  .footer__logo {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+
+  .footer__payment-link {
+    margin-right: 15px;
+  }
+
+  .footer__payment-more {
+    text-align: center;
+  }
+
+  .footer__right {
+    text-align: center;
+  }
+}

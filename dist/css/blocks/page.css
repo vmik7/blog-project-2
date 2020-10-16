@@ -110,6 +110,10 @@
   margin: 0 auto;
 }
 
+.page__footer {
+  z-index: 0;
+}
+
 @media screen and (min-width: 481px) {
   .page__sidebar {
     -webkit-transition: right var(--transition-time, 0.4s) ease, padding-top var(--transition-time, 0.4s) ease;

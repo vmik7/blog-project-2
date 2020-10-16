@@ -41,6 +41,7 @@ const pageSidebarToggle = document.querySelector('.page__sidebar-toggle');
 const pageSidebarOverlayer = document.querySelector('.page__sidebar-overlayer');
 const pageContent = document.querySelector('.page__content');
 const pageArticleAction = document.querySelector('.page__article-action');
+const pageFooter = document.querySelector('.page__footer');
 
 const menuButton = pageTopHeader.querySelector('.top-header__menu .menu__button');
 const menuBody = pageTopHeader.querySelector('.top-header__menu .menu__body');
@@ -291,9 +292,10 @@ let hideSidebarFixedBarContent = () => {
 };
 let fixSidebarFixedBarContent = () => {
     let headerOffset = Math.max(pageMain.offsetTop - pageYOffset, 0);
+    let footerOffset = Math.max(window.innerHeight - pageFooter.offsetTop + window.pageYOffset, 0);
     let expanded = pageSidebarToggle.getAttribute('aria-expanded') === 'true' || false;
 
-    if (headerOffset === 0 && !expanded) {
+    if (headerOffset === 0 && footerOffset === 0 && !expanded) {
         showSidebarFixedBarContent();
     }
     else {
@@ -315,6 +317,9 @@ let fixSidebar = () => {
 
     pageSidebar.style.top = `${headerOffset}px`;
     pageSidebar.style.paddingTop = `${Math.max(topOffset - headerOffset, 0)}px`;
+
+    let footerOffset = Math.max(window.innerHeight - pageFooter.offsetTop + window.pageYOffset, 0);
+    pageSidebar.style.bottom = `${footerOffset}px`;
 };
 
 let sidebarHidden;
@@ -342,7 +347,9 @@ let showSidebar = () => {
             pageBody.classList.add('page__body_lock');
 
             let headerOffset = Math.max(pageMain.offsetTop - pageYOffset, 0);
-            if (headerOffset) {
+            let footerOffset = Math.max(window.innerHeight - pageFooter.offsetTop + window.pageYOffset, 0);
+
+            if (headerOffset || footerOffset) {
 
                 withoutTransition(pageSidebarOverlayer, () => {
                     pageSidebarOverlayer.style.zIndex = '1';
@@ -365,6 +372,7 @@ let showSidebar = () => {
 
                     pageSidebar.style.top = `${topOffset}px`;
                     pageSidebar.style.paddingTop = `0px`;
+                    pageSidebar.style.bottom = `0px`;
 
                     setTimeout(() => {
                         pageSidebar.style.transition = tranBackup;
@@ -421,7 +429,9 @@ let hideSidebar = () => {
             pageSidebar.style.right = `${-sidebarContent.offsetWidth}px`;
 
             let headerOffset = Math.max(pageMain.offsetTop - pageYOffset, 0);
-            if (headerOffset) {
+            let footerOffset = Math.max(window.innerHeight - pageFooter.offsetTop + window.pageYOffset, 0);
+
+            if (headerOffset || footerOffset) {
                 setTimeout(() => {
                     let tranBackup = window.getComputedStyle(pageSidebar).transition;
                     pageSidebar.style.transition = 'all 0.4s ease';
