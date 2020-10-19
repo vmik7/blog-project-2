@@ -8,6 +8,10 @@
   color: #333;
 }
 
+.article__content {
+  margin-bottom: 60px;
+}
+
 .article__clearfix {
   margin-top: -40px;
 }
@@ -250,6 +254,10 @@
   text-align: center;
   color: #fff;
   z-index: 1;
+}
+
+.article__footer {
+  margin-bottom: 100px;
 }
 
 .article__scroll-top {

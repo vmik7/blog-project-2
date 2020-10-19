@@ -1,0 +1,70 @@
+@import '../_variables';
+@import '../_mixins';
+
+/* Article-Footer */
+
+.article-footer {
+
+    &__action {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__author {
+        margin-top: 30px;
+    }
+
+    &__useful {
+        margin-top: 70px;
+        display: flex;
+    }
+
+    &__useful-label {
+        font-family: "Proxima Nova", sans-serif;
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 22px;
+        color: #1E1E1E;
+    }
+
+    &__useful-buttons {
+        display: flex;
+        margin-left: auto;
+
+        & > *:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        span {
+            font-family: "Proxima Nova", sans-serif;
+            font-weight: 800;
+            font-size: 22px;
+            line-height: 27px;
+            color: #3C3C3C;
+            margin: 0 40px;
+        }
+
+        &::before, &::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #F5F5F5;
+        }
+
+        margin-bottom: 70px;
+    }
+
+    &__see-also {
+        margin-top: 80px;
+    }
+
+    &__comments {
+        margin-top: 70px;
+    }
+}

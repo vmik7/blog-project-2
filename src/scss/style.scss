@@ -133,12 +133,16 @@ a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
 
 @import 'blocks/main';
 @import 'blocks/page-content';
+
 @import 'blocks/article';
 @import 'blocks/article-header';
 @import 'blocks/article-action';
 @import 'blocks/contents-table';
 @import 'blocks/quote';
 @import 'blocks/message';
+@import 'blocks/article-footer';
+@import 'blocks/author';
+@import 'blocks/see-also';
 
 @import 'blocks/sidebar';
 @import 'blocks/category';
