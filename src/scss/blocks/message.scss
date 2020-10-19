@@ -1,0 +1,72 @@
+@import '../_variables';
+@import '../_mixins';
+
+/* Message */
+
+// :root {
+    // --message-bg: #F0F0F0;
+    // --message-icon: url('../../img/message/message-icon.svg');
+    // --message-color: #5A5A5A;
+// }
+
+.message {
+    position: relative;
+    padding: 23px 28px 26px 120px;
+    background: var(--message-bg, #F0F0F0);
+    border-radius: 5px;
+    min-height: 124px;
+
+    &__text {
+        font-family: "Open Sans", sans-serif;
+        font-size: 15px;
+        line-height: 25px;
+        font-weight: var(--message-font-weight, 400);
+        color: var(--message-color, #5A5A5A);
+    }
+
+    &::before {
+        content: var(--message-icon, url('../../img/message/message-icon.svg'));
+        position: absolute;
+        width: 120px;
+        top: 42px;
+        left: 0;
+        text-align: center;
+    }
+
+    &_ok {
+        --message-bg: linear-gradient(90deg, #D9FFEA 0%, #F6FFC1 100%);;
+        --message-icon: url('../../img/message/message-icon_ok.svg');
+        --message-font-weight: 600;
+        --message-color: #333;
+    }
+
+    &_attention {
+        --message-bg: linear-gradient(90deg, #F6FFC1 0%, #FFE6C1 100%);;
+        --message-icon: url('../../img/message/message-icon_attention.svg');
+        --message-font-weight: 400;
+        --message-color: #5A5A5A;
+    }
+
+    &_warning {
+        --message-bg: linear-gradient(90deg, #FFEE55 0%, #FFF9C6 100%);;
+        --message-icon: url('../../img/message/message-icon_warning.svg');
+        --message-font-weight: 400;
+        --message-color: #5A5A5A;
+    }
+
+    &_error {
+        --message-bg: linear-gradient(90deg, #FF9C96 0%, #FCD8D6 100%);;
+        --message-icon: url('../../img/message/message-icon_error.svg');
+        --message-font-weight: 400;
+        --message-color: #5A5A5A;
+    }
+
+    &_info {
+        --message-bg: linear-gradient(90deg, #ACDDF9 0%, #E1FAFF 100%);;
+        --message-icon: url('../../img/message/message-icon_info.svg');
+        --message-font-weight: 400;
+        --message-color: #5A5A5A;
+    }
+
+    
+}

@@ -1,0 +1,42 @@
+@import '../_variables';
+@import '../_mixins';
+
+/* Quote */
+
+.quote {
+    position: relative;
+    padding: 26px 29px 22px 120px;
+    border-radius: 5px;
+    background: #F0F0F0;
+
+    &::before {
+        content: url('../../img/quote.svg');
+        position: absolute;
+        width: 120px;
+        top: 44px;
+        left: 0;
+        text-align: center;
+    }
+
+    &__text {
+        font-family: "Roboto Slab", sans-serif;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 25px;
+        color: #5A5A5A;
+    }
+
+    &__author {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 18px;
+        color: #787878;
+        margin-top: 15px;
+        text-align: right;
+    }
+
+    &__author-name {
+        font-weight: 400;
+    }
+}

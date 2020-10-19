@@ -99,6 +99,17 @@ a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
     @include no-focus-outline();
 }
 
+// clearfix
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+	*zoom: 1;
+}
 
 
 // BEM BLOCKS
@@ -126,6 +137,8 @@ a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
 @import 'blocks/article-header';
 @import 'blocks/article-action';
 @import 'blocks/contents-table';
+@import 'blocks/quote';
+@import 'blocks/message';
 
 @import 'blocks/sidebar';
 @import 'blocks/category';
