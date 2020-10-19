@@ -1,0 +1,125 @@
+/* Header */
+
+.header {
+  position: relative;
+  background: transparent;
+  z-index: 1;
+  padding: 50px 0 40px 0;
+  min-height: 420px;
+  height: 1px;
+}
+
+.header__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+  background-color: #363636;
+}
+
+.header__container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__breadcrumbs {
+  text-align: center;
+}
+
+.header__breadcrumbs-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.header__breadcrumbs-link {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.header__title {
+  font-family: "Proxima Nova", "Montserrat", "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 55px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  max-width: 970px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 992px) {
+  .header {
+    padding: 30px 0 25px 0;
+    min-height: 340px;
+  }
+
+  .header__breadcrumbs-link {
+    font-size: 13px;
+  }
+
+  .header__title {
+    max-width: 650px;
+    font-size: 35px;
+    line-height: 48px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 20px 0;
+    min-height: 280px;
+  }
+
+  .header__breadcrumbs-link {
+    font-size: 12px;
+  }
+
+  .header__title {
+    max-width: 100%;
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 15px 0;
+    min-height: 250px;
+  }
+
+  .header__title {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}

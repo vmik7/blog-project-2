@@ -1,21 +1,20 @@
 /* Article */
 
-.article__action {
-  padding: 50px 0;
+.article__scroll-top {
+  position: fixed;
+  left: 0;
+  top: 40%;
+  -webkit-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: rotate(-90deg) translate3d(-50%, 0px, 0px);
+          transform: rotate(-90deg) translate3d(-50%, 0px, 0px);
+  border-radius: 0px 0px 5px 5px;
+  -webkit-transition: all var(--transition-time, 0.4s) ease;
+  -o-transition: all var(--transition-time, 0.4s) ease;
+  transition: all var(--transition-time, 0.4s) ease;
 }
 
-.article__content {
-  padding-top: 40px;
-}
-
-@media screen and (max-width: 992px) {
-  .article__action {
-    padding: 35px 0;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .article__action {
-    padding: 25px 0;
-  }
+.article__scroll-top_hidden {
+  opacity: 0;
 }

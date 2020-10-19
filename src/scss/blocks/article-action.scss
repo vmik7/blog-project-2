@@ -4,7 +4,7 @@
 /* Article-Action */
 
 .article-action {
-    @media screen and (min-width: $md4 + 1 + px) {
+    @media screen and (min-width: $md3 + 1 + px) {
         display: flex;
         justify-content: space-between;
     }
@@ -15,9 +15,13 @@
     
     &__list {
         display: flex;
+        @media screen and (max-width: $md3 + px) {
+            justify-content: space-between;
+            max-width: 430px;
+            margin: 0 auto;
+        }
         @media screen and (max-width: $md4 + px) {
-            justify-content: center;
-            margin: 0 -7px;
+            max-width: 320px;
         }
     }
     &_small &__list {
@@ -34,7 +38,7 @@
             margin-right: 15px;
         }
         @media screen and (max-width: $md3 + px) {
-            margin-right: 10px;
+            margin: 0;
         }
         @media screen and (max-width: $md4 + px) {
             margin: 0 7px;
@@ -101,7 +105,7 @@
             margin-left: 10px;
         }
         @media screen and (max-width: $md3 + px) {
-            margin-left: 5px;
+            // margin-left: 5px;
         }
         @media screen and (max-width: $md4 + px) {
             margin: 5px 0 0 0;
@@ -161,17 +165,18 @@
             font-size: 12px;
             line-height: 16px;
         }
-        @media screen and (max-width: $md3 + px) and (min-width: $md4 + 1 + px) {
-            display: none;
+        @media screen and (max-width: $md3 + px) {
+            font-size: 11px;
+            line-height: 14px;
         }
         @media screen and (max-width: $md4 + px) {
-            font-size: 11px;
-            line-height: 14px;        
+            // font-size: 11px;
+            // line-height: 14px;        
         }
     }
 
     &__bookmark {
-        @media screen and (max-width: $md4 + px) {
+        @media screen and (max-width: $md3 + px) {
             margin: 15px auto 0 auto;
         }
     }

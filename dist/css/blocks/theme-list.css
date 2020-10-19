@@ -1,16 +1,21 @@
 /* Theme-List */
 
 .theme-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   margin: -7px -8px -8px -7px;
 }
 
 .theme-list__item {
   margin: 7px 8px 8px 7px;
+  display: inline-block;
+}
+
+.theme-list__label {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  color: #1E1E1E;
+  margin-right: 21px;
 }
 
 .theme-list__button {

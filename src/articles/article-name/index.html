@@ -134,36 +134,36 @@
 
     <!-- Header -->
     <header class="page__header page-header">
-        <div class="page-header__content article-header">
+        <div class="page-header__content header">
             <picture>
                 <source srcset="../../img/header-bg@1x.webp 1x,
                                 img/header-bg@2x.webp 2x"
                         type="image/webp">
                 <img	src="../../img/header-bg@1x.jpg"
                         srcset="../../img/header-bg@2x.jpg 2x"
-                        alt="background" class="article-header__background">
+                        alt="background" class="header__background">
             </picture>
-            <div class="page__container article-header__container">
-                <nav class="article-header__breadcrumbs breadcrumbs">
-                    <ul class="article-header__breadcrumbs-list breadcrumbs__list">
-                        <li class="article-header__breadcrumbs-item breadcrumbs__item">
-                            <a href="#" class="article-header__breadcrumbs-link breadcrumbs__link">Главная</a>
+            <div class="page__container header__container">
+                <nav class="header__breadcrumbs breadcrumbs">
+                    <ul class="header__breadcrumbs-list breadcrumbs__list">
+                        <li class="header__breadcrumbs-item breadcrumbs__item">
+                            <a href="#" class="header__breadcrumbs-link breadcrumbs__link">Главная</a>
                         </li>
-                        <li class="article-header__breadcrumbs-item breadcrumbs__item">
-                            <a href="#" class="article-header__breadcrumbs-link breadcrumbs__link">Блог</a>
+                        <li class="header__breadcrumbs-item breadcrumbs__item">
+                            <a href="#" class="header__breadcrumbs-link breadcrumbs__link">Блог</a>
                         </li>
-                        <li class="article-header__breadcrumbs-item breadcrumbs__item">
-                            <a href="#" class="article-header__breadcrumbs-link breadcrumbs__link">Психология</a>
+                        <li class="header__breadcrumbs-item breadcrumbs__item">
+                            <a href="#" class="header__breadcrumbs-link breadcrumbs__link">Психология</a>
                         </li>
-                        <li class="article-header__breadcrumbs-item breadcrumbs__item">
-                            <a href="#" class="article-header__breadcrumbs-link breadcrumbs__link">Тема 1</a>
+                        <li class="header__breadcrumbs-item breadcrumbs__item">
+                            <a href="#" class="header__breadcrumbs-link breadcrumbs__link">Тема 1</a>
                         </li>
-                        <li class="article-header__breadcrumbs-item breadcrumbs__item">
-                            <a href="#" class="article-header__breadcrumbs-link breadcrumbs__link">Статья 2</a>
+                        <li class="header__breadcrumbs-item breadcrumbs__item">
+                            <a href="#" class="header__breadcrumbs-link breadcrumbs__link">Статья 2</a>
                         </li>
                     </ul>
                 </nav>
-                <h1 class="article-header__title">
+                <h1 class="header__title">
                     Продвижение сайта в поисковых системах: 56 шагов, которые позволят вам выйти в топ
                 </h1>
             </div>
@@ -548,8 +548,8 @@
         <!-- Content -->
         <div class="page__content page-content article">
             <div class="page__content-container">
-                <header class="article__header">
-                    <div class="article__action article-action page__article-action">
+                <header class="article__header article-header">
+                    <div class="article-header__action article-action page__article-action">
                         <ul class="article-action__list">
                             <li class="article-action__item">
                                 <div class="article-action__item-icon">
@@ -596,6 +596,68 @@
                         </button>
                     </div>
                     <div class="page-content__separator"></div>
+                    <div class="article-header__themes">
+                        <ul class="theme-list">
+                            <li class="theme-list__item theme-list__label">Темы:</li>
+                            <li class="theme-list__item"><a href="#" class="button button_grey theme-list__button">Тематема</a></li>
+                            <li class="theme-list__item"><a href="#" class="button button_grey theme-list__button">Тематематема тема тема</a></li>
+                            <li class="theme-list__item"><a href="#" class="button button_grey theme-list__button">Тема тематема те</a></li>
+                            <li class="theme-list__item"><a href="#" class="button button_grey theme-list__button">Тематема</a></li>
+                            <li class="theme-list__item"><a href="#" class="button button_grey theme-list__button">Тематематема тема тема</a></li>
+                        </ul>
+                    </div>
+                    <div class="article-header__contents-table contents-table">
+                        <div class="contents-table__header">
+                            <div class="contents-table__title">Содержание:</div>
+                            <button class="contents-table__control contents-table__control_hide" aria-expanded="true" aria-controls="contents-table-body">
+                                <div class="contents-table__control-label contents-table__control-label_hide">Скрыть</div>
+                                <div class="contents-table__control-label contents-table__control-label_show">Показать</div>
+                                <div class="contents-table__control-icon">
+                                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 0L0 6.607L1.476 8L7 2.786L12.524 8L14 6.607L7 0Z" fill="#828282"/>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="contents-table__body" id="contents-table-body">
+                            <ul class="contents-table__list contents-table__list_l1">
+                                <li class="contents-table__list-item">
+                                    <a href="#" class="contents-table__link">Нужна ли виза в Таиланд</a>
+                                </li>
+                                <li class="contents-table__list-item">
+                                    <a href="#" class="contents-table__link">Въезд в Таиланд и выезд</a>
+                                    <ul class="contents-table__list contents-table__list_l2">
+                                        <li class="contents-table__list-item">
+                                            <a href="#" class="contents-table__link">Обратный билет</a>
+                                        </li>
+                                        <li class="contents-table__list-item">
+                                            <a href="#" class="contents-table__link">Пример заполнения иммиграционной карточки</a>
+                                        </li>
+                                        <li class="contents-table__list-item">
+                                            <a href="#" class="contents-table__link">Регистрация по месту пребывания</a>
+                                        </li>
+                                        <li class="contents-table__list-item">
+                                            <a href="#" class="contents-table__link">Правило 90 дней</a>
+                                        </li>
+                                        <li class="contents-table__list-item">
+                                            <a href="#" class="contents-table__link">Оверстей при выезде</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="contents-table__list-item">
+                                    <a href="#" class="contents-table__link">Визаран в Таиланде</a>
+                                    <ul class="contents-table__list contents-table__list_l2">
+                                        <li class="contents-table__list-item">
+                                            <a href="#" class="contents-table__link">Что такое визаран и бордерран</a>
+                                        </li>
+                                        <li class="contents-table__list-item">
+                                            <a href="#" class="contents-table__link">Куда поехать в визаран/бордерран</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </header>
                 <div class="article__content">
                     <p style="color: black;">
@@ -710,6 +772,7 @@
                     </p>
                 </div>
                 <footer class="article__footer"></footer>
+                <button class="button button_small article__scroll-top">Содержание</button>
             </div>
         </div>
         <!-- End: Content -->

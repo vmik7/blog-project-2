@@ -118,12 +118,14 @@ a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
 
 @import 'blocks/page-header';
 @import 'blocks/hero';
-@import 'blocks/article-header';
+@import 'blocks/header';
 
 @import 'blocks/main';
 @import 'blocks/page-content';
 @import 'blocks/article';
+@import 'blocks/article-header';
 @import 'blocks/article-action';
+@import 'blocks/contents-table';
 
 @import 'blocks/sidebar';
 @import 'blocks/category';

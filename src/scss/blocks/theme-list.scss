@@ -4,13 +4,21 @@
 /* Theme-List */
 
 .theme-list {
-    display: flex;
-    flex-wrap: wrap;
-
     margin: -7px -8px -8px -7px;
 
     &__item {
         margin: 7px 8px 8px 7px;
+        display: inline-block;
+    }
+
+    &__label {
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 20px;
+        color: #1E1E1E;
+
+        margin-right: 21px;
     }
 
     &__button {

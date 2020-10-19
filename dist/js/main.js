@@ -114,6 +114,12 @@ const sidebarFixedBar = document.querySelector('.sidebar__fixed-bar');
 const sidebarFixedBarContent = document.querySelector('.sidebar__fixed-bar-content');
 const sidebarContent = document.querySelector('.sidebar__content');
 
+const contentsTable = document.querySelector('.article-header__contents-table');
+const contentsTableControl = contentsTable && contentsTable.querySelector('.contents-table__control');
+const contentsTableBody = contentsTable && contentsTable.querySelector('.contents-table__body');
+
+const scrollButton = document.querySelector('.article__scroll-top');
+
 let prevScroll = pageYOffset;
 
 let withoutTransition = (elem, func) => {
@@ -196,6 +202,40 @@ if (window.matchMedia('(max-width: 768px)').matches) {
     });
 
     hideLogin();
+}
+
+
+
+
+// * Contents-Table interactive
+
+if (contentsTable) {
+    let showContentsTableBody = () => {
+        contentsTableControl.setAttribute('aria-expanded', true);
+        contentsTableControl.classList.add('contents-table__control_hide');
+        contentsTableControl.classList.remove('contents-table__control_show');
+        contentsTable.classList.remove('contents-table_hidden');
+        contentsTableBody.inert = false;
+    };
+    let hideContentsTableBody = () => {
+        contentsTableControl.setAttribute('aria-expanded', false);
+        contentsTableControl.classList.remove('contents-table__control_hide');
+        contentsTableControl.classList.add('contents-table__control_show');
+        contentsTable.classList.add('contents-table_hidden');
+        contentsTableBody.inert = true;
+    };
+    
+    contentsTableControl.addEventListener('click', () => {
+        let expanded = contentsTableControl.getAttribute('aria-expanded') === 'true' || false;
+        if (!expanded) {
+            showContentsTableBody();
+        }
+        else {
+            hideContentsTableBody();
+        }
+    });
+
+    showContentsTableBody();
 }
 
 
@@ -639,3 +679,41 @@ if (window.matchMedia('(max-width: 1290px)').matches) {
     pageSidebarOverlayer.addEventListener('click', toggleSidebar);
 }
 
+
+
+
+// * Scroll-Button interactive
+
+if (scrollButton) {
+    let showScrollButton = () => {
+        scrollButton.classList.remove('article__scroll-top_hidden');
+        scrollButton.inert = false;
+    };
+    let hideScrollButton = () => {
+        scrollButton.classList.add('article__scroll-top_hidden');
+        scrollButton.inert = true;
+    };
+    let fixScrollButton = () => {
+        let footerOffset = Math.max(window.innerHeight - pageFooter.offsetTop + window.pageYOffset, 0);
+        if (pageYOffset > contentsTable.offsetTop + contentsTable.offsetHeight && footerOffset === 0) {
+            showScrollButton();
+        }
+        else {
+            hideScrollButton();
+        }
+    };
+    window.addEventListener('scroll', fixScrollButton);
+
+    let smoothscroll = () => {
+        let currentScroll = pageYOffset;
+        let finishScroll = pageContent.offsetTop;
+
+        if (currentScroll > finishScroll) {
+            window.requestAnimationFrame(smoothscroll);
+            window.scrollTo(0, currentScroll - (currentScroll - finishScroll) / 5);
+        }
+    };
+    scrollButton.addEventListener('click', smoothscroll);
+
+    hideScrollButton();
+}
