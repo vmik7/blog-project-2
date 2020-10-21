@@ -34,6 +34,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 0;
   background: none;
 }
@@ -145,6 +148,7 @@
 
 .contents-table__list_l2 .contents-table__link {
   font-family: "Open Sans";
+  font-weight: 400;
   font-size: 13px;
   line-height: 18px;
 }
@@ -153,5 +157,106 @@
   .contents-table__link:hover,
   .contents-table__link:focus {
     color: #ffa800;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .contents-table {
+    padding: 25px 30px 10px 35px;
+    border-radius: 7px;
+  }
+
+  .contents-table_hidden {
+    padding-bottom: 25px;
+  }
+
+  .contents-table__body {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contents-table {
+    padding: 20px 20px 10px 20px;
+    border-radius: 5px;
+  }
+
+  .contents-table_hidden {
+    padding-bottom: 20px;
+  }
+
+  .contents-table__title {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .contents-table__control-label {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .contents-table__list_l2 {
+    margin: 15px 0;
+  }
+
+  .contents-table__list_l1 > .contents-table__list-item {
+    margin: 10px 0;
+  }
+
+  .contents-table__list_l1 > .contents-table__list-item::before {
+    font-size: 14px;
+    line-height: 16px;
+    margin-right: 7px;
+  }
+
+  .contents-table__list_l2 > .contents-table__list-item {
+    margin: 8px 0 8px 18px;
+  }
+
+  .contents-table__list_l2 > .contents-table__list-item::before {
+    margin-right: 7px;
+  }
+
+  .contents-table__list_l1 .contents-table__link {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .contents-table__list_l2 .contents-table__link {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contents-table__title {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .contents-table__control-label {
+    font-size: 11px;
+    line-height: 14px;
+    margin-right: 7px;
+  }
+
+  .contents-table__list_l1 > .contents-table__list-item::before {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .contents-table__list_l2 > .contents-table__list-item::before {
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  .contents-table__list_l1 .contents-table__link {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .contents-table__list_l2 .contents-table__link {
+    font-size: 11px;
+    line-height: 13px;
   }
 }

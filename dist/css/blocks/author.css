@@ -56,3 +56,51 @@
   color: #5A5A5A;
   margin-top: 30px;
 }
+
+@media screen and (max-width: 992px) {
+  .author__photo img {
+    margin: 0 30px;
+  }
+
+  .author__label {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 8px;
+  }
+
+  .author__name {
+    font-size: 20px;
+    line-height: 25px;
+    margin-top: 8px;
+  }
+
+  .author__about {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .author__photo img {
+    margin: 0 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .author__label {
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 8px;
+  }
+
+  .author__name {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 3px;
+  }
+
+  .author__about {
+    font-size: 11px;
+    margin-top: 13px;
+  }
+}

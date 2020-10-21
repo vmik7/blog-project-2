@@ -16,12 +16,34 @@
     border-radius: 5px;
     min-height: 124px;
 
+    @media screen and (max-width: $md3 + px) {
+        padding: 20px 25px 20px 80px;
+        min-height: 100px;
+    }
+    @media screen and (max-width: $md4 + px) {
+        padding: 75px 15px 20px 15px;
+    }
+
     &__text {
         font-family: "Open Sans", sans-serif;
         font-size: 15px;
         line-height: 25px;
         font-weight: var(--message-font-weight, 400);
         color: var(--message-color, #5A5A5A);
+
+        @media screen and (max-width: $md2 + px) {
+            font-size: 14px;
+            line-height: 24px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            font-size: 13px;
+            line-height: 20px;
+        }
+        @media screen and (max-width: $md4 + px) {
+            font-size: 12px;
+            line-height: 20px;
+            text-align: center;
+        }
     }
 
     &::before {
@@ -31,6 +53,15 @@
         top: 42px;
         left: 0;
         text-align: center;
+
+        @media screen and (max-width: $md3 + px) {
+            top: 30px;
+            width: 80px;
+        }
+        @media screen and (max-width: $md4 + px) {
+            top: 20px;
+            width: 100%;
+        }
     }
 
     &_ok {

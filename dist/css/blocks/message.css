@@ -59,3 +59,44 @@
   --message-font-weight: 400;
   --message-color: #5A5A5A;
 }
+
+@media screen and (max-width: 992px) {
+  .message__text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .message {
+    padding: 20px 25px 20px 80px;
+    min-height: 100px;
+  }
+
+  .message__text {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .message::before {
+    top: 30px;
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .message {
+    padding: 75px 15px 20px 15px;
+  }
+
+  .message__text {
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  .message::before {
+    top: 20px;
+    width: 100%;
+  }
+}

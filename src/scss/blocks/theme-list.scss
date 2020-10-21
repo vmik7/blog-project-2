@@ -6,9 +6,17 @@
 .theme-list {
     margin: -7px -8px -8px -7px;
 
+    @media screen and (max-width: $md3 + px) {
+        margin: -4px;
+    }
+
     &__item {
         margin: 7px 8px 8px 7px;
         display: inline-block;
+
+        @media screen and (max-width: $md3 + px) {
+            margin: 4px;
+        }
     }
 
     &__label {
@@ -17,6 +25,11 @@
         font-size: 15px;
         line-height: 20px;
         color: #1E1E1E;
+
+        @media screen and (max-width: $md3 + px) {
+            font-size: 13px;
+            line-height: 18px;
+        }
 
         margin-right: 21px;
     }

@@ -26,3 +26,18 @@
   font-size: 12px;
   line-height: 16px;
 }
+
+@media screen and (max-width: 768px) {
+  .theme-list {
+    margin: -4px;
+  }
+
+  .theme-list__item {
+    margin: 4px;
+  }
+
+  .theme-list__label {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}

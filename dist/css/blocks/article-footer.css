@@ -32,7 +32,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: auto;
 }
 
 .article-footer__useful-buttons > *:not(:last-child) {
@@ -75,4 +74,127 @@
 
 .article-footer__comments {
   margin-top: 70px;
+}
+
+@media screen and (min-width: 769px) {
+  .article-footer__useful-buttons {
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .article-footer__author {
+    margin-top: 20px;
+  }
+
+  .article-footer__useful {
+    margin-top: 55px;
+  }
+
+  .article-footer__useful-label {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .article-footer__useful-buttons > *:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  .article-footer__title span {
+    font-size: 20px;
+    line-height: 25px;
+    margin: 0 30px;
+  }
+
+  .article-footer__title {
+    margin-bottom: 55px;
+  }
+
+  .article-footer__see-also {
+    margin-top: 60px;
+  }
+
+  .article-footer__comments {
+    margin-top: 55px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .article-footer__action {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .article-footer__bookmark {
+    margin-top: 20px;
+  }
+
+  .article-footer__author {
+    margin-top: 35px;
+  }
+
+  .article-footer__useful {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 35px;
+  }
+
+  .article-footer__useful-buttons {
+    margin-top: 20px;
+  }
+
+  .article-footer__title span {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0 20px;
+  }
+
+  .article-footer__title {
+    margin-bottom: 35px;
+  }
+
+  .article-footer__see-also {
+    margin-top: 40px;
+  }
+
+  .article-footer__comments {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .article-footer__useful-label {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .article-footer__useful-buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .article-footer__useful-buttons > *:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+
+  .article-footer__title span {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }

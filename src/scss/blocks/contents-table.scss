@@ -8,8 +8,23 @@
     border-radius: 10px;
 
     padding: 30px 40px 10px 50px;
+    @media screen and (max-width: $md2 + px) {
+        padding: 25px 30px 10px 35px;
+        border-radius: 7px;
+    }
+    @media screen and (max-width: $md3 + px) {
+        padding: 20px 20px 10px 20px;
+        border-radius: 5px;
+    }
+
     &_hidden {
         padding-bottom: 30px;
+        @media screen and (max-width: $md2 + px) {
+            padding-bottom: 25px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            padding-bottom: 20px;
+        }
     }
 
     &__header {
@@ -24,10 +39,20 @@
         font-size: 17px;
         line-height: 23px;
         color: #3C3C3C;
+
+        @media screen and (max-width: $md3 + px) {
+            font-size: 15px;
+            line-height: 18px;        
+        }
+        @media screen and (max-width: $md4 + px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
     }
 
     &__control {
         display: flex;
+        align-items: center;
         border: 0;
         background: none;
 
@@ -47,13 +72,17 @@
 
         margin-right: 9px;
 
+        @media screen and (max-width: $md3 + px) {
+            font-size: 12px;
+            line-height: 16px;
+        }
+        @media screen and (max-width: $md4 + px) {
+            font-size: 11px;
+            line-height: 14px;
+            margin-right: 7px;
+        }
+
         transition: all var(--transition-time, 0.4s) ease;
-
-        &_hide {
-        }
-
-        &_show {
-        }
     }
     &__control_hide &__control-label_show {
         display: none;
@@ -74,6 +103,9 @@
 
     &__body {
         margin-top: 30px;
+        @media screen and (max-width: $md2 + px) {
+            margin-top: 20px;
+        }
         transition: all var(--transition-time, 0.4s) ease;
     }
     &_hidden &__body {
@@ -96,6 +128,10 @@
         &_l2 {
             counter-reset: list-l2;
             margin: 20px 0;
+
+            @media screen and (max-width: $md3 + px) {
+                margin: 15px 0;
+            }
         }
     }
 
@@ -103,6 +139,9 @@
     }
     &__list_l1 > &__list-item {
         margin: 15px 0;
+        @media screen and (max-width: $md3 + px) {
+            margin: 10px 0;
+        }
 
         &::before {
             counter-increment: list-l1;
@@ -113,12 +152,24 @@
             font-size: 15px;
             line-height: 20px;
             color: #787878;
-
             margin-right: 10px;
+
+            @media screen and (max-width: $md3 + px) {
+                font-size: 14px;
+                line-height: 16px;
+                margin-right: 7px;
+            }
+            @media screen and (max-width: $md4 + px) {
+                font-size: 12px;
+                line-height: 14px;
+            }
         }
     }
     &__list_l2 > &__list-item {
         margin: 10px 0 10px 30px;
+        @media screen and (max-width: $md3 + px) {
+            margin: 8px 0 8px 18px;
+        }
 
         &::before {
             counter-increment: list-l2;
@@ -130,6 +181,14 @@
             color: #787878;
 
             margin-right: 10px;
+
+            @media screen and (max-width: $md3 + px) {
+                margin-right: 7px;
+            }
+            @media screen and (max-width: $md4 + px) {
+                font-size: 11px;
+                line-height: 13px;
+            }
         }
     }
 
@@ -149,10 +208,29 @@
         font-weight: 600;
         font-size: 15px;
         line-height: 20px;
+
+        @media screen and (max-width: $md3 + px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+        @media screen and (max-width: $md4 + px) {
+            font-size: 12px;
+            line-height: 14px;
+        }
     }
     &__list_l2 &__link {
         font-family: "Open Sans";
+        font-weight: 400;
         font-size: 13px;
         line-height: 18px;
+
+        @media screen and (max-width: $md3 + px) {
+            font-size: 12px;
+            line-height: 14px;
+        }
+        @media screen and (max-width: $md4 + px) {
+            font-size: 11px;
+            line-height: 13px;
+        }
     }
 }

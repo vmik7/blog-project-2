@@ -21,6 +21,9 @@
 }
 
 .article-action__item-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   cursor: pointer;
   font-size: 0;
 }

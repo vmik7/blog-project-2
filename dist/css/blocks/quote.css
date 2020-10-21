@@ -37,3 +37,42 @@
 .quote__author-name {
   font-weight: 400;
 }
+
+@media screen and (max-width: 992px) {
+  .quote__text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .quote__author {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .quote {
+    padding: 75px 25px 20px 20px;
+  }
+
+  .quote::before {
+    width: 100%;
+    top: 20px;
+  }
+
+  .quote__text {
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .quote {
+    padding: 75px 15px 15px 15px;
+  }
+
+  .quote__text {
+    font-size: 12px;
+  }
+}

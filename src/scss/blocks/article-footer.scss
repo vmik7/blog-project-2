@@ -8,15 +8,41 @@
     &__action {
         display: flex;
         justify-content: space-between;
+
+        @media screen and (max-width: $md3 + px) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__bookmark {
+        @media screen and (max-width: $md3 + px) {
+            margin-top: 20px;
+        }
     }
 
     &__author {
         margin-top: 30px;
+        @media screen and (max-width: $md2 + px) {
+            margin-top: 20px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            margin-top: 35px;
+        }
     }
 
     &__useful {
         margin-top: 70px;
         display: flex;
+
+        @media screen and (max-width: $md2 + px) {
+            margin-top: 55px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 35px;
+        }
     }
 
     &__useful-label {
@@ -25,14 +51,40 @@
         font-size: 18px;
         line-height: 22px;
         color: #1E1E1E;
+
+        @media screen and (max-width: $md2 + px) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+        @media screen and (max-width: $md4 + px) {
+            font-size: 14px;
+            line-height: 18px;
+        }
     }
 
     &__useful-buttons {
         display: flex;
-        margin-left: auto;
+
+        @media screen and (min-width: $md3 + 1 + px) {
+            margin-left: auto;
+        }
+        @media screen and (max-width: $md3 + px) {
+            margin-top: 20px;
+        }
+        @media screen and (max-width: $md4 + px) {
+            flex-direction: column;
+            align-items: center;
+        }
 
         & > *:not(:last-child) {
             margin-right: 30px;
+            @media screen and (max-width: $md2 + px) {
+                margin-right: 15px;
+            }
+            @media screen and (max-width: $md4 + px) {
+                margin-right: 0;
+                margin-bottom: 12px;
+            }
         }
     }
 
@@ -48,6 +100,21 @@
             line-height: 27px;
             color: #3C3C3C;
             margin: 0 40px;
+
+            @media screen and (max-width: $md2 + px) {
+                font-size: 20px;
+                line-height: 25px;
+                margin: 0 30px;
+            }
+            @media screen and (max-width: $md3 + px) {
+                font-size: 18px;
+                line-height: 22px;
+                margin: 0 20px;
+            }
+            @media screen and (max-width: $md4 + px) {
+                font-size: 16px;
+                line-height: 20px;
+            }
         }
 
         &::before, &::after {
@@ -58,13 +125,32 @@
         }
 
         margin-bottom: 70px;
+
+        @media screen and (max-width: $md2 + px) {
+            margin-bottom: 55px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            margin-bottom: 35px;
+        }
     }
 
     &__see-also {
         margin-top: 80px;
+        @media screen and (max-width: $md2 + px) {
+            margin-top: 60px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            margin-top: 40px;
+        }
     }
 
     &__comments {
         margin-top: 70px;
+        @media screen and (max-width: $md2 + px) {
+            margin-top: 55px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            margin-top: 40px;
+        }
     }
 }

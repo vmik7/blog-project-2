@@ -392,10 +392,10 @@ let showSidebar = () => {
             if (headerOffset || footerOffset) {
 
                 withoutTransition(pageSidebarOverlayer, () => {
-                    pageSidebarOverlayer.style.zIndex = '1';
+                    pageSidebarOverlayer.style.zIndex = '5';
                 });
                 withoutTransition(pageSidebar, () => {
-                    pageSidebar.style.zIndex = '1';
+                    pageSidebar.style.zIndex = '5';
                 });
 
                 setTimeout(() => {
@@ -423,6 +423,8 @@ let showSidebar = () => {
                 }, 40);
             }
             else {
+                pageSidebarOverlayer.style.zIndex = '5';
+                pageSidebar.style.zIndex = '5';
                 pageSidebar.style.right = `${0}px`;
                 pageSidebarToggle.classList.add('sidebar__toggle_active');
                 pageSidebar.classList.remove('sidebar_hidden');
@@ -491,6 +493,8 @@ let hideSidebar = () => {
             else {
                 pageSidebarOverlayer.classList.remove('page__sidebar-overlayer_active');
                 pageBody.classList.remove('page__body_lock');
+                pageSidebar.style.zIndex = '0';
+                pageSidebarOverlayer.style.zIndex = '0';
             }
 
             fixSidebarFixedBarContent();

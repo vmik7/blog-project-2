@@ -9,6 +9,13 @@
     border-radius: 5px;
     background: #F0F0F0;
 
+    @media screen and (max-width: $md3 + px) {
+        padding: 75px 25px 20px 20px;
+    }
+    @media screen and (max-width: $md4 + px) {
+        padding: 75px 15px 15px 15px;
+    }
+
     &::before {
         content: url('../../img/quote.svg');
         position: absolute;
@@ -16,6 +23,11 @@
         top: 44px;
         left: 0;
         text-align: center;
+
+        @media screen and (max-width: $md3 + px) {
+            width: 100%;
+            top: 20px;
+        }
     }
 
     &__text {
@@ -24,6 +36,19 @@
         font-size: 15px;
         line-height: 25px;
         color: #5A5A5A;
+
+        @media screen and (max-width: $md2 + px) {
+            font-size: 14px;
+            line-height: 24px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            font-size: 13px;
+            line-height: 20px;
+            text-align: center;
+        }
+        @media screen and (max-width: $md4 + px) {
+            font-size: 12px;
+        }
     }
 
     &__author {
@@ -34,6 +59,11 @@
         color: #787878;
         margin-top: 15px;
         text-align: right;
+
+        @media screen and (max-width: $md2 + px) {
+            font-size: 12px;
+            line-height: 16px;
+        }
     }
 
     &__author-name {
