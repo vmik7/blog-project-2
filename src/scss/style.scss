@@ -121,6 +121,7 @@ a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
 @import 'blocks/breadcrumbs';
 @import 'blocks/logo';
 @import 'blocks/social';
+@import 'blocks/theme-list';
 
 @import 'blocks/top-header';
 @import 'blocks/top-menu';
@@ -134,6 +135,8 @@ a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
 @import 'blocks/main';
 @import 'blocks/page-content';
 
+@import 'blocks/home-page';
+
 @import 'blocks/article';
 @import 'blocks/article-header';
 @import 'blocks/article-action';
@@ -146,7 +149,6 @@ a:focus, link:focus, button:focus, input:focus, select:focus, textarea:focus {
 
 @import 'blocks/sidebar';
 @import 'blocks/category';
-@import 'blocks/theme-list';
 @import 'blocks/popular';
 @import 'blocks/recent';
 

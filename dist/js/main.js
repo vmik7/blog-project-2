@@ -120,6 +120,14 @@ const contentsTableBody = contentsTable && contentsTable.querySelector('.content
 
 const scrollButton = document.querySelector('.article__scroll-top');
 
+const homePage = document.querySelector('.home-page');
+const homePageControlSort = homePage && homePage.querySelector('.home-page__control-sort');
+const homeSortButton = homePageControlSort && homePageControlSort.querySelector('.home-page__sort-button');
+const homeSortLabel = homePageControlSort && homePageControlSort.querySelector('.home-page__sort-label');
+const homeSortIcon = homePageControlSort && homePageControlSort.querySelector('.home-page__sort-icon');
+const homeSortList = homePageControlSort && homePageControlSort.querySelector('.home-page__sort-list');
+const homeSortValues = homePageControlSort && homePageControlSort.querySelectorAll('.home-page__sort-value');
+
 let prevScroll = pageYOffset;
 
 let withoutTransition = (elem, func) => {
@@ -202,6 +210,42 @@ if (window.matchMedia('(max-width: 768px)').matches) {
     });
 
     hideLogin();
+}
+
+
+
+
+// * Home-Page sort select
+
+if (homePageControlSort) {
+    let showSelectList = () => {
+        homeSortButton.classList.add('home-page__sort-button_active');
+        homeSortList.classList.add('home-page__sort-list_show');
+        homeSortButton.removeEventListener('click', fixSelect);
+        setTimeout(() => {
+            window.addEventListener('click', closeOnClick);
+        }, 10);
+    };
+    let hideSelectList = () => {
+        homeSortButton.classList.remove('home-page__sort-button_active');
+        homeSortList.classList.remove('home-page__sort-list_show');
+        homeSortButton.addEventListener('click', fixSelect);
+    };
+    let closeOnClick = (event) => {
+        hideSelectList();
+        window.removeEventListener('click', closeOnClick);
+    };
+    let fixSelect = () => {
+        showSelectList();
+        for (let value of homeSortValues) {
+            value.addEventListener('click', (event) => {
+                homeSortLabel.innerText = event.target.innerText;
+                hideSelectList();
+            });
+        }
+    };
+    
+    hideSelectList();
 }
 
 

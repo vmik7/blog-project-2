@@ -101,4 +101,11 @@
             }
         }
     }
+    &_grey.button_active {
+        background: var(--accent-color, #621EF4);
+            color: #fff;
+            path {
+                fill: #fff;
+            }
+    }
 }

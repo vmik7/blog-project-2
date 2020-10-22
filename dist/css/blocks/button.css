@@ -103,6 +103,15 @@
   fill: #fff;
 }
 
+.button_grey.button_active {
+  background: var(--accent-color, #621EF4);
+  color: #fff;
+}
+
+.button_grey.button_active path {
+  fill: #fff;
+}
+
 @media screen and (max-width: 992px) {
   .button_small .button__icon-block {
     margin-left: 10px;
