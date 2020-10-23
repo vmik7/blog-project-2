@@ -88,6 +88,20 @@ $('.hero__slider').slick({
 
 
 
+// * Cards slider
+
+$('.cards-slider__body').slick({
+    dots: true,
+    infinite: false,
+    appendDots: '.cards-slider__bottom-controls',
+    appendArrows: '.cards-slider__bottom-controls',
+    prevArrow: '<button type="button" class="slick-prev">Назад</button>',
+    nextArrow: '<button type="button" class="slick-next">Вперед</button>',
+});
+
+
+
+
 // * Variables
 
 const pageTop = document.querySelector('.page__top');
@@ -120,13 +134,13 @@ const contentsTableBody = contentsTable && contentsTable.querySelector('.content
 
 const scrollButton = document.querySelector('.article__scroll-top');
 
-const homePage = document.querySelector('.home-page');
-const homePageControlSort = homePage && homePage.querySelector('.home-page__control-sort');
-const homeSortButton = homePageControlSort && homePageControlSort.querySelector('.home-page__sort-button');
-const homeSortLabel = homePageControlSort && homePageControlSort.querySelector('.home-page__sort-label');
-const homeSortIcon = homePageControlSort && homePageControlSort.querySelector('.home-page__sort-icon');
-const homeSortList = homePageControlSort && homePageControlSort.querySelector('.home-page__sort-list');
-const homeSortValues = homePageControlSort && homePageControlSort.querySelectorAll('.home-page__sort-value');
+const cardsSlider = document.querySelector('.cards-slider');
+const cardsControlSort = cardsSlider && cardsSlider.querySelector('.cards-slider__control-sort');
+const cardsSortButton = cardsControlSort && cardsControlSort.querySelector('.cards-slider__sort-button');
+const cardsSortLabel = cardsControlSort && cardsControlSort.querySelector('.cards-slider__sort-label');
+const cardsSortIcon = cardsControlSort && cardsControlSort.querySelector('.cards-slider__sort-icon');
+const cardsSortList = cardsControlSort && cardsControlSort.querySelector('.cards-slider__sort-list');
+const cardsSortValues = cardsControlSort && cardsControlSort.querySelectorAll('.cards-slider__sort-value');
 
 let prevScroll = pageYOffset;
 
@@ -215,21 +229,21 @@ if (window.matchMedia('(max-width: 768px)').matches) {
 
 
 
-// * Home-Page sort select
+// * Cards-slider sort select
 
-if (homePageControlSort) {
+if (cardsControlSort) {
     let showSelectList = () => {
-        homeSortButton.classList.add('home-page__sort-button_active');
-        homeSortList.classList.add('home-page__sort-list_show');
-        homeSortButton.removeEventListener('click', fixSelect);
+        cardsSortButton.classList.add('cards-slider__sort-button_active');
+        cardsSortList.classList.add('cards-slider__sort-list_show');
+        cardsSortButton.removeEventListener('click', fixSelect);
         setTimeout(() => {
             window.addEventListener('click', closeOnClick);
         }, 10);
     };
     let hideSelectList = () => {
-        homeSortButton.classList.remove('home-page__sort-button_active');
-        homeSortList.classList.remove('home-page__sort-list_show');
-        homeSortButton.addEventListener('click', fixSelect);
+        cardsSortButton.classList.remove('cards-slider__sort-button_active');
+        cardsSortList.classList.remove('cards-slider__sort-list_show');
+        cardsSortButton.addEventListener('click', fixSelect);
     };
     let closeOnClick = (event) => {
         hideSelectList();
@@ -237,9 +251,9 @@ if (homePageControlSort) {
     };
     let fixSelect = () => {
         showSelectList();
-        for (let value of homeSortValues) {
+        for (let value of cardsSortValues) {
             value.addEventListener('click', (event) => {
-                homeSortLabel.innerText = event.target.innerText;
+                cardsSortLabel.innerText = event.target.innerText;
                 hideSelectList();
             });
         }

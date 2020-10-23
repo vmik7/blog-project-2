@@ -1,0 +1,266 @@
+@import '../_variables';
+@import '../_mixins';
+
+/* Cards-Slider */
+
+.cards-slider {
+
+    &__top-controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__control-view {
+    }
+
+    &__view-button {
+        background: none;
+        border: 0;
+        padding: 0;
+
+        path {
+            transition: all var(--transition-time, 0.4s) ease;
+        }
+
+        &_active,
+        &:hover,
+        &:focus {
+            path {
+                fill: var(--accent-color, #621EF4);
+            }
+        }
+    }
+
+    &__control-sort {
+        position: relative;
+    }
+
+    &__sort-button {
+        position: relative;
+        background: none;
+        border: 0;
+        padding: 5px 0;
+    }
+
+    &__sort-label {
+        font-family: "Open Sans", sans-serif;
+        font-size: 13px;
+        line-height: 18px;
+        color: #969696;
+        padding-right: 30px;
+        text-align: right;
+
+        transition: all var(--transition-time, 0.4s) ease;
+    }
+    &__sort-button_active &__sort-label {
+        color: var(--accent-color, #621EF4);
+    }
+
+    &__sort-icon {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate3d(0, -50%, 0);
+
+        transition: all var(--transition-time, 0.4s) ease;
+        path {
+            transition: all var(--transition-time, 0.4s) ease;
+        }
+    }
+    &__sort-button_active &__sort-icon {
+        transform: translate3d(0, -50%, 0) rotate(180deg);
+
+        path {
+            fill: var(--accent-color, #621EF4);
+        }
+    }
+
+    &__sort-list {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        padding-right: 30px;
+        text-align: right;
+        width: 150%;
+
+        display: none;
+        &_show {
+            display: block;
+        }
+    }
+
+    &__sort-item {
+        
+    }
+
+    &__sort-value {
+        background: #fff;
+        border: 0;
+        padding: 5px 0;
+
+        font-family: "Open Sans", sans-serif;
+        font-size: 13px;
+        line-height: 18px;
+        color: #969696;
+        text-align: right;
+
+        transition: all var(--transition-time, 0.4s) ease;
+
+        &:hover, &:focus {
+            color: var(--accent-color, #621EF4);
+        }
+    }
+
+
+    &__page {
+        margin: 0 20px;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 40px;
+        row-gap: 60px;
+    }
+
+    &__body {
+        margin-top: 25px;
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+
+    &__card {
+
+    }
+
+    &__bottom-controls {
+        margin-top: 60px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slick {
+        /* Слайдер */
+        &-slider {}
+    
+        /* Слайдер запущен */
+        &-slider.slick-initialized {}
+    
+        /* Слайдер с точками */
+        &-slider.slick-dotted {}
+    
+        /* Ограничивающая оболочка */
+        &-list {
+            overflow: hidden;
+            padding: 30px 0;
+        }
+    
+        /* Лента слайдов */
+        &-track {
+            display: flex;
+            // align-items: flex-start;
+        }
+    
+        /* Слайд */
+        &-slide {
+    
+            /* Слайд активный (показывается) */
+            &.slick-active {}
+    
+            /* Слайд основной */
+            &.slick-current {}
+    
+            /* Слайд по центру */
+            &.slick-center {}
+    
+            /* Клонированный слайд */
+            &.slick-cloned {}
+        }
+    
+        /* Стрелка */
+        &-arrow {
+            border: 0;
+            background: #F5F5F5;
+            border-radius: 5px;
+            min-width: 80px;
+            height: 26px;
+
+            font-family: "Open Sans";
+            font-weight: 600;
+            font-size: 9px;
+            line-height: 12px;
+            color: #828282;
+
+            transition: all var(--transition-time, 0.4s) ease;
+
+            &:hover:not(.slick-disabled), &:focus:not(.slick-disabled) {
+                background: #E5D9FF;
+                color: var(--accent-color, #621EF4);
+            }
+
+            &:active:not(.slick-disabled) {
+                background: var(--accent-color, #621EF4);
+                color: #fff;
+            }
+    
+            /* Стрелка влево */
+            &.slick-prev {
+                order: -1;
+            }
+    
+            /* Стрелка вправо */
+            &.slick-next {
+                order: 1;
+            }
+    
+            /* Стрелка не активная */
+            &.slick-disabled {
+                color: #BBBBBB;
+            }
+        }
+    
+        /* Точки (булиты) */
+        &-dots {
+            display: flex;
+            margin: 0 15px;
+    
+            li {
+    
+                /* Активная точка */
+                &.slick-active {
+                    button {
+                        background: #621EF4 !important;
+                        color: #fff !important;
+                    }
+                }
+    
+                /* Элемент точки */
+                button {
+                    border: 0;
+                    background: #F5F5F5;
+                    border-radius: 5px;
+                    min-width: 26px;
+                    height: 26px;
+
+                    font-family: "Open Sans";
+                    font-weight: 600;
+                    font-size: 9px;
+                    line-height: 12px;
+                    color: #828282;
+
+                    transition: all var(--transition-time, 0.4s) ease;
+
+                    &:hover, &:focus {
+                        background: #E5D9FF;
+                        color: var(--accent-color, #621EF4);
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}

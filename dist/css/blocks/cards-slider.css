@@ -1,0 +1,266 @@
+@charset "UTF-8";
+
+/* Cards-Slider */
+
+.cards-slider__top-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cards-slider__view-button {
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+.cards-slider__view-button path {
+  -webkit-transition: all var(--transition-time, 0.4s) ease;
+  -o-transition: all var(--transition-time, 0.4s) ease;
+  transition: all var(--transition-time, 0.4s) ease;
+}
+
+.cards-slider__view-button_active path,
+.cards-slider__view-button:hover path,
+.cards-slider__view-button:focus path {
+  fill: var(--accent-color, #621EF4);
+}
+
+.cards-slider__control-sort {
+  position: relative;
+}
+
+.cards-slider__sort-button {
+  position: relative;
+  background: none;
+  border: 0;
+  padding: 5px 0;
+}
+
+.cards-slider__sort-label {
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #969696;
+  padding-right: 30px;
+  text-align: right;
+  -webkit-transition: all var(--transition-time, 0.4s) ease;
+  -o-transition: all var(--transition-time, 0.4s) ease;
+  transition: all var(--transition-time, 0.4s) ease;
+}
+
+.cards-slider__sort-button_active .cards-slider__sort-label {
+  color: var(--accent-color, #621EF4);
+}
+
+.cards-slider__sort-icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+  -webkit-transition: all var(--transition-time, 0.4s) ease;
+  -o-transition: all var(--transition-time, 0.4s) ease;
+  transition: all var(--transition-time, 0.4s) ease;
+}
+
+.cards-slider__sort-icon path {
+  -webkit-transition: all var(--transition-time, 0.4s) ease;
+  -o-transition: all var(--transition-time, 0.4s) ease;
+  transition: all var(--transition-time, 0.4s) ease;
+}
+
+.cards-slider__sort-button_active .cards-slider__sort-icon {
+  -webkit-transform: translate3d(0, -50%, 0) rotate(180deg);
+          transform: translate3d(0, -50%, 0) rotate(180deg);
+}
+
+.cards-slider__sort-button_active .cards-slider__sort-icon path {
+  fill: var(--accent-color, #621EF4);
+}
+
+.cards-slider__sort-list {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  padding-right: 30px;
+  text-align: right;
+  width: 150%;
+  display: none;
+}
+
+.cards-slider__sort-list_show {
+  display: block;
+}
+
+.cards-slider__sort-value {
+  background: #fff;
+  border: 0;
+  padding: 5px 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #969696;
+  text-align: right;
+  -webkit-transition: all var(--transition-time, 0.4s) ease;
+  -o-transition: all var(--transition-time, 0.4s) ease;
+  transition: all var(--transition-time, 0.4s) ease;
+}
+
+.cards-slider__sort-value:hover,
+.cards-slider__sort-value:focus {
+  color: var(--accent-color, #621EF4);
+}
+
+.cards-slider__page {
+  margin: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -webkit-column-gap: 40px;
+     -moz-column-gap: 40px;
+          column-gap: 40px;
+  row-gap: 60px;
+}
+
+.cards-slider__body {
+  margin-top: 25px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.cards-slider__bottom-controls {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cards-slider .slick {
+  /* Слайдер */
+  /* Слайдер запущен */
+  /* Слайдер с точками */
+  /* Ограничивающая оболочка */
+  /* Лента слайдов */
+  /* Слайд */
+  /* Стрелка */
+  /* Точки (булиты) */
+}
+
+.cards-slider .slick-list {
+  overflow: hidden;
+  padding: 30px 0;
+}
+
+.cards-slider .slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cards-slider .slick-slide {
+  /* Слайд активный (показывается) */
+  /* Слайд основной */
+  /* Слайд по центру */
+  /* Клонированный слайд */
+}
+
+.cards-slider .slick-arrow {
+  border: 0;
+  background: #F5F5F5;
+  border-radius: 5px;
+  min-width: 80px;
+  height: 26px;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 12px;
+  color: #828282;
+  -webkit-transition: all var(--transition-time, 0.4s) ease;
+  -o-transition: all var(--transition-time, 0.4s) ease;
+  transition: all var(--transition-time, 0.4s) ease;
+  /* Стрелка влево */
+  /* Стрелка вправо */
+  /* Стрелка не активная */
+}
+
+.cards-slider .slick-arrow:hover:not(.slick-disabled),
+.cards-slider .slick-arrow:focus:not(.slick-disabled) {
+  background: #E5D9FF;
+  color: var(--accent-color, #621EF4);
+}
+
+.cards-slider .slick-arrow:active:not(.slick-disabled) {
+  background: var(--accent-color, #621EF4);
+  color: #fff;
+}
+
+.cards-slider .slick-arrow.slick-prev {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+
+.cards-slider .slick-arrow.slick-next {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.cards-slider .slick-arrow.slick-disabled {
+  color: #BBBBBB;
+}
+
+.cards-slider .slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 15px;
+}
+
+.cards-slider .slick-dots li {
+  /* Активная точка */
+  /* Элемент точки */
+}
+
+.cards-slider .slick-dots li.slick-active button {
+  background: #621EF4 !important;
+  color: #fff !important;
+}
+
+.cards-slider .slick-dots li button {
+  border: 0;
+  background: #F5F5F5;
+  border-radius: 5px;
+  min-width: 26px;
+  height: 26px;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 12px;
+  color: #828282;
+  -webkit-transition: all var(--transition-time, 0.4s) ease;
+  -o-transition: all var(--transition-time, 0.4s) ease;
+  transition: all var(--transition-time, 0.4s) ease;
+}
+
+.cards-slider .slick-dots li button:hover,
+.cards-slider .slick-dots li button:focus {
+  background: #E5D9FF;
+  color: var(--accent-color, #621EF4);
+}
+
+.cards-slider .slick-dots li:not(:last-child) {
+  margin-right: 15px;
+}
