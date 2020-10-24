@@ -120,6 +120,11 @@
         grid-template-columns: repeat(3, 1fr);
         column-gap: 40px;
         row-gap: 60px;
+
+        &_wide {
+            grid-template-columns: 1fr;
+            row-gap: 50px;
+        }
     }
 
     &__body {
@@ -159,7 +164,7 @@
         /* Лента слайдов */
         &-track {
             display: flex;
-            // align-items: flex-start;
+            align-items: flex-start;
         }
     
         /* Слайд */

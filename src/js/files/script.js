@@ -32,6 +32,8 @@ $('.hero__slider').slick({
 // * Cards slider
 
 $('.cards-slider__body').slick({
+    initialSlide: 1,
+    // adaptiveHeight: true,
     dots: true,
     infinite: false,
     appendDots: '.cards-slider__bottom-controls',

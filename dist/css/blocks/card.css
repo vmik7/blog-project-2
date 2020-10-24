@@ -1,8 +1,6 @@
 /* Card */
 
 .card {
-  max-width: 260px;
-  min-height: 356px;
   background: #FFFFFF;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -11,16 +9,21 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-transition: all var(--transition-time, 0.4s) ease;
   -o-transition: all var(--transition-time, 0.4s) ease;
   transition: all var(--transition-time, 0.4s) ease;
 }
 
-.card:hover {
+.card:not(.card_wide) {
+  max-width: 260px;
+  min-height: 356px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card:not(.card_wide):hover {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
@@ -30,6 +33,14 @@
   -webkit-box-flex: 0;
       -ms-flex: 0 0 178px;
           flex: 0 0 178px;
+}
+
+.card:not(.card_wide) .card__img_big {
+  display: none;
+}
+
+.card_wide .card__img_small {
+  display: none;
 }
 
 .card__body {
@@ -46,8 +57,25 @@
           flex: 1;
 }
 
+.card_wide .card__body {
+  padding: 24px 45px 26px 35px;
+}
+
 .card__header-row {
   margin-bottom: 10px;
+}
+
+.card_wide .card__header-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .card__date {
@@ -74,6 +102,11 @@
   color: var(--accent-color, #621EF4);
 }
 
+.card_wide .card__title {
+  font-size: 18px;
+  line-height: 22px;
+}
+
 .card__text {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
@@ -82,6 +115,26 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.card_wide .card__text {
+  font-size: 15px;
+  line-height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card:not(.card_wide) .card__themes {
+  display: none;
+}
+
+.card__themes {
+  margin-top: -2px;
+  margin-bottom: -2px;
 }
 
 .card__bottom {

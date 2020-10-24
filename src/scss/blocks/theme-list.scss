@@ -5,6 +5,9 @@
 
 .theme-list {
     margin: -7px -8px -8px -7px;
+    &_small {
+        margin: -7px -7px -7px -7px;
+    }
 
     @media screen and (max-width: $md3 + px) {
         margin: -4px;
@@ -17,6 +20,9 @@
         @media screen and (max-width: $md3 + px) {
             margin: 4px;
         }
+    }
+    &_small &__item {
+        margin: 7px 7px 7px 7px;
     }
 
     &__label {
@@ -42,5 +48,10 @@
         font-weight: 600;
         font-size: 12px;
         line-height: 16px;
+    }
+
+    &_small &__button {
+        height: 23px;
+        padding: 0 8px;
     }
 }

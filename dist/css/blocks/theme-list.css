@@ -4,9 +4,17 @@
   margin: -7px -8px -8px -7px;
 }
 
+.theme-list_small {
+  margin: -7px -7px -7px -7px;
+}
+
 .theme-list__item {
   margin: 7px 8px 8px 7px;
   display: inline-block;
+}
+
+.theme-list_small .theme-list__item {
+  margin: 7px 7px 7px 7px;
 }
 
 .theme-list__label {
@@ -25,6 +33,11 @@
   font-weight: 600;
   font-size: 12px;
   line-height: 16px;
+}
+
+.theme-list_small .theme-list__button {
+  height: 23px;
+  padding: 0 8px;
 }
 
 @media screen and (max-width: 768px) {
