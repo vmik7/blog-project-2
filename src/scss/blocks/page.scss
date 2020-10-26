@@ -118,6 +118,7 @@
         }
         @media screen and (max-width: $md4 + px) {
             transition: top var(--transition-time, 0.4s) ease;
+            z-index: 2000;
         }
     }
 

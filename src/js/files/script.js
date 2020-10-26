@@ -498,12 +498,17 @@ let showSidebar = () => {
 
             // Mobile
 
-            pageSidebarOverlayer.classList.add('page__sidebar-overlayer_active');
-            pageBody.classList.add('page__body_lock');
-
-            pageSidebarToggle.classList.add('sidebar__toggle_active');
-            pageSidebar.classList.remove('sidebar_hidden');
-
+            pageSidebarOverlayer.style.zIndex = '2020';
+            pageSidebar.style.zIndex = '2020';
+            
+            setTimeout(() => {
+                
+                pageSidebarOverlayer.classList.add('page__sidebar-overlayer_active');
+                pageBody.classList.add('page__body_lock');
+    
+                pageSidebarToggle.classList.add('sidebar__toggle_active');
+                pageSidebar.classList.remove('sidebar_hidden');
+            }, 100);
         }
 
     }
@@ -572,6 +577,8 @@ let hideSidebar = () => {
             pageSidebarOverlayer.classList.remove('page__sidebar-overlayer_active');
             pageBody.classList.remove('page__body_lock');
 
+            pageSidebarOverlayer.style.zIndex = '200';
+            pageSidebar.style.zIndex = '200';
         }
     }
 };

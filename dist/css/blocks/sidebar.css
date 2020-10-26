@@ -165,7 +165,6 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    z-index: 2000;
   }
 
   .sidebar_hidden {

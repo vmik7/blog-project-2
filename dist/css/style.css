@@ -5108,6 +5108,7 @@ textarea:focus {
     -webkit-transition: top var(--transition-time, 0.4s) ease;
     -o-transition: top var(--transition-time, 0.4s) ease;
     transition: top var(--transition-time, 0.4s) ease;
+    z-index: 2000;
   }
 
   .top-menu__content {
@@ -5571,7 +5572,6 @@ textarea:focus {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    z-index: 2000;
   }
 
   .sidebar_hidden {

@@ -162,5 +162,6 @@
     -webkit-transition: top var(--transition-time, 0.4s) ease;
     -o-transition: top var(--transition-time, 0.4s) ease;
     transition: top var(--transition-time, 0.4s) ease;
+    z-index: 2000;
   }
 }
