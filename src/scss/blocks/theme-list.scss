@@ -5,12 +5,15 @@
 
 .theme-list {
     margin: -7px -8px -8px -7px;
-    &_small {
-        margin: -7px -7px -7px -7px;
-    }
-
     @media screen and (max-width: $md3 + px) {
         margin: -4px;
+    }
+
+    &_small {
+        margin: -7px -7px -7px -7px;
+        @media screen and (max-width: $md3 + px) {
+            margin: -3px;
+        }
     }
 
     &__item {
@@ -23,6 +26,9 @@
     }
     &_small &__item {
         margin: 7px 7px 7px 7px;
+        @media screen and (max-width: $md3 + px) {
+            margin: 3px;
+        }
     }
 
     &__label {
@@ -53,5 +59,13 @@
     &_small &__button {
         height: 23px;
         padding: 0 8px;
+
+        @media screen and (max-width: $md3 + px) {
+            height: 20px;
+            padding: 0 5px;
+            border-radius: 3px;
+            font-size: 9px;
+            line-height: 10px;
+        }
     }
 }

@@ -7,6 +7,12 @@
 
     &__header {
         padding: 60px 0 30px 0;
+        @media screen and (max-width: $md3 + px) {
+            padding: 40px 0 25px 0;
+        }
+        @media screen and (max-width: $md4 + px) {
+            padding: 30px 0 25px 0;
+        }
     }
 
     &__title {
@@ -15,6 +21,19 @@
         font-size: 30px;
         line-height: 37px;
         color: #5A5A5A;
+
+        @media screen and (max-width: $md2 + px) {
+            font-size: 25px;
+            line-height: 35px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            font-size: 23px;
+            line-height: 33px;
+        }
+        @media screen and (max-width: $md4 + px) {
+            font-size: 20px;
+            line-height: 30px;
+        }
 
         span {
             color: #d2d2d2;
@@ -26,6 +45,19 @@
         font-size: 15px;
         line-height: 20px;
         color: #969696;
+
+        @media screen and (max-width: $md2 + px) {
+            font-size: 13px;
+            line-height: 17px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            font-size: 12px;
+            line-height: 16px;
+        }
+        @media screen and (max-width: $md4 + px) {
+            font-size: 12px;
+            line-height: 16px;
+        }
 
         span {
             color: #1E1E1E;
@@ -42,9 +74,34 @@
         display: block;
         font-size: 17px;
         line-height: 23px;
+
+        @media screen and (max-width: $md2 + px) {
+            font-size: 14px;
+            line-height: 20px;
+        }
+        @media screen and (max-width: $md3 + px) {
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+
+    &__theme-button {
+        @media screen and (max-width: $md4 + px) {
+            font-size: 10px;
+            line-height: 12px;
+            padding: 0 10px;
+            height: 24px;
+        }
     }
 
     &__content {
         padding: 37px 0 100px 0;
+
+        @media screen and (max-width: $md2 + px) {
+            padding: 25px 0 80px 0;
+        }
+        @media screen and (max-width: $md4 + px) {
+            padding: 20px 0 60px 0;
+        }
     }
 }

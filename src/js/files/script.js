@@ -32,8 +32,8 @@ $('.hero__slider').slick({
 // * Cards slider
 
 $('.cards-slider__body').slick({
-    initialSlide: 1,
-    // adaptiveHeight: true,
+    adaptiveHeight: true,
+    // initialSlide: 1,
     dots: true,
     infinite: false,
     appendDots: '.cards-slider__bottom-controls',
@@ -176,6 +176,7 @@ if (window.matchMedia('(max-width: 768px)').matches) {
 
 if (cardsControlSort) {
     let showSelectList = () => {
+        cardsSortButton.setAttribute('aria-expanded', true);
         cardsSortButton.classList.add('cards-slider__sort-button_active');
         cardsSortList.classList.add('cards-slider__sort-list_show');
         cardsSortButton.removeEventListener('click', fixSelect);
@@ -184,6 +185,7 @@ if (cardsControlSort) {
         }, 10);
     };
     let hideSelectList = () => {
+        cardsSortButton.setAttribute('aria-expanded', false);
         cardsSortButton.classList.remove('cards-slider__sort-button_active');
         cardsSortList.classList.remove('cards-slider__sort-list_show');
         cardsSortButton.addEventListener('click', fixSelect);
@@ -553,8 +555,10 @@ let hideSidebar = () => {
             else {
                 pageSidebarOverlayer.classList.remove('page__sidebar-overlayer_active');
                 pageBody.classList.remove('page__body_lock');
-                pageSidebar.style.zIndex = '0';
-                pageSidebarOverlayer.style.zIndex = '0';
+                setTimeout(() => {
+                    pageSidebar.style.zIndex = '0';
+                    pageSidebarOverlayer.style.zIndex = '0';
+                }, 400);
             }
 
             fixSidebarFixedBarContent();
