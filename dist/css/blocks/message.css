@@ -17,7 +17,7 @@
 }
 
 .message::before {
-  content: var(--message-icon, url("../../img/message/message-icon.svg"));
+  content: var(--message-icon, url("../img/message/message-icon.svg"));
   position: absolute;
   width: 120px;
   top: 42px;
@@ -27,35 +27,35 @@
 
 .message_ok {
   --message-bg: linear-gradient(90deg, #D9FFEA 0%, #F6FFC1 100%);
-  --message-icon: url('../../img/message/message-icon_ok.svg');
+  --message-icon: url('../img/message/message-icon_ok.svg');
   --message-font-weight: 600;
   --message-color: #333;
 }
 
 .message_attention {
   --message-bg: linear-gradient(90deg, #F6FFC1 0%, #FFE6C1 100%);
-  --message-icon: url('../../img/message/message-icon_attention.svg');
+  --message-icon: url('../img/message/message-icon_attention.svg');
   --message-font-weight: 400;
   --message-color: #5A5A5A;
 }
 
 .message_warning {
   --message-bg: linear-gradient(90deg, #FFEE55 0%, #FFF9C6 100%);
-  --message-icon: url('../../img/message/message-icon_warning.svg');
+  --message-icon: url('../img/message/message-icon_warning.svg');
   --message-font-weight: 400;
   --message-color: #5A5A5A;
 }
 
 .message_error {
   --message-bg: linear-gradient(90deg, #FF9C96 0%, #FCD8D6 100%);
-  --message-icon: url('../../img/message/message-icon_error.svg');
+  --message-icon: url('../img/message/message-icon_error.svg');
   --message-font-weight: 400;
   --message-color: #5A5A5A;
 }
 
 .message_info {
   --message-bg: linear-gradient(90deg, #ACDDF9 0%, #E1FAFF 100%);
-  --message-icon: url('../../img/message/message-icon_info.svg');
+  --message-icon: url('../img/message/message-icon_info.svg');
   --message-font-weight: 400;
   --message-color: #5A5A5A;
 }

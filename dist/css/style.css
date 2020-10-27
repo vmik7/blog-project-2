@@ -14,7 +14,6 @@
     Included blocks: 
         blocks/page
         blocks/form
-        blocks/check
         blocks/button
         blocks/breadcrumbs
         blocks/logo
@@ -847,6 +846,8 @@ textarea:focus {
   z-index: 0;
 }
 
+/* Form */
+
 .form__input {
   display: block;
   width: 100%;
@@ -914,44 +915,6 @@ textarea:focus {
 .form__textarea {
   width: 100%;
   resize: none;
-}
-
-.check {
-  padding-left: 1.2em;
-}
-
-.check__input {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-
-.check__box {
-  position: absolute;
-  width: 1em;
-  height: 1em;
-  margin-left: -1.2em;
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"%3E%3Crect x="3" y="3" width="14" height="14" fill="%23fff" stroke="%234a90e2" stroke-width="2" rx="2"/%3E%3C/svg%3E');
-}
-
-.check__input:checked + .check__box {
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"%3E%3Crect x="2" y="2" width="16" height="16" fill="%234A90E2" rx="3"/%3E%3Cpolyline fill="none" stroke="%23fff" stroke-width="3" points="5 9 9 13 15 6"/%3E%3C/svg%3E');
-}
-
-.check__input:focus + .check__box {
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"%3E%3Crect width="20" height="20" fill="%237ed321" rx="4"/%3E%3Crect width="14" height="14" x="3" y="3" fill="%23fff" stroke="%234a90e2" stroke-width="2" rx="2"/%3E%3C/svg%3E');
-}
-
-.check__input:checked:focus + .check__box {
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"%3E%3Crect width="20" height="20" fill="%237ed321" rx="4"/%3E%3Crect width="16" height="16" x="2" y="2" fill="%234a90e2" rx="3"/%3E%3Cpolyline fill="none" stroke="%23fff" stroke-width="3" points="5 9 9 13 15 6"/%3E%3C/svg%3E');
-}
-
-.check__input:disabled + .check__box {
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"%3E%3Crect x="3" y="3" width="14" height="14" fill="%23fff" stroke="%239b9b9b" stroke-width="2" rx="2"/%3E%3C/svg%3E');
-}
-
-.check__input:checked:disabled + .check__box {
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"%3E%3Crect x="2" y="2" width="16" height="16" fill="%239B9B9B" rx="3"/%3E%3Cpolyline fill="none" stroke="%23FFF" stroke-width="3" points="5 9 9 13 15 6"/%3E%3C/svg%3E');
 }
 
 /* Button */
@@ -1598,6 +1561,8 @@ textarea:focus {
 .page-header__bottom-link:hover {
   color: var(--accent-color, #621EF4);
 }
+
+/* Hero */
 
 .hero .slick-slider {
   position: relative;
@@ -2965,7 +2930,7 @@ textarea:focus {
 }
 
 .quote::before {
-  content: url("../../img/quote.svg");
+  content: url("../img/quote.svg");
   position: absolute;
   width: 120px;
   top: 44px;
@@ -3014,7 +2979,7 @@ textarea:focus {
 }
 
 .message::before {
-  content: var(--message-icon, url("../../img/message/message-icon.svg"));
+  content: var(--message-icon, url("../img/message/message-icon.svg"));
   position: absolute;
   width: 120px;
   top: 42px;
@@ -3024,35 +2989,35 @@ textarea:focus {
 
 .message_ok {
   --message-bg: linear-gradient(90deg, #D9FFEA 0%, #F6FFC1 100%);
-  --message-icon: url('../../img/message/message-icon_ok.svg');
+  --message-icon: url('../img/message/message-icon_ok.svg');
   --message-font-weight: 600;
   --message-color: #333;
 }
 
 .message_attention {
   --message-bg: linear-gradient(90deg, #F6FFC1 0%, #FFE6C1 100%);
-  --message-icon: url('../../img/message/message-icon_attention.svg');
+  --message-icon: url('../img/message/message-icon_attention.svg');
   --message-font-weight: 400;
   --message-color: #5A5A5A;
 }
 
 .message_warning {
   --message-bg: linear-gradient(90deg, #FFEE55 0%, #FFF9C6 100%);
-  --message-icon: url('../../img/message/message-icon_warning.svg');
+  --message-icon: url('../img/message/message-icon_warning.svg');
   --message-font-weight: 400;
   --message-color: #5A5A5A;
 }
 
 .message_error {
   --message-bg: linear-gradient(90deg, #FF9C96 0%, #FCD8D6 100%);
-  --message-icon: url('../../img/message/message-icon_error.svg');
+  --message-icon: url('../img/message/message-icon_error.svg');
   --message-font-weight: 400;
   --message-color: #5A5A5A;
 }
 
 .message_info {
   --message-bg: linear-gradient(90deg, #ACDDF9 0%, #E1FAFF 100%);
-  --message-icon: url('../../img/message/message-icon_info.svg');
+  --message-icon: url('../img/message/message-icon_info.svg');
   --message-font-weight: 400;
   --message-color: #5A5A5A;
 }
@@ -3519,6 +3484,8 @@ textarea:focus {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Footer */
 
 .footer {
   background: #FCFAFA;

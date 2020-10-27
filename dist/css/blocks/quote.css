@@ -8,7 +8,7 @@
 }
 
 .quote::before {
-  content: url("../../img/quote.svg");
+  content: url("../img/quote.svg");
   position: absolute;
   width: 120px;
   top: 44px;
