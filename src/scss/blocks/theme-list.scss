@@ -54,6 +54,13 @@
         font-weight: 600;
         font-size: 12px;
         line-height: 16px;
+
+        @media screen and (max-width: $md4 + px) {
+            font-size: 10px;
+            line-height: 12px;
+            padding: 0 10px;
+            height: 24px;
+        }
     }
 
     &_small &__button {

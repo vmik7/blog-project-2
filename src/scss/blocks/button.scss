@@ -86,7 +86,7 @@
         }
 
         &:hover, &.focus-visible {
-            background: #E5D9FF;
+            background: var(--accent-light-color, #E5D9FF);
             color: var(--accent-color, #621EF4);
             path {
                 fill: var(--accent-color, #621EF4);

@@ -85,15 +85,6 @@
         }
     }
 
-    &__theme-button {
-        @media screen and (max-width: $md4 + px) {
-            font-size: 10px;
-            line-height: 12px;
-            padding: 0 10px;
-            height: 24px;
-        }
-    }
-
     &__content {
         padding: 37px 0 100px 0;
 

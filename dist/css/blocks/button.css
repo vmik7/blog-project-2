@@ -85,7 +85,7 @@
 
 .button_grey:hover,
 .button_grey.focus-visible {
-  background: #E5D9FF;
+  background: var(--accent-light-color, #E5D9FF);
   color: var(--accent-color, #621EF4);
 }
 

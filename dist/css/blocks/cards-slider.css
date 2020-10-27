@@ -233,7 +233,7 @@
 
 .cards-slider .slick-arrow:hover:not(.slick-disabled),
 .cards-slider .slick-arrow:focus:not(.slick-disabled) {
-  background: #E5D9FF;
+  background: var(--accent-light-color, #E5D9FF);
   color: var(--accent-color, #621EF4);
 }
 
@@ -271,7 +271,7 @@
 }
 
 .cards-slider .slick-dots li.slick-active button {
-  background: #621EF4 !important;
+  background: var(--accent-color, #621EF4) !important;
   color: #fff !important;
 }
 
@@ -293,7 +293,7 @@
 
 .cards-slider .slick-dots li button:hover,
 .cards-slider .slick-dots li button:focus {
-  background: #E5D9FF;
+  background: var(--accent-light-color, #E5D9FF);
   color: var(--accent-color, #621EF4);
 }
 
