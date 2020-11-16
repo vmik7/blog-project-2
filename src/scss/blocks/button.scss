@@ -49,6 +49,7 @@
     &_small {
         padding: 0 17px;
         justify-content: center;
+        font-weight: 400;
         @media screen and (max-width: $md2 + px) {
             padding: 0 15px;
             height: 34px;

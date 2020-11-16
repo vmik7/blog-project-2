@@ -22,6 +22,8 @@
         width: 22px;
         height: 22px;
 
+        margin-right: 5px;
+
         @media screen and (max-width: $md4 + px) {
             width: 18px;
             height: 18px;
@@ -34,6 +36,7 @@
 
         path {
             transition: all var(--transition-time, 0.4s) ease;
+            fill: #F5F5F5;
         }
 
         &_active,
@@ -58,6 +61,7 @@
 
     &__sort-label {
         font-family: "Open Sans", sans-serif;
+        font-weight: 300;
         font-size: 13px;
         line-height: 18px;
         color: #969696;
@@ -110,7 +114,7 @@
 
     &__sort-list {
         position: absolute;
-        right: 5px;
+        left: -15px;
         top: calc(100% + 5px);
         padding: 5px;
         text-align: right;
@@ -136,10 +140,13 @@
         padding: 7px 10px;
 
         font-family: "Open Sans", sans-serif;
+        font-weight: 300;
         font-size: 13px;
         line-height: 18px;
         color: #969696;
-        text-align: right;
+        
+        text-align: left;
+        width: 100%;
 
         white-space: nowrap;
 

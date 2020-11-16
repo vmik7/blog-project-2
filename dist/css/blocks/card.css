@@ -2,9 +2,9 @@
 
 .card {
   background: #FFFFFF;
-  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,7 +85,6 @@
 
 .card__date {
   font-family: "Open Sans", sans-serif;
-  font-weight: bold;
   font-size: 11px;
   line-height: 15px;
   color: #BEBEBE;
@@ -124,6 +123,7 @@
 
 .card__text {
   font-family: "Open Sans", sans-serif;
+  font-weight: 300;
   font-size: 12px;
   line-height: 16px;
   color: #5A5A5A;
@@ -211,7 +211,6 @@
 
 .card__bottom-value {
   font-family: "Open Sans", sans-serif;
-  font-weight: 600;
   font-size: 11px;
   line-height: 18px;
   color: #AAAAAA;
@@ -233,6 +232,12 @@
   height: 12px;
   width: 48px;
   cursor: pointer;
+  -webkit-transition: all var(--transition-time, 0.4s) ease;
+  -o-transition: all var(--transition-time, 0.4s) ease;
+  transition: all var(--transition-time, 0.4s) ease;
+  -webkit-transform-origin: 30% center;
+      -ms-transform-origin: 30% center;
+          transform-origin: 30% center;
 }
 
 .card__bottom-arrow svg {
@@ -244,6 +249,12 @@
   -webkit-transition: all var(--transition-time, 0.4s) ease;
   -o-transition: all var(--transition-time, 0.4s) ease;
   transition: all var(--transition-time, 0.4s) ease;
+}
+
+.card__bottom-arrow:hover {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .card__bottom-arrow:hover path {
@@ -276,9 +287,9 @@
 
 @media screen and (min-width: 769px) {
   .card:not(.card_wide):hover {
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.08);
+        -ms-transform: scale(1.08);
+            transform: scale(1.08);
   }
 
   .card_wide {
@@ -287,8 +298,8 @@
   }
 
   .card_wide:hover {
-    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   }
 
   .card__img_big {

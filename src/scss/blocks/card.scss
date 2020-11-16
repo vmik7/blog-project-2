@@ -6,8 +6,8 @@
 .card {
     
     background: #FFFFFF;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     display: flex;    
 
@@ -20,7 +20,7 @@
 
         @media screen and (min-width: $md3 + 1 + px) {
             &:hover {
-                transform: scale(1.1);
+                transform: scale(1.08);
     
                 @media screen and (max-width: $md2 + px) {
                     transform: scale(1.07);
@@ -36,7 +36,7 @@
         @media screen and (min-width: $md3 + 1 + px) {
             box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
             &:hover {
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
             }
         }
     }
@@ -141,7 +141,6 @@
 
     &__date {
         font-family: "Open Sans", sans-serif;
-        font-weight: bold;
         font-size: 11px;
         line-height: 15px;
         color: #BEBEBE;
@@ -231,6 +230,7 @@
 
     &__text {
         font-family: "Open Sans", sans-serif;
+        font-weight: 300;
         font-size: 12px;
         line-height: 16px;
         color: #5A5A5A;
@@ -408,7 +408,6 @@
 
     &__bottom-value {
         font-family: "Open Sans", sans-serif;
-        font-weight: 600;
         font-size: 11px;
         line-height: 18px;
         color: #AAAAAA;
@@ -470,7 +469,10 @@
             transition: all var(--transition-time, 0.4s) ease;
         }
 
+        transition: all var(--transition-time, 0.4s) ease;
+        transform-origin: 30% center;
         &:hover {
+            transform: scale(1.2);
             path {
                 fill: var(--accent-color, #621EF4);
             }

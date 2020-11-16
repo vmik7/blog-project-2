@@ -21,6 +21,16 @@
         }
     }
 
+    &__button {
+        min-width: 180px;
+        height: 38px;
+        font-weight: 400;
+
+        .button__icon-block {
+            margin-left: 15px;
+        }
+    }
+
     &__author {
         margin-top: 30px;
         @media screen and (max-width: $md2 + px) {
@@ -34,6 +44,7 @@
     &__useful {
         margin-top: 70px;
         display: flex;
+        align-items: center;
 
         @media screen and (max-width: $md2 + px) {
             margin-top: 55px;

@@ -7,19 +7,23 @@
 .category__link {
   display: block;
   font-family: Roboto, sans-serif;
+  font-weight: 300;
   font-size: 16px;
   line-height: 19px;
   color: #969696;
   -webkit-transition: all var(--transition-time, 0.4s) ease;
   -o-transition: all var(--transition-time, 0.4s) ease;
   transition: all var(--transition-time, 0.4s) ease;
+  -webkit-transform-origin: left center;
+      -ms-transform-origin: left center;
+          transform-origin: left center;
 }
 
 @media screen and (min-width: 769px) {
   .category__link:hover {
     font-weight: bold;
     color: var(--accent-color, #621EF4);
-    padding-left: 27px;
+    padding-left: 10px;
     -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
             transform: scale(1.1);

@@ -42,6 +42,7 @@
 
     &__sub-title {
         font-family: "Open Sans";
+        font-weight: 300;
         font-size: 15px;
         line-height: 20px;
         color: #969696;
@@ -61,13 +62,14 @@
 
         span {
             color: #1E1E1E;
+            font-weight: 700;
         }
 
         margin-top: 5px;
     }
 
     &__themes {
-        margin-top: 25px;
+        margin-top: 35px;
     }
 
     &__themes-label {

@@ -17,7 +17,7 @@ $('.hero__slider').slick({
     dots: true,
     infinite: true,
     initialSlide: 1,
-    speed: 500,
+    speed: 1500,
     fade: true,
     adaptiveHeight: true,
     cssEase: 'ease',
@@ -345,7 +345,7 @@ if (pageTopMenu) {
     let currentArticleProgress;
     let setProgressBarWidth = () => {
         let fullScroll = pageBody.offsetHeight - window.innerHeight;
-        currentArticleProgress = Math.max(currentArticleProgress, pageYOffset * 100 / fullScroll);
+        currentArticleProgress = pageYOffset * 100 / fullScroll;
         progressValue.style.width = `${currentArticleProgress}%`;
     };
 
@@ -389,7 +389,7 @@ let hideSidebarFixedBarContent = () => {
         sidebarFixedBarContent.classList.add('sidebar__fixed-bar-content_hidden');
         setTimeout(() => {
             sidebarFixedBarContent.style.display = 'none';
-        }, 400);
+        }, 800);
     }
 };
 let fixSidebarFixedBarContent = () => {
@@ -462,7 +462,7 @@ let showSidebar = () => {
 
                 setTimeout(() => {
                     let tranBackup = window.getComputedStyle(pageSidebar).transition;
-                    pageSidebar.style.transition = 'all 0.3s ease';
+                    pageSidebar.style.transition = 'all 0.8s ease';
 
                     let topOffset = 0;
                     if (pageTop && !topHeaderHidden) {
@@ -481,7 +481,7 @@ let showSidebar = () => {
                         pageSidebar.style.right = `${0}px`;
                         pageSidebarToggle.classList.add('sidebar__toggle_active');
                         pageSidebar.classList.remove('sidebar_hidden');
-                    }, 300);
+                    }, 800);
                 }, 40);
             }
             else {
@@ -498,8 +498,12 @@ let showSidebar = () => {
 
             // Mobile
 
-            pageSidebarOverlayer.style.zIndex = '2020';
-            pageSidebar.style.zIndex = '2020';
+            withoutTransition(pageSidebarOverlayer, () => {
+                pageSidebarOverlayer.style.zIndex = '2020';
+            });
+            withoutTransition(pageSidebar, () => {
+                pageSidebar.style.zIndex = '2020';
+            });
             
             setTimeout(() => {
                 
@@ -543,7 +547,7 @@ let hideSidebar = () => {
             if (headerOffset || footerOffset) {
                 setTimeout(() => {
                     let tranBackup = window.getComputedStyle(pageSidebar).transition;
-                    pageSidebar.style.transition = 'all 0.4s ease';
+                    pageSidebar.style.transition = 'all 0.8s ease';
     
                     fixSidebar();
                     
@@ -554,8 +558,8 @@ let hideSidebar = () => {
                         pageSidebar.style.transition = tranBackup;
                         pageSidebar.style.zIndex = '0';
                         pageSidebarOverlayer.style.zIndex = '0';
-                    }, 400);
-                }, 400);
+                    }, 800);
+                }, 800);
             }
             else {
                 pageSidebarOverlayer.classList.remove('page__sidebar-overlayer_active');
@@ -563,7 +567,7 @@ let hideSidebar = () => {
                 setTimeout(() => {
                     pageSidebar.style.zIndex = '0';
                     pageSidebarOverlayer.style.zIndex = '0';
-                }, 400);
+                }, 800);
             }
 
             fixSidebarFixedBarContent();

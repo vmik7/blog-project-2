@@ -80,9 +80,9 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   overflow: hidden;
-  -webkit-transition: padding var(--transition-time, 0.4s) ease;
-  -o-transition: padding var(--transition-time, 0.4s) ease;
-  transition: padding var(--transition-time, 0.4s) ease;
+  -webkit-transition: padding 0.8s ease;
+  -o-transition: padding 0.8s ease;
+  transition: padding 0.8s ease;
 }
 
 .page__sidebar-overlayer {
@@ -94,9 +94,9 @@
   background: rgba(0, 0, 0, 0.3);
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: all var(--transition-time, 0.4s) ease;
-  -o-transition: all var(--transition-time, 0.4s) ease;
-  transition: all var(--transition-time, 0.4s) ease;
+  -webkit-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
 
 .page__content {
@@ -117,9 +117,9 @@
 
 @media screen and (min-width: 481px) {
   .page__sidebar {
-    -webkit-transition: right var(--transition-time, 0.4s) ease, padding-top var(--transition-time, 0.4s) ease;
-    -o-transition: right var(--transition-time, 0.4s) ease, padding-top var(--transition-time, 0.4s) ease;
-    transition: right var(--transition-time, 0.4s) ease, padding-top var(--transition-time, 0.4s) ease;
+    -webkit-transition: right 0.8s ease, padding-top 0.4s ease;
+    -o-transition: right 0.8s ease, padding-top 0.4s ease;
+    transition: right 0.8s ease, padding-top 0.4s ease;
   }
 }
 
@@ -159,9 +159,9 @@
   }
 
   .page__sidebar {
-    -webkit-transition: top var(--transition-time, 0.4s) ease;
-    -o-transition: top var(--transition-time, 0.4s) ease;
-    transition: top var(--transition-time, 0.4s) ease;
+    -webkit-transition: top 0.8s ease;
+    -o-transition: top 0.8s ease;
+    transition: top 0.8s ease;
     z-index: 2000;
   }
 }

@@ -66,6 +66,15 @@
   color: #C6C6C6;
 }
 
+.article-action:not(.article-action_small) .article-action__bookmark {
+  min-width: 235px;
+  height: 40px;
+}
+
+.article-action:not(.article-action_small) .article-action__bookmark .button__icon-block {
+  margin-left: 15px;
+}
+
 @media screen and (min-width: 769px) {
   .article-action {
     display: -webkit-box;
@@ -78,6 +87,10 @@
 
   .article-action__item-icon:hover path {
     fill: var(--accent-color, #621EF4);
+  }
+
+  .article-action__item-icon_with-stroke:hover path {
+    stroke: var(--accent-color, #621EF4);
   }
 }
 

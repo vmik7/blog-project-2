@@ -11,12 +11,12 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  margin-left: 12px;
+  margin-left: 18px;
 }
 
 .recent__date {
   font-family: "Open Sans", sans-serif;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 11px;
   line-height: 15px;
   color: #9E9E9E;
@@ -42,6 +42,7 @@
 
 .recent__text {
   font-family: "Open Sans", sans-serif;
+  font-weight: 300;
   font-size: 11px;
   line-height: 15px;
   color: #BEBEBE;

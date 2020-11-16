@@ -90,6 +90,16 @@
                 }
             }
         }
+
+        &_with-stroke {
+            @media screen and (min-width: $md3 + 1 + px) {
+                &:hover {
+                    path {
+                        stroke: var(--accent-color, #621EF4);
+                    }
+                }
+            }
+        }
     }
     &_small &__item-icon {
         svg {
@@ -181,6 +191,15 @@
     &__bookmark {
         @media screen and (max-width: $md3 + px) {
             margin: 15px auto 0 auto;
+        }
+    }
+
+    &:not(.article-action_small) &__bookmark {
+        min-width: 235px;
+        height: 40px;
+
+        .button__icon-block {
+            margin-left: 15px;
         }
     }
 }

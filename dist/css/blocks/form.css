@@ -4,6 +4,8 @@
   display: block;
   width: 100%;
   height: 40px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
   padding: 0;
   border: 0;
   background: none;
@@ -21,7 +23,7 @@
 .form__input::-webkit-input-placeholder {
   font-family: "Open Sans", sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 300;
   font-size: 16px;
   line-height: 22px;
   color: #E1E1E1;
@@ -30,7 +32,7 @@
 .form__input::-moz-placeholder {
   font-family: "Open Sans", sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 300;
   font-size: 16px;
   line-height: 22px;
   color: #E1E1E1;
@@ -39,7 +41,7 @@
 .form__input:-ms-input-placeholder {
   font-family: "Open Sans", sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 300;
   font-size: 16px;
   line-height: 22px;
   color: #E1E1E1;
@@ -48,7 +50,7 @@
 .form__input::-ms-input-placeholder {
   font-family: "Open Sans", sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 300;
   font-size: 16px;
   line-height: 22px;
   color: #E1E1E1;
@@ -58,7 +60,7 @@
 .form__select:required:invalid {
   font-family: "Open Sans", sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 300;
   font-size: 16px;
   line-height: 22px;
   color: #E1E1E1;

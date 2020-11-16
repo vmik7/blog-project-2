@@ -20,6 +20,7 @@
   padding: 0;
   width: 22px;
   height: 22px;
+  margin-right: 5px;
 }
 
 .cards-slider__view-button svg {
@@ -31,6 +32,7 @@
   -webkit-transition: all var(--transition-time, 0.4s) ease;
   -o-transition: all var(--transition-time, 0.4s) ease;
   transition: all var(--transition-time, 0.4s) ease;
+  fill: #F5F5F5;
 }
 
 .cards-slider__view-button_active path,
@@ -52,6 +54,7 @@
 
 .cards-slider__sort-label {
   font-family: "Open Sans", sans-serif;
+  font-weight: 300;
   font-size: 13px;
   line-height: 18px;
   color: #969696;
@@ -104,7 +107,7 @@
 
 .cards-slider__sort-list {
   position: absolute;
-  right: 5px;
+  left: -15px;
   top: calc(100% + 5px);
   padding: 5px;
   text-align: right;
@@ -125,10 +128,12 @@
   border: 0;
   padding: 7px 10px;
   font-family: "Open Sans", sans-serif;
+  font-weight: 300;
   font-size: 13px;
   line-height: 18px;
   color: #969696;
-  text-align: right;
+  text-align: left;
+  width: 100%;
   white-space: nowrap;
   -webkit-transition: all var(--transition-time, 0.4s) ease;
   -o-transition: all var(--transition-time, 0.4s) ease;

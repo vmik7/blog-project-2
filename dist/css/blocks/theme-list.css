@@ -30,9 +30,14 @@
   height: 26px;
   padding: 0 10px;
   font-family: "Open Sans", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 12px;
   line-height: 16px;
+  color: #828282;
+}
+
+.theme-list__button.button_active {
+  min-width: 100px;
 }
 
 .theme-list_small .theme-list__button {

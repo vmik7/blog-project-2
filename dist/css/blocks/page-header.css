@@ -26,7 +26,7 @@
 }
 
 .page-header__bottom-icon {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .page-header__bottom-title,
@@ -67,7 +67,6 @@
   }
 
   .page-header__bottom-icon {
-    margin-right: 5px;
     height: 18px;
   }
 

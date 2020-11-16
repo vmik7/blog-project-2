@@ -52,10 +52,11 @@
 
         flex: 0 0 70px;
         height: 100%;
+        padding-bottom: 35px;
 
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
 
         @media screen and (max-width: $md3 + px) {
             flex: 0 0 60px;
@@ -63,11 +64,13 @@
         @media screen and (max-width: $md4 + px) {
             flex: 0 0 50px;
             justify-content: flex-start;
+            align-items: center;
+            padding-bottom: 0;
         }
     }
 
     &__fixed-bar-content {
-        transition: all var(--transition-time, 0.4s) ease;
+        transition: all 0.4s ease;
         opacity: 1;
 
         &_hidden {
@@ -109,7 +112,7 @@
             transform: translate3d(0, -50%, 0) rotate(-90deg);
         }
 
-        transition: all var(--transition-time, 0.4s) ease;
+        transition: all 0.8s ease;
     }
     &__toggle_active {
         @media screen and (min-width: $md4 + 1 + px) {
@@ -122,11 +125,11 @@
 
     &__content {
         flex: 1;
-        padding: 80px 80px 50px 0;
+        padding: 80px 45px 50px 0;
         overflow: auto;
 
         @media screen and (max-width: $md3 + px) {
-            padding: 70px 60px 40px 0;
+            padding: 70px 45px 40px 0;
         }
         @media screen and (max-width: $md4 + px) {
             padding: 15px 15px;
@@ -135,7 +138,7 @@
         opacity: 1;
         visibility: visible;
 
-        transition: all var(--transition-time, 0.4s) ease;
+        transition: all 0.8s ease;
     }
     &_hidden &__content {
         opacity: 0;
@@ -143,7 +146,7 @@
     }
 
     &__section {
-        margin: 0px 0px 50px 0px;
+        margin: 0px 0px 65px 0px;
     }
 
     &__title {
@@ -157,6 +160,7 @@
     }
 
     &__social {
+        justify-content: space-between;
         @media screen and (max-width: $md4 + px) {
             justify-content: center;
         }
@@ -170,10 +174,11 @@
     }
 
     &__image {
-        border-radius: 11px;
         overflow: hidden;
+        text-align: center;
 
         img {
+            border-radius: 11px;
             max-width: 100%;
         }
 

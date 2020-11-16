@@ -81,7 +81,7 @@
         justify-content: space-between;
         overflow: hidden;
 
-        transition: padding var(--transition-time, 0.4s) ease;
+        transition: padding 0.8s ease;
     }
 
     &__sidebar-wrapper {
@@ -98,7 +98,7 @@
         opacity: 0;
         visibility: hidden;
         
-        transition: all var(--transition-time, 0.4s) ease;
+        transition: all 0.8s ease;
 
         &_active {
             @media screen and (max-width: 1290px) {
@@ -114,10 +114,10 @@
 
     &__sidebar {
         @media screen and (min-width: $md4 + 1 + px) {
-            transition: right var(--transition-time, 0.4s) ease, padding-top var(--transition-time, 0.4s) ease;
+            transition: right 0.8s ease, padding-top 0.4s ease;
         }
         @media screen and (max-width: $md4 + px) {
-            transition: top var(--transition-time, 0.4s) ease;
+            transition: top 0.8s ease;
             z-index: 2000;
         }
     }

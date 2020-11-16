@@ -51,15 +51,20 @@
         padding: 0 10px;
 
         font-family: "Open Sans", sans-serif;
-        font-weight: 600;
+        font-weight: 400;
         font-size: 12px;
         line-height: 16px;
+        color: #828282;
 
         @media screen and (max-width: $md4 + px) {
             font-size: 10px;
             line-height: 12px;
             padding: 0 10px;
             height: 24px;
+        }
+
+        &.button_active {
+            min-width: 100px;
         }
     }
 
