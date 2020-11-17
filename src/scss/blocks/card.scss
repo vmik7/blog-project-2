@@ -43,6 +43,8 @@
 
     &__image {
         // flex: 0 0 178px;
+        cursor: pointer;
+        overflow: hidden;
         
     }
     &:not(.card_wide) &__image {
@@ -66,6 +68,8 @@
         height: 100%;
         object-fit: cover;
 
+        opacity: 0.9;
+
         &_big {
             transition: all var(--transition-time, 0.4s) ease;
             @media screen and (min-width: $md3 + 1 + px) {
@@ -73,6 +77,18 @@
             }
         }
     }
+
+    @media screen and (min-width: $md3 + 1 + px) {
+        &:hover &__img,
+        &:focus &__img {
+            transition: transform 5s linear, opacity 0.3s ease, -webkit-transform 5s linear;
+            -webkit-transform: scale(1.3);
+            -ms-transform: scale(1.3);
+            transform: scale(1.3);
+            opacity: 1;
+        }
+    }
+
 
     &:not(.card_wide) &__img_big {
         display: none;
